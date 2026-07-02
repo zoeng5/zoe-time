@@ -1,0 +1,7 @@
+logs/
+.refresh.lock
+.publish/
+__pycache__/
+*.pyc
+node_modules/
+backups/

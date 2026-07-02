@@ -1,0 +1,1585 @@
+{
+  "_说明": "Zoe 时间管理 · 归类语义层。优先级 = overrides > rules(从上到下) > AI兜底 > unclassified。AI判过的写进 cache，你改过的写进 overrides，越用越准。",
+  "version": 1,
+  "categories": {
+    "strategy": {
+      "label": "战略",
+      "def": "公司/品牌层面的战略性决策与研究（含 AI 战略）",
+      "subs": [
+        "公司战略",
+        "品牌战略",
+        "董事会与股东",
+        "战略研究"
+      ]
+    },
+    "people": {
+      "label": "组织人才",
+      "def": "人与组织：招聘面试、述职、1-1、高管团队、团队文化",
+      "subs": [
+        "招聘",
+        "1-1",
+        "述职",
+        "高管团队",
+        "团队文化"
+      ]
+    },
+    "product": {
+      "label": "产品品牌",
+      "def": "产品企划评审、品牌营销、创意拍摄、超品直播、门店体验",
+      "subs": [
+        "产品评审",
+        "品牌营销",
+        "设计创意",
+        "门店体验"
+      ]
+    },
+    "operations": {
+      "label": "运营财务",
+      "def": "日常运营、财务预算税务、OKR/经营分析、BI/数智化/IT、电商运营",
+      "subs": [
+        "财务",
+        "日常运营",
+        "跨部门协同",
+        "审批决策"
+      ]
+    },
+    "external": {
+      "label": "对外关系",
+      "def": "投资人/ESOP、合作伙伴外部会面、媒体公关、社会责任",
+      "subs": [
+        "投资人",
+        "合作伙伴",
+        "媒体公关",
+        "社会责任"
+      ]
+    },
+    "global": {
+      "label": "全球业务",
+      "def": "海外业务：MTI EC/Retail、US/欧洲/印尼（落地业务会议；飞行归差旅）",
+      "subs": [
+        "MTI EC",
+        "MTI Retail",
+        "海外人才"
+      ]
+    },
+    "growth": {
+      "label": "进修成长",
+      "def": "学习成长：湖畔/YPO/DeepTalk、研修班工作坊、商学院课程、行业游学",
+      "subs": [
+        "湖畔/YPO",
+        "课程学习",
+        "行业交流"
+      ]
+    },
+    "family": {
+      "label": "家庭",
+      "def": "孩子(Olivia/George/Max)、学校活动、家长会、亲子、家庭旅行、陪伴长辈",
+      "subs": [
+        "亲子居家",
+        "亲子旅行",
+        "陪伴长辈"
+      ]
+    },
+    "self": {
+      "label": "自我",
+      "def": "自我照顾：健身、美容护肤、看病体检、Wellness、私人休闲与用餐",
+      "subs": [
+        "健身运动",
+        "美容护肤",
+        "健康医疗",
+        "休闲放松"
+      ]
+    },
+    "travel": {
+      "label": "差旅",
+      "def": "纯交通/在途：航班、高铁、机场、通勤、接送、换乘",
+      "subs": [
+        "出差飞行",
+        "通勤接送"
+      ]
+    },
+    "sleep": {
+      "label": "睡眠",
+      "def": "睡眠（由 Oura/WHOOP 自动生成，不参与会议归类）",
+      "subs": []
+    }
+  },
+  "rules": [
+    {
+      "cat": "travel",
+      "sub": "出差飞行",
+      "any": [
+        "机场",
+        "航空",
+        "航班",
+        "预订号",
+        "票号",
+        "送机",
+        "接机",
+        "站内换乘",
+        "路程距离",
+        "返程第",
+        "苏黎世",
+        "凯夫拉维克",
+        "赫尔辛基机场",
+        "SZ-HK",
+        "SZ HK"
+      ],
+      "regex": "编号[:：]|[A-Z]{3}[ ]*→|→[ ]*[A-Z]{3}|EK0?\\d{2,}|HX\\d{2,}|CZ\\d{2,}|T\\d[ ]*→|→.*T\\d",
+      "_note": "只抓纯交通；冰岛/湖畔的游玩活动不含这些词，会落到下面的家庭/进修"
+    },
+    {
+      "cat": "growth",
+      "sub": "湖畔/YPO",
+      "any": [
+        "湖畔",
+        "YPO",
+        "YPOI",
+        "With token"
+      ],
+      "_note": "湖畔/YPO 前缀优先级高于伙伴/吃饭——串门访学里的公司名、晚餐都算进修"
+    },
+    {
+      "cat": "growth",
+      "sub": "课程学习",
+      "any": [
+        "DeepTalk",
+        "研修",
+        "工作坊",
+        "商学院",
+        "腾讯咨询",
+        "胖东来",
+        "游学",
+        "公开课",
+        "答辩",
+        "开题",
+        "美的实战",
+        "组织研修",
+        "MOT",
+        "风变",
+        "新员工培训课程",
+        "企业声誉",
+        "企业风险与危机",
+        "消费者洞察",
+        "AI落地与组织转型",
+        "AI in Physical Security",
+        "AI Time",
+        "Learn",
+        "CEO小会",
+        "组织转型"
+      ]
+    },
+    {
+      "cat": "family",
+      "sub": "亲子旅行",
+      "any": [
+        "冰岛",
+        "露营",
+        "Play Date",
+        "XVenture"
+      ],
+      "_note": "冰岛只匹配游玩，飞行段已被差旅先抓走"
+    },
+    {
+      "cat": "family",
+      "sub": "亲子居家",
+      "any": [
+        "Olivia",
+        "George",
+        "Max",
+        "全家",
+        "家长",
+        "swimming比赛",
+        "Swimming Competition",
+        "Party",
+        "Art Show",
+        "图书馆节",
+        "骨龄",
+        "Reading Time",
+        "Rally the Family",
+        "School Leaders",
+        "Yvette",
+        "Mediterranean",
+        "好奇星球",
+        "WASHK 6V",
+        "WAS 6V"
+      ]
+    },
+    {
+      "cat": "self",
+      "sub": "健身运动",
+      "any": [
+        "GYM",
+        "Tennis",
+        "健身",
+        "跑步",
+        "普拉提",
+        "瑜伽"
+      ],
+      "regex": "\\bswimming\\b(?!.*比赛)"
+    },
+    {
+      "cat": "self",
+      "sub": "美容护肤",
+      "any": [
+        "养发",
+        "丝域",
+        "eyelash",
+        "化妆",
+        "Beauty",
+        "美容",
+        "护肤",
+        "kiki"
+      ]
+    },
+    {
+      "cat": "self",
+      "sub": "健康医疗",
+      "any": [
+        "牙齿",
+        "皮肤科",
+        "养和医院",
+        "激光中心",
+        "体检",
+        "骨龄"
+      ],
+      "_note": "孩子的骨龄已被家庭先抓；这里是 Zoe 本人体检"
+    },
+    {
+      "cat": "self",
+      "sub": "休闲放松",
+      "any": [
+        "Wellness",
+        "周回顾"
+      ]
+    },
+    {
+      "cat": "people",
+      "sub": "招聘",
+      "any": [
+        "面试",
+        "interview",
+        "招聘",
+        "hiring",
+        "Onboarding",
+        "入职",
+        "Preboarding"
+      ]
+    },
+    {
+      "cat": "people",
+      "sub": "述职",
+      "any": [
+        "述职"
+      ]
+    },
+    {
+      "cat": "people",
+      "sub": "1-1",
+      "any": [
+        "1-1",
+        "1 on 1",
+        "1on1",
+        "1o1",
+        "1v1",
+        "Vicki",
+        "Shirley",
+        "with Phoebe",
+        "Zoe & Yan",
+        "HR case"
+      ]
+    },
+    {
+      "cat": "people",
+      "sub": "团队文化",
+      "any": [
+        "团建",
+        "Hey Zoe",
+        "宣讲",
+        "调薪",
+        "年度庆典",
+        "颁奖",
+        "Team Dinner",
+        "Girls Day"
+      ]
+    },
+    {
+      "cat": "external",
+      "sub": "投资人",
+      "any": [
+        "ESOP",
+        "esop",
+        "行权",
+        "innoven",
+        "innovan",
+        "期权",
+        "渶策",
+        "股权激励"
+      ]
+    },
+    {
+      "cat": "external",
+      "sub": "社会责任",
+      "any": [
+        "UNICEF",
+        "NICEF",
+        "Fundraising",
+        "Thankathon"
+      ]
+    },
+    {
+      "cat": "external",
+      "sub": "合作伙伴",
+      "any": [
+        "Reima",
+        "Databricks",
+        "Oracle",
+        "Nativex",
+        "德勤",
+        "KPMG",
+        "East West",
+        "Kelvin",
+        "Savio",
+        "Morris Mak",
+        "Marc",
+        "Michael",
+        "众源",
+        "Stephanie",
+        "小鹏",
+        "富途",
+        "云迹",
+        "昂跑",
+        "pinn",
+        "Nick",
+        "Jerry朋友"
+      ]
+    },
+    {
+      "cat": "product",
+      "sub": "品牌营销",
+      "any": [
+        "MKT",
+        "Campaign",
+        "创意",
+        "拍摄",
+        "大片",
+        "KV",
+        "摄影",
+        "影棚",
+        "超品",
+        "直播",
+        "彩排",
+        "Rundown",
+        "营销",
+        "稿件",
+        "秋冬",
+        "26fw",
+        "形象标准",
+        "全连彩排"
+      ]
+    },
+    {
+      "cat": "product",
+      "sub": "产品评审",
+      "any": [
+        "27FW",
+        "27SS",
+        "27ss",
+        "样衣",
+        "企划",
+        "产品管理",
+        "新品"
+      ]
+    },
+    {
+      "cat": "product",
+      "sub": "门店体验",
+      "any": [
+        "门店",
+        "store BD",
+        "Retail store",
+        "mixc",
+        "万象天地"
+      ]
+    },
+    {
+      "cat": "operations",
+      "sub": "财务",
+      "any": [
+        "财务",
+        "finance",
+        "Budget",
+        "税务",
+        "费用",
+        "费控",
+        "报表",
+        "账目",
+        "Price control",
+        "调薪沟通"
+      ],
+      "_note": "调薪本身归人才；这里是其他财务"
+    },
+    {
+      "cat": "operations",
+      "sub": "跨部门协同",
+      "any": [
+        "BI",
+        "数智化",
+        "IT ",
+        "IT setup",
+        "系统",
+        "网盘",
+        "电脑安全",
+        "Nas",
+        "CRM",
+        "Account apply",
+        "打通",
+        "飞书AI",
+        "慕迪"
+      ]
+    },
+    {
+      "cat": "operations",
+      "sub": "日常运营",
+      "any": [
+        "电商",
+        "EC ",
+        "OKR",
+        "KPI",
+        "经营分析",
+        "MT3",
+        "MTI汇报",
+        "数据复盘",
+        "BP工作汇报",
+        "月度Review",
+        "项目会议",
+        "RECAP"
+      ]
+    },
+    {
+      "cat": "global",
+      "sub": "MTI EC",
+      "any": [
+        "MTI",
+        "Global EC",
+        "海外",
+        "US retail",
+        "印尼",
+        "Indonesia"
+      ]
+    },
+    {
+      "cat": "strategy",
+      "sub": "公司战略",
+      "any": [
+        "鞋战略",
+        "董事会",
+        "股东",
+        "公司战略",
+        "框架"
+      ]
+    },
+    {
+      "cat": "strategy",
+      "sub": "战略研究",
+      "any": [
+        "战略",
+        "AI实战",
+        "AI update",
+        "AI catch up",
+        "AI岗位",
+        "AI 安全架构",
+        "AI素材",
+        "AI内容",
+        "AI 内容",
+        "Meeting with Jerry",
+        "学院 update",
+        "academy"
+      ]
+    },
+    {
+      "cat": "self",
+      "sub": "休闲放松",
+      "any": [
+        "晚饭",
+        "晚宴",
+        "聚餐",
+        "Brunch",
+        "brunch",
+        "Coffee",
+        "Cocktails",
+        "Canapés",
+        "lunch",
+        "Lunch",
+        "Dinner",
+        "晚餐",
+        "松间集"
+      ],
+      "_note": "兜底的私人用餐归自我休闲；带外部公司名/团队/家庭前缀的已在上面被先抓"
+    }
+  ],
+  "overrides": {
+    "block": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "占位时间块"
+    },
+    "签到": {
+      "cat": "growth",
+      "sub": "课程学习"
+    },
+    "🔧 装 Health Brief cron 到 Mac Studio": {
+      "cat": "self",
+      "sub": "休闲放松",
+      "_note": "Zoe 个人 AI 折腾"
+    },
+    "IT": {
+      "cat": "operations",
+      "sub": "跨部门协同"
+    },
+    "【现场】Simon沟通": {
+      "cat": "external",
+      "sub": "合作伙伴",
+      "_note": "Simon=外部"
+    },
+    "Brian Chee": {
+      "cat": "external",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "Hupan8 JK@Insta360": {
+      "cat": "growth",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "Hupan8 JK@Insta360（不确定早上开始时间）": {
+      "cat": "growth",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "MT云学院推进aligh": {
+      "cat": "people",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "世界杯洛杉矶1/4决赛（8进4）": {
+      "cat": "self",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "从酒店出发": {
+      "cat": "travel",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "出发去西九龙高铁站": {
+      "cat": "travel",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "出发杭州西高铁站 2.5km预计10min": {
+      "cat": "travel",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "出发深圳": {
+      "cat": "travel",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "出发香港西九龙高铁站": {
+      "cat": "travel",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "日本研学 DAY3 大阪—和歌山—大阪": {
+      "cat": "family",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "日本研学 DAY4 大阪—京都": {
+      "cat": "family",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "日本研学 DAY5 京都—大阪—国内 自由安排": {
+      "cat": "family",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "酒店出发35min路程": {
+      "cat": "travel",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "高铁（一等座）：杭州西站—上海虹桥站 G8360 检票口：10A   位置：01车厢09 F": {
+      "cat": "travel",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "高铁（商务座）：长沙南站—许昌东站  G544  检票口：6A 7A   位置：01车厢02A": {
+      "cat": "travel",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "高铁：香港西九龙-广州南 02车厢03D号": {
+      "cat": "travel",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "1.7-南区伙伴见面会": {
+      "cat": "external",
+      "sub": "伙伴见面",
+      "_note": "AI 判定"
+    },
+    "12:30出发：百度国际大厦": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "2025 Performance Review": {
+      "cat": "people",
+      "sub": "述职",
+      "_note": "AI 判定"
+    },
+    "2026年IMS PTA FLAG日": {
+      "cat": "operations",
+      "sub": "OKR",
+      "_note": "AI 判定"
+    },
+    "25年终奖定性沟通": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "26 挑战目标": {
+      "cat": "operations",
+      "sub": "OKR",
+      "_note": "AI 判定"
+    },
+    "26产品策略": {
+      "cat": "product",
+      "sub": "产品企划",
+      "_note": "AI 判定"
+    },
+    "26年产品属性确认（经典&保留款）": {
+      "cat": "product",
+      "sub": "产品企划",
+      "_note": "AI 判定"
+    },
+    "2v1": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "3.7活动取消沟通+2.27服装安排": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "AI 判定"
+    },
+    "AI /模型岗位 对齐": {
+      "cat": "strategy",
+      "sub": "AI战略",
+      "_note": "AI 判定"
+    },
+    "AI 实践 practice": {
+      "cat": "strategy",
+      "sub": "AI战略",
+      "_note": "AI 判定"
+    },
+    "AirBoat Mark": {
+      "cat": "product",
+      "sub": "品牌",
+      "_note": "AI 判定"
+    },
+    "BE Boarding school.": {
+      "cat": "family",
+      "sub": "孩子教育",
+      "_note": "AI 判定"
+    },
+    "Branding DM3": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "CM调解结果同步及后续方案讨论": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "AI 判定"
+    },
+    "Call Alex": {
+      "cat": "external",
+      "sub": "对外联系",
+      "_note": "AI 判定"
+    },
+    "Call Huixin@启明创投：13426346712": {
+      "cat": "external",
+      "sub": "投资人",
+      "_note": "AI 判定"
+    },
+    "Call@Gao Leilei@香港中文大学 远志嫂子": {
+      "cat": "external",
+      "sub": "对外人脉",
+      "_note": "AI 判定"
+    },
+    "China Retail HRBP": {
+      "cat": "people",
+      "sub": "组织人才",
+      "_note": "AI 判定"
+    },
+    "Cutting Ribbon Ceremony": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "DM3 & moodytiger Workshop": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "DM3 X moodytiger 聊一下next step": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "DM3沟通": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "Diana沟通": {
+      "cat": "external",
+      "sub": "对外人脉",
+      "_note": "AI 判定"
+    },
+    "Donald Edrington's Zoom Meeting": {
+      "cat": "external",
+      "sub": "对外会议",
+      "_note": "AI 判定"
+    },
+    "FW26鞋子订货会": {
+      "cat": "product",
+      "sub": "产品企划",
+      "_note": "AI 判定"
+    },
+    "Family time": {
+      "cat": "family",
+      "sub": "亲子",
+      "_note": "AI 判定"
+    },
+    "Financial Model": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "Flynn沟通": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "GG x Moodytiger - Preliminary Concept": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "HK - SZ": {
+      "cat": "travel",
+      "sub": "跨城",
+      "_note": "AI 判定"
+    },
+    "Hakuba International School; a boarding school in Japanese Alps is having an info session in HK!": {
+      "cat": "family",
+      "sub": "孩子教育",
+      "_note": "AI 判定"
+    },
+    "IPO updte，审计公司 & 预算调整": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "Labour Cost for 2026": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "Movie night in 太古城": {
+      "cat": "family",
+      "sub": "家庭休闲",
+      "_note": "AI 判定"
+    },
+    "New Brand: MoodyTiger": {
+      "cat": "strategy",
+      "sub": "品牌战略",
+      "_note": "AI 判定"
+    },
+    "PFAS舆情面对": {
+      "cat": "external",
+      "sub": "媒体公关",
+      "_note": "AI 判定"
+    },
+    "Q2 市场部工作重点+方向": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "SABCD内容沟通": {
+      "cat": "product",
+      "sub": "内容营销",
+      "_note": "AI 判定"
+    },
+    "SPA 2 hrs": {
+      "cat": "self",
+      "sub": "美容护肤",
+      "_note": "AI 判定"
+    },
+    "Terry沟通": {
+      "cat": "external",
+      "sub": "对外人脉",
+      "_note": "AI 判定"
+    },
+    "Welcoming Remarks：Moodytiger representative": {
+      "cat": "external",
+      "sub": "公开活动",
+      "_note": "AI 判定"
+    },
+    "Xchat 上线，去下载": {
+      "cat": "operations",
+      "sub": "IT工具",
+      "_note": "AI 判定"
+    },
+    "YOP到访": {
+      "cat": "external",
+      "sub": "对外访问",
+      "_note": "AI 判定"
+    },
+    "Yan": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "Zoe & Lionel 1:1": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "Zoe needs to call Qingmu 银粟": {
+      "cat": "external",
+      "sub": "对外联系",
+      "_note": "AI 判定"
+    },
+    "Zoe's meeting（线下会议）": {
+      "cat": "operations",
+      "sub": "会议",
+      "_note": "AI 判定"
+    },
+    "about KOL part mtmt room": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "call Flynn": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "call 青木": {
+      "cat": "external",
+      "sub": "对外人脉",
+      "_note": "AI 判定"
+    },
+    "cfo jenny": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "content": {
+      "cat": "product",
+      "sub": "内容营销",
+      "_note": "AI 判定"
+    },
+    "family": {
+      "cat": "family",
+      "sub": "家庭时间",
+      "_note": "AI 判定"
+    },
+    "marketing discussion about ROI": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "marketing架构": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "marketing架构&职能沟通": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "meeting": {
+      "cat": "operations",
+      "sub": "会议",
+      "_note": "AI 判定"
+    },
+    "mollly1by1": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "moodytiger & EY 沟通": {
+      "cat": "external",
+      "sub": "合作伙伴",
+      "_note": "AI 判定"
+    },
+    "moodytiger x DM3 next step讨论": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "mtmt room大屏沟通": {
+      "cat": "product",
+      "sub": "超品直播",
+      "_note": "AI 判定"
+    },
+    "open claw学习": {
+      "cat": "growth",
+      "sub": "学习成长",
+      "_note": "AI 判定"
+    },
+    "return HK": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "sms 12pm": {
+      "cat": "self",
+      "sub": "个人提醒",
+      "_note": "AI 判定"
+    },
+    "stretch plan 激励包测算方案（zoe online）": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "testing": {
+      "cat": "operations",
+      "sub": "IT工具",
+      "_note": "AI 判定"
+    },
+    "wanda-Xiaoling Pay": {
+      "cat": "external",
+      "sub": "财务合作",
+      "_note": "AI 判定"
+    },
+    "wesley沟通": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "work": {
+      "cat": "operations",
+      "sub": "工作",
+      "_note": "AI 判定"
+    },
+    "zoe": {
+      "cat": "self",
+      "sub": "个人时间",
+      "_note": "AI 判定"
+    },
+    "“一级组织绩效指标”讨论": {
+      "cat": "operations",
+      "sub": "OKR",
+      "_note": "AI 判定"
+    },
+    "「菁彩創未來——保利2026春精品藝術展」華菁會專場": {
+      "cat": "self",
+      "sub": "艺术欣赏",
+      "_note": "AI 判定"
+    },
+    "「風箏不斷線」吳冠中陶瓷版畫藝術展華菁會專場導賞": {
+      "cat": "self",
+      "sub": "艺术欣赏",
+      "_note": "AI 判定"
+    },
+    "【#腾讯会议：432-882-735】Zoe & Jenny": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "【08 HUDDLE ROOM】ZOE & Jessie,2025年Year End Performance Review": {
+      "cat": "people",
+      "sub": "述职",
+      "_note": "AI 判定"
+    },
+    "【08 HUDDLE ROOM】ZOE & Joanna,2025年Year End Performance Review": {
+      "cat": "people",
+      "sub": "述职",
+      "_note": "AI 判定"
+    },
+    "【08 HUDDLE ROOM】ZOE & Joe,2025年Year End Performance Review": {
+      "cat": "people",
+      "sub": "述职",
+      "_note": "AI 判定"
+    },
+    "【08 HUDDLE ROOM】ZOE & Molly,2025年Year End Performance Review": {
+      "cat": "people",
+      "sub": "述职",
+      "_note": "AI 判定"
+    },
+    "【08 HUDDLE ROOM】ZOE & Shirely,2025年Year End Performance Review": {
+      "cat": "people",
+      "sub": "述职",
+      "_note": "AI 判定"
+    },
+    "【08 HUDDLE ROOM】ZOE & Wendy,2025年Year End Performance Review": {
+      "cat": "people",
+      "sub": "述职",
+      "_note": "AI 判定"
+    },
+    "【08 Huddle】Before meeting Jennifer": {
+      "cat": "people",
+      "sub": "会议准备",
+      "_note": "AI 判定"
+    },
+    "【08 huddle room】Zoe账户整理、沟通": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "AI 判定"
+    },
+    "【08:45出发】HK-SZ，10:00到公司": {
+      "cat": "travel",
+      "sub": "跨城",
+      "_note": "AI 判定"
+    },
+    "【HK,Café Landmark】Meet 蓝月亮@Simon Poon": {
+      "cat": "external",
+      "sub": "合作伙伴见面",
+      "_note": "AI 判定"
+    },
+    "【Landmark 45楼】Tods Fashion Show": {
+      "cat": "product",
+      "sub": "品牌活动",
+      "_note": "AI 判定"
+    },
+    "【ONLINE】IMS 2026年夏令营信息说明会": {
+      "cat": "family",
+      "sub": "孩子教育",
+      "_note": "AI 判定"
+    },
+    "【ONLINE】ZOE & FLYNN,2025年Year End Performance Review": {
+      "cat": "people",
+      "sub": "述职",
+      "_note": "AI 判定"
+    },
+    "【ONLINE】ZOE & Larissa,2025年Year End Performance Review": {
+      "cat": "people",
+      "sub": "述职",
+      "_note": "AI 判定"
+    },
+    "【co-creat/comsult】会议安排沟通+时间记录沟通": {
+      "cat": "operations",
+      "sub": "会议协调",
+      "_note": "AI 判定"
+    },
+    "【mtmt room 】Q2会议安排沟通": {
+      "cat": "operations",
+      "sub": "会议协调",
+      "_note": "AI 判定"
+    },
+    "【product】": {
+      "cat": "product",
+      "sub": "产品",
+      "_note": "AI 判定"
+    },
+    "【巡店】印力中心": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【巡店】壹方城": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【巡店】天汇广场IGC": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【巡店】天环广场": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【巡店】太古汇": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【巡店】广佛佛罗伦萨": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【巡店】广州天河城": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【巡店】深业上城": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【巡店】龙岗万科城": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【待定巡店】番禺天河城": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "【组织】人才盘点&绩效review": {
+      "cat": "people",
+      "sub": "组织人才",
+      "_note": "AI 判定"
+    },
+    "【集合地点：14:00黄竹坑站 B 出口天桥处】菁彩创未来：南港岛艺术鉴赏之旅": {
+      "cat": "self",
+      "sub": "艺术欣赏",
+      "_note": "AI 判定"
+    },
+    "一定13:30出发，担心路上堵车": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "一级组织绩效指标拉通": {
+      "cat": "operations",
+      "sub": "OKR",
+      "_note": "AI 判定"
+    },
+    "三人会议": {
+      "cat": "operations",
+      "sub": "会议",
+      "_note": "AI 判定"
+    },
+    "三月第一周业绩": {
+      "cat": "operations",
+      "sub": "经营分析",
+      "_note": "AI 判定"
+    },
+    "下午BD会议妙计+视频": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "下午会议PPT preview": {
+      "cat": "operations",
+      "sub": "会议准备",
+      "_note": "AI 判定"
+    },
+    "与通力律师面谈品牌保护方案": {
+      "cat": "external",
+      "sub": "法律合作",
+      "_note": "AI 判定"
+    },
+    "专家访谈：泰兰尼斯": {
+      "cat": "external",
+      "sub": "媒体对外",
+      "_note": "AI 判定"
+    },
+    "个人时间": {
+      "cat": "self",
+      "sub": "个人时间",
+      "_note": "AI 判定"
+    },
+    "中信银行取钱（带上内地身份证、香港通行证+身份证，若不需要，看看是否需要注销）": {
+      "cat": "self",
+      "sub": "个人事务",
+      "_note": "AI 判定"
+    },
+    "中国银行授信合同签约（2000万，2.6%费率）": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "中国零售Q1季度复盘&Q2季度规划": {
+      "cat": "operations",
+      "sub": "经营分析",
+      "_note": "AI 判定"
+    },
+    "产品部&商品管理部年终奖沟通": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "人工智慧戰略論壇 從 AI 熱潮到企業實效：CEO 與 CIO 的第一手策略經驗 憑邀請免費參加": {
+      "cat": "strategy",
+      "sub": "AI战略",
+      "_note": "AI 判定"
+    },
+    "从香港去深圳": {
+      "cat": "travel",
+      "sub": "跨城",
+      "_note": "AI 判定"
+    },
+    "住深圳，周四08:00集合出发去广州": {
+      "cat": "travel",
+      "sub": "跨城",
+      "_note": "AI 判定"
+    },
+    "住深圳，周四08:30集合出发去龙岗": {
+      "cat": "travel",
+      "sub": "跨城",
+      "_note": "AI 判定"
+    },
+    "供应链管理部年终奖结果沟通": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "关键岗位对齐": {
+      "cat": "people",
+      "sub": "组织人才",
+      "_note": "AI 判定"
+    },
+    "内容素材平台培训（第一场）": {
+      "cat": "operations",
+      "sub": "IT培训",
+      "_note": "AI 判定"
+    },
+    "出发-龙岗": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "出发去惠州": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "出发回hk": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "出发来深圳": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "到达录制现场，对方安排午饭": {
+      "cat": "product",
+      "sub": "超品直播",
+      "_note": "AI 判定"
+    },
+    "前袋鼠妈妈VP沟通": {
+      "cat": "external",
+      "sub": "合作伙伴",
+      "_note": "AI 判定"
+    },
+    "助理录用结果沟通": {
+      "cat": "people",
+      "sub": "招聘",
+      "_note": "AI 判定"
+    },
+    "北区+西区视频录制": {
+      "cat": "product",
+      "sub": "超品直播",
+      "_note": "AI 判定"
+    },
+    "午餐:深业上城": {
+      "cat": "self",
+      "sub": "用餐休闲",
+      "_note": "AI 判定"
+    },
+    "午餐：太古汇": {
+      "cat": "self",
+      "sub": "用餐休闲",
+      "_note": "AI 判定"
+    },
+    "南区动员会议": {
+      "cat": "operations",
+      "sub": "部门会议",
+      "_note": "AI 判定"
+    },
+    "南区巡店待办事项20260316-负责人版 自动化跟进方式": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "去银行汇丰银行 HSBC，带香港身份证（周六上班时间09:00-13:00）": {
+      "cat": "self",
+      "sub": "个人事务",
+      "_note": "AI 判定"
+    },
+    "各业务单元 年终复盘 & 26规划 review": {
+      "cat": "operations",
+      "sub": "经营分析",
+      "_note": "AI 判定"
+    },
+    "商品销售跟进讨论": {
+      "cat": "product",
+      "sub": "产品销售",
+      "_note": "AI 判定"
+    },
+    "团队沟通": {
+      "cat": "people",
+      "sub": "团队沟通",
+      "_note": "AI 判定"
+    },
+    "妆发：在酒店": {
+      "cat": "self",
+      "sub": "美容护肤",
+      "_note": "AI 判定"
+    },
+    "小明 下午茶 the rock": {
+      "cat": "family",
+      "sub": "陪伴",
+      "_note": "AI 判定"
+    },
+    "工作琐事": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "AI 判定"
+    },
+    "年度绩效应用逻辑沟通": {
+      "cat": "operations",
+      "sub": "OKR",
+      "_note": "AI 判定"
+    },
+    "年终奖progress update to Don": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "录制": {
+      "cat": "product",
+      "sub": "超品直播",
+      "_note": "AI 判定"
+    },
+    "拉丁舞比赛": {
+      "cat": "family",
+      "sub": "孩子活动",
+      "_note": "AI 判定"
+    },
+    "接入 上市公司 数据需求": {
+      "cat": "operations",
+      "sub": "BI数智",
+      "_note": "AI 判定"
+    },
+    "提醒：预定明天 7:20 香港→深圳的车": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "晚上住深圳，酒店距离上课地点1.8公里，开车9分钟": {
+      "cat": "travel",
+      "sub": "出差住宿",
+      "_note": "AI 判定"
+    },
+    "汇报法务近期工作": {
+      "cat": "people",
+      "sub": "1-1",
+      "_note": "AI 判定"
+    },
+    "沟通供应商准入流程": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "AI 判定"
+    },
+    "沟通案件胜诉宣传方案（8号会议室）": {
+      "cat": "external",
+      "sub": "法律公关",
+      "_note": "AI 判定"
+    },
+    "沟通葛媛纠纷案": {
+      "cat": "external",
+      "sub": "法律事务",
+      "_note": "AI 判定"
+    },
+    "泛微 review": {
+      "cat": "operations",
+      "sub": "IT工具",
+      "_note": "AI 判定"
+    },
+    "泛微流程梳理会议": {
+      "cat": "operations",
+      "sub": "IT工具",
+      "_note": "AI 判定"
+    },
+    "泛微测试（差旅报销）": {
+      "cat": "operations",
+      "sub": "IT工具",
+      "_note": "AI 判定"
+    },
+    "泛微测试（综采、合同、付款）": {
+      "cat": "operations",
+      "sub": "IT工具",
+      "_note": "AI 判定"
+    },
+    "深业上城看项目": {
+      "cat": "product",
+      "sub": "门店体验",
+      "_note": "AI 判定"
+    },
+    "深圳-广州": {
+      "cat": "travel",
+      "sub": "跨城",
+      "_note": "AI 判定"
+    },
+    "深圳office开工利是派发：休闲区（CNY100/人，wanda已准备）": {
+      "cat": "people",
+      "sub": "团队文化",
+      "_note": "AI 判定"
+    },
+    "深圳湾万象城：ÄNGLE安格买手店": {
+      "cat": "self",
+      "sub": "购物休闲",
+      "_note": "AI 判定"
+    },
+    "澳门商标注册申请公证": {
+      "cat": "operations",
+      "sub": "财务法务",
+      "_note": "AI 判定"
+    },
+    "牙醫複診 斯威特口腔（8楼801）": {
+      "cat": "self",
+      "sub": "医疗",
+      "_note": "AI 判定"
+    },
+    "独立站内容规划": {
+      "cat": "product",
+      "sub": "内容营销",
+      "_note": "AI 判定"
+    },
+    "短视频 AI 工具": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "竞品数据": {
+      "cat": "product",
+      "sub": "产品分析",
+      "_note": "AI 判定"
+    },
+    "素材管理平台 特赞 方式共识": {
+      "cat": "operations",
+      "sub": "工具流程",
+      "_note": "AI 判定"
+    },
+    "组织": {
+      "cat": "people",
+      "sub": "组织",
+      "_note": "AI 判定"
+    },
+    "组织会议": {
+      "cat": "people",
+      "sub": "组织会议",
+      "_note": "AI 判定"
+    },
+    "绩效沟通": {
+      "cat": "people",
+      "sub": "绩效",
+      "_note": "AI 判定"
+    },
+    "美国签证面签": {
+      "cat": "self",
+      "sub": "出国准备",
+      "_note": "AI 判定"
+    },
+    "耀出行定车回香港": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "聊聊品牌": {
+      "cat": "product",
+      "sub": "品牌营销",
+      "_note": "AI 判定"
+    },
+    "若要回香港，5点出发，需要订车": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "蓝月亮cfo @cafe landmark（预定信息:11点,吴女士 56835507）": {
+      "cat": "external",
+      "sub": "合作伙伴财务",
+      "_note": "AI 判定"
+    },
+    "赠品沟通": {
+      "cat": "product",
+      "sub": "产品促销",
+      "_note": "AI 判定"
+    },
+    "走的时候带蛋糕": {
+      "cat": "self",
+      "sub": "个人事务",
+      "_note": "AI 判定"
+    },
+    "返回深圳": {
+      "cat": "travel",
+      "sub": "在途",
+      "_note": "AI 判定"
+    },
+    "迪士尼活动-具体操作在描述中": {
+      "cat": "family",
+      "sub": "亲子活动",
+      "_note": "AI 判定"
+    },
+    "采购部 Monthly Meeting": {
+      "cat": "operations",
+      "sub": "部门会议",
+      "_note": "AI 判定"
+    },
+    "预定时间": {
+      "cat": "self",
+      "sub": "个人提醒",
+      "_note": "AI 判定"
+    },
+    "飞书大群-春节红包派送": {
+      "cat": "people",
+      "sub": "团队文化",
+      "_note": "AI 判定"
+    },
+    "香港office开工利是派发（HKD100/人，需提前取现包红包）": {
+      "cat": "people",
+      "sub": "团队文化",
+      "_note": "AI 判定"
+    },
+    "香港故宫古埃及展览 带孩子看": {
+      "cat": "family",
+      "sub": "亲子活动",
+      "_note": "AI 判定"
+    },
+    "马会 meet 小明，最晚19:30到": {
+      "cat": "family",
+      "sub": "陪伴",
+      "_note": "AI 判定"
+    },
+    "高新投合同签署（贷款息2.4%+担保息0.9%）": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "AI 判定"
+    },
+    "（腾讯会议）AI培训需求沟通会": {
+      "cat": "operations",
+      "sub": "IT培训",
+      "_note": "AI 判定"
+    },
+    "🚨 大鑊！走進首家被 30 隻 AI 龍蝦「全面接管」的公司 • 香港站": {
+      "cat": "growth",
+      "sub": "学习成长",
+      "_note": "AI 判定"
+    }
+  },
+  "fallback": {
+    "cat": "unclassified",
+    "sub": ""
+  }
+}

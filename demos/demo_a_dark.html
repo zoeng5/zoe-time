@@ -1,0 +1,827 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>深色高级 · Demo A</title><link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAA+RUlEQVR4nO2dCZwcVbX/f/dWVS+zZSYLWQkhAYIECKuKRFbFJ6CgMlEfCogSVFT+LqwJJAGEgCLwQIUgCj4USUAQAUV5LIrsELaEJRuEkH0ms09313L+n3OraqYzTLaZ7umumvuF+Uy6p7u6uuqec88595xzBTRlBQFiYT1k/T4QwVOemAtvKy8X730HtVZ1YpRhecMszxufTMjhmRyNqkmJcVkHaY8wNG3RLkLAdByRIMAgoAKA6X+cfxwh4ADoEAKuKSgHwO1wxHpToMEykGnL0eqEKdbZjteQhXzPtWWD3Zpbt9uv0ZR3nC2/y2xIQP0AS0BYAE+I3l+rKQ3hINOUCCIITIeEL/C9CvuLM1Cx2y6JXROGO0lC7GER7Smk2MMDjTGFGOkRahMGkjAA9bPFB/BRezzO/52P6DEiZC8jxPV/ci6yUqDJIVovINaBaGmWxFKXaJlLxrL3NuTeP2Q+OraqFLRCKAu0AijBDI/6rQv8U2eievIu1l4JE1MNeAebBvaTEpMExGgzBdEl4F7wwwLpAR6pY3sgsErxBdy/uyJUNGJbdz5PDNVbuwWTj+i/3v/Nx5GSH7Mo8/l0z/PqfJwMyCOsA2iZ7eINz5OLsi69srzdefvjN6Jli4/ls50DQymEhfDEVqwJTXHQCmAAUIN8oS8iYroS2S7WXIQRFQljqhTicBM4zAD2TxgYjWRwdwIhJ/4huL6cK2EU6j//d/D/AH6nbsXAv/ks1HnxeQgBQ4TWCH9r/ktOWQ3rXMIbBHq608VTOcd9ZcxV2LjFcRcEKq5eWwcDgVYARRT6J+bAOKrHLP/ADFQcOcI8wEjgGItwjBQ4wEygTnnk/CoH8FjY1b/yBF1NytG4X6wcSJk68PIUgyENCPU9WSk4gJPDZpfotRyJxxwHj63KOIsOuBbtH3IX5sDVyqA4RGJARQU15hdAYiFH8rpn+pU/wai6CnmkJeXxlqQjLENMQCIQeBtwvcCgJwjyzetY3hePQHlKQRoSElagEGzAdrDKJTzpkPe3hpz3xIQrsXYLZTBFuU/aMiggsRxoA82Cehj19Vua96suxtghpjwuIeUXDIlpVhJ14UB3bTWvu4G3LkVMBX57kO9E+AqBYBhWYCHwZcqgyfXwb5e8+xtt75HxV+KDrvctgLFwITA9T8lq+sagHHiFIAxeyblwwulo0bmo3aNWCf2XpcCxZgpD1B9ygOvCDWc+DqKV9OTLFBXEDCwhw4ChrCT2FjJo9gQe77S9BatbvUf2vQ6NCEMks2FqF6HvaAWwk4SmaP5s33CJeXjapFNNiJOtFEarqxoKvc+gneX7bR1wLDFUBgTYWazziP7S4Yg/DL3c+fcWwcPFoG3kTGh6QQ/KnTHz9+keYB/8CMNrq81TEgadbhri42qAstA7WuiLtOLgKwMzUAZqVYGedzxxe1OLs3DsL7CpS0EvgciPwWi2jh6g24HqYeQnrDTOsvZLJ7wzTYivmimM5GHpZrt8ekML/QBYBsG1NpIQ7EzZWWxwif7U3ClvG3WV/Vr+0mvPZVfNlujBuoOCv3GmcVRVUnzPEDjJSsEMZ3sSEFL79CUhTHwKrQInA8fx8EDGo1/WzXUfU6/RimCbaAWwHcFvnm2cmBTi/yUTOJYj1JRRjqmjZ/vyswokYIqUn2OQc/B4xqXrh8x1H8hPudauwZboAbxl0glCH795lvH5ZALnJRNiGl8lN9O1ZMVRfH3dyjtWIA1OmyZWBPR0RwbX1V3h3tPbfR7sDPqB3DOq3zTT+K9UEhclE+IIfuzmfDOT01tLfa6aHYfTpjmD0khA8ijPZumpjhyuHnqF+6D6u141GNwKQGXtzYYh5voptw2XmIdVWLgkZeGzPEe4WXiczipVmEkTVbhOSgIkE74Cz+bwj3Yblw273PkPPybOI5gLd7AWIQ1KBcDaP5zx3/tJctKIamdmwhBncCYaC76e8eOHRyquAyMJ6dmqMOnO1jZ52S4/yy3tOSYGE4NKAcyeDTknMPe5xn7v0eaPEhbOs5Ko8TpVAQsPEi34MXcNhICUaQg7gzbboWuXLnd/dsCdaB+M8YFBowAenw3z6MDcb7nEOCll4UorLfZBVhXjOMLvkKMZJHgE1+QMwyTXHdDbmSwurrnC/XPoFoSuYdyJvQLI1+prz01OqB3qzksl8WX2+FxbL+cNZihYPjQsmDwCcjncu7nDOH/UvOyKoNZDxN0aiPXAz9fkLZea30kncIWZxFCvUzXWUJ1tSn2OmrIpQiIjBcPOoSlr45Lquc5Ng8EaiKUCyNfe75+HPYdXmzekUvgsZ+85Llyp/XzNdtyCXCf+2dDmnDvmGrzJVuQcAHNjaA3ETgHkR3NbLjXPTlu42kxiiNupntMFOprtugWCswqTMB0bre2duKj2p84v47pSECthCM21d/8fRo+sM29KpfHFsCxXR/c1O7taYEgYSAGZTvxl42bnnPHX4YO4uQQiNoG+OUpzU+PFxglVaXGzlcQ4LwOHdJBP098gYQqmncXatk46e+iV7l/jFCCMvGDkmWWi9VLjiqq0uFhF+B29tKcpYGzAhMEh47YMXVU9152lno6BSxBpBRCaY6t+iLG71Jq3JyvxKbdTZfLxF9MRfk2hVwpgVEBm2/HYpmbnjHG/wPtRdwlE1PP4N15gHFVThf9NJMU4N6NnfU1xIcBhl8DJYm17hk6r/an7qCosmh7NTU1kFNN5MVv5X07TTPM7tTXi0YQhxjmdqqBDC7+mqAjA5LFmGhhdVSkeab3UPFe5AdSddBYlRNT68gWtoEXHbOOGdKX4vmrH5febj9zF10TeJRBGGqK9lW7+xmXu9xYCLjeUiVLTERG1XP4XZ2DIlLHmH1OVON7rhEOejvJrSrxKUAEz245/LFvlfHXf29CYX3dS7ohIre//GLuPqTXus1Jiqtup/X1NeUAEh5WAnaHF6xrdk8dfh2VRCQ6WvQIIL+TG88xDaqpxfyKJsSrY17WHjEZTJkogBdN2sLalGV8cfo3zbBSUQFn7zeEFXHeh8anaIXgsYWGsk1FZfVr4NWWFEDB5bFoCo4fU4NE15xuf5bGrOg6VMaLchX/zxcaXqirFH00gwW24dUqvptw7D5kmpAs4nW3e16uv8v5UzpZAWVoANAMWX7C2WdZp1VXiHpNgua7u1qMpf6SAVGPVg1FVI+9qmWl9k8fyizPUPshlR9kpAKUt58Nuv0TOqKyiO4QHz/X0Mp8mOghAEu8Y5cCrrqHftM+UZx8yH3Y5ugNlJVSsJVlbts80z66okre4NjxydeMOTfQQvDTtQXg5uBU18mYe0+UYExBlZfbPh90y0zqruobm84UjT9fva2LQX0DC47bkrS34ds1PnVvKKSYgy8nsb5tpfb26Sgu/Jj4IAcFjmcd0dQ1ubptlnVlOlkDJFUCoDdefb3wxVUl3eC48Twu/JqZKoKKSbmu4UH65XJSAKIsknwuMY2prxN94c0dydSmvJp54BJIGeIjT5jY6fuQ89x+ldgdKpgDCZgqbL7AOrKqmJwyBGp79tfBr4l5EZBgQDqGjuQXHDL/Geb6UjUVKImxcNslf+IMfYHy6kh40DdR4nOSjhV8TcwQgHQdkSlTWVOEBrm9hWShVKbFZknr+OaCn3kf1iGHGA1YSY1w/vVcn+WgGT7KQDddKYeSYGuOvi851p2EOmtVetAPcZ1AOdCefOX5rbjp4V/Muq0JMDQp7tPBrBhVCwOCxb1WIKZPrzLvncNB7CoTfzW7gGFizI2jj1TLTuD5VjRO8Dti6sEczWBECptcJO12F486bZdyo4gCzB3YyHDAFEEY7my6WM6prxbluBxyI8syP1mgGEItloXKI+G7TReY5A708OCDmRtgmaf355ieGDcETgiDJ1Wv9Gk1+tqAngc0tOGaXq51/DVRrMTkgQb8F8N75PkbUVmGBIWCp/H4t/BpNd6IQQZgCsrYSf+KdrVhmBmJloNgf0BX0G1dn3plIYaxjq4i/Xu7TaHouD9rwrBRGj6ox/8gVcCyfxQ4KFlUQKQz6XWzOTtfgOI566p15NZreYdngXpfJGhzVerFxhcoQLHJQsGjaJfRhNl9kHF1TLR6DF3TwLaMKRI2m3ODtBXh3YmHC3NxK/zXsSveRYsYDiiKMoe/yZhZ1kyrMVxImxrqObuqh0exwurAJkXOw/v1mZ+qkKmzi54uRJFQsgVQZTRMs8+ZEGuNULz8t/BrNDsGyws1wEmmMGlNpzg8EX0bCAggLGxovlqfV1co79H59Gk0/9iFMw2xq9GbUXeXdWoyiIVlw078e3oofY7fqtLzBs4unuTSauEMEAzm4VRXyWi4a4g1IC700WNiZeYpa3/c6LjVvNpOodXnDzqhF/QVfXx2njG+IbUBrbfqFFBCuA5hpVO9Sad4i4BxHUwqrAETBTf8L5el1Q+XtXkY1OYie6e84wU7wmtjBomNGb0gCcGQaZvNm7+zaK735hXQFCqIAQrNkfQ4jhqbNxZaJOtZc0Qv8ETBiCpCoUvaXNgRiAvnpdsi1ARsXR87C87iTkAnyPLQ0tThThl+DtZgDUYhVAbNgpv90uO2zjGutNIY5HXCjl/AjAM+BPPl2YNSBpT4ZTTFYtwjeLQcB0gq0QnRcAXLgmRWorbTN64VwptOCwkyu/T5IaI5smml8qqJSnMp+f/SEPw/PDnxFJxgk+ifyP+G9VPc2wv0DOuCmK1DfdKHxX6qL0IL+y1m/LABlJC8GPfx9JKssXA/hG87RMrB6Inr8aKJPTO6nYAkDJVO44fHTMRWLkQvkjUpiATzh5/p7h9ea5yQrxRQ3B1dGzu/XaCKVIOSmqsReB44zf6RiAP2sFTD7FfibA3d5DiPTFmaB1/y5yi86rpVGE0UMLwuvIokL3zkfv8ccfNCfXoKyn2v+NNKw5lpp1Lk2iBt99Pl4Go1mu3AxHbnwrDSqxybNy1kGWRbRR/oksAvqYXBW0tqLrH1TKfqmlwlmf41GU3Q4td7LwE2mcBrvqyE5IMgy2Qf6JLT19eokaIhJPzUSMD1/++6IR1g0mujACY2GBZlO0JXK696nb8637OuyX8NF5uHJND7vZuBFetlPo4nosqCyAirwXxsvMo7mGEBflgV33gJY7GuatInLJIcQSYf9NJpSwGvuLMHVFi7Ll82iKQA1+8+Ft3GmcUyqAsfw7B+5Yh+NJiYITg7KwkumxbRNFxmf7osVsHMWQKBhKg0xS/DH6NlfoyktLIMSqLRwaV+sgB1WAKov2Vx4jTPNI1IpHM2Rfz37azTlYQWkKvpmBex0DKDCwEXC9CuUdvpsNRpN0ayACktcuLNWwA4pgLAr6YbzrIPMBD7DmUixjfx7rqoK3OKHXH/dRUVdNGUN3yN1r3q5j3xv47si4CWTOLr5QvNjmAva0byAHbMA6v1f1Sn6kZFUu5jEt2VGug7g5Q0j6f/mHw54cKegsMypS0mwYtBKoWTwtc+/FwzfI3WvjO77F95LvrcxhQBPWhCJBH68M8VBYkdy/tmvWDMTu41Imm9JgSRvYxS/rB++bA7EQWcBtRMBKYFUnRo0omI4UDUKqNil90GkZh03T0nE7+qUB9Q9w6tr3cv8lWkC2jcAbetAHRuBzs3+c6wkmlaCXr4VYB82jh6sUFcn19Du7DtyHpaFstvfYiC+yl61MGaYaaR455J4dvnlwkoD9Oz87pZggSwTG1OWBaSGAdVjIIZPBkYdADH6IGDkVKByRDCoAniwbW2AanYeZdJ7gTUWzPBM+0Zgw+ugNS8B614FNbwNtK4GOhsBOwfVNCtsC8Dw25IxFX4o3egaFUhWZI2zAfe8UHa39Z5tTlVhU6xXf4yKfarNt80ExnoOvOi1+toJpNHjsoSzDpuarj+owoHFL60eBozcD2LCsRB7fBoYfbA/UNVbg9mKrQltFfTBqA1n+uDa8bVc8xJo+T9AKx8D1r8GtG2C6j4pgvthBPdQuW09rbHAZYgpHoF4QxHHxvp3G5y9Jt+IFr6C23IJtq0AZsPk/claZ8n/rqqRf4hkl9+CEVY78O/QNPAAN+cPQB5XCQC77Asx+SSIKV/asrUYWwUfUi6arQq+ulYB618DLb4H9M4DaqZHLhB01rNGotsiUB1/WekGxxmEEFsBaRgtLeIbQ66wbw9leGuv354pr8wHU4oZg/R65pE3sPKvhWEBRjBLsZWw/g3Q6jdA/7kaYrcjgIO+CbH3yYBV4b+eZyBtEWxb8PnHyYDevB9YdBvo3SeBjA1wKz/T4ky0IPgauAYRavVddHhYeaCk4c0AcHufXYAwgMAlvyMq6JWg1l+P2u0R+v484+eCFuOjJkMc+m2IA84AUrV5imCQGlM9UQHU4FrkWkGLbge9cDOwbok/4hJBNF8L+w6hpigDtL5JHDr2Z/bLXL4/fSubi27Ll1d/qzK904wUDPKNXM324AHKws8kk0BFEtj0NuiBH8K7+SDQczcBbtYX/sGeW9C1emKohp30wq/h/fog0AM/ADYuAdJJ/xoyKh9DC/8O4hoJyLq0dzo/qN9n6xP31v6gDNoVs5EaQ8bbiZQY78Y9+DcQVoGdUf6r2HUqcMxlEJM/nxcfiOHCyrbI+8609GHg/y4Bvf+yb+ZbKT3b9zMYaFoQdg4fLGl1Jh9wLdq31jy0V4HmnuP8hhrbODpRoYW/YFaBmQAqU6C1r4LuPAm08CtA86rAvB0sSUXBrM/fuXU16N6vgX5/AmjNy0BFyr9Gerbv9z4CngPXSmHs+LRxbNjAt9fXbuM4lLLEV9mX2F4gQbOTiiCRUKYtvXI3vFsOBb36++5lqzgPfPXdeBXFAL3+B3g3Hwp6+Q9AMuFfEy34BY8DpKU4lR8fNaX3MP6HXIDQVFh5LmrH1JnLEhaGua5u+VUUeBZ0suDu7uKQ0yGO/x8gWRNPlyD8TnYb6OFzQc//FkhwSlmyO2aiKagCMCSE7aJpXZMzafx1aOzNDfiQBRCYCqK22vhUIo1hbEpo4S8SPPANUwUK6YU74P1mmp/cwoISJ6EIhX/jEni/+SToud/6wVFeQo3T9ywjWGZdF66VRm1NpTxOJfX14gZ8SAEEpgIlDPFF7vJP3HZYU/yClqoUsP51eLd9EvTW/fFRAoHw09IHfQW35hUVB/ELqbS5X1R82aWklF9SM38vbsAWM3toIrx5HqonVRrLLEvs4ro6ADhgqAQYG3A9iM/dBHHoOdF2B0Lhf+kW0APfUdEplcgT43TccoLXUUwDwrap8YPN7qTdb0BTTzdgS8EOdhwdYxnTrJQW/gGHBYNdAssC3f890L8uz7MEomSIUbfwPzUP9OdvAyaX5fJ30cI/UPDiM8uwlRZDh1YbR6gne+wqvKVwL/YtAsvCCTr6XyJUqSv3JUiC/n4p6Mm5gRKIkOCoLEdTnTs9fJGf0MPfSZv8pcBjV94ycGK+jIeInpV/C+shT/qI8UYiLfZ2bW0BlA6+8hJoz0J8Zi7EkZdGwx0IZ/5//xT0t1lAJUf5gyIdTUlsMd5AJJelFa+vcfc+ZD7sfDegW7hn+08eMdHax7DEXpyZ2d/dgzUFKI7hFYJHZoOe+5/yDwyGwv/ir0B/n+VH+rXwl3waYVk2TbH7+OHWfurJ2d0Tf76Aq39XmnSUkVKZgLz8pykpgRdWkQA9eC7ozXvLVwmEZv/bD4AeOAdIcW20Fv5ygGVZJiEqDDqmp9x3K4BgicAwcWzQA0PLfzkQpgdbJuje04F1L3enDpcLKrXX8Lvz3PM1P9infH4t/GUByzLvIS4RKgBvCwWgfILpcF/5Gu/5gY/B7v6bplx2gjSAXDu8BV/2+9yFDUlKjRJyAWRb4C2YDmRbATOodNSUC5Jl2hQ45Nnvo0btHRDE/GQY+OPf48ab+1kWRrkOiAsKSn3Wmh4mdjIFrFsGevAsv7qwHIQsaIZKD30bWPOWf45RWrEYBAgBwTJtJTBiYpU5NX85UObXC1vSO0yw6yZ07X9Zwr4/VxMuuhf00s2lXx4M/f5Xfgt68a4gw68M4xMaKJm2gAoTh+UvB8p8/z9hyMO0/1/m8IybMkF/Px9oXOYvFZbCEghbc3Or7Yd/qM6pLCwSzTbjAIbA4erxkmAZMPT/X5wBSwIHcftANhm2chhNOfjcHA/obAU9fE6QylGKYJu/mkx/+wHQ3uKfk1YA5QvLNK/SSkx9+PtI8k5ffAdluCY4ckhigjSwm3LpdACwvGHTmzMF3/wH6PU/Bi21BtAV4M/imv4l94DeeDBY79deY9nnA3DxqcSuByQSk9STsyHkE2Hvv6S7n5mE6Xna/4+MJWBJ0P9drCLwfhrXQFgCQR5Zrh306AXcMlov90WpZXgSsiLl+AlBbBAcFfwrIXGg3wlAZ25EAja3rQSw4T3Qs9cP3KpAsFkHvXAjsG6F38lHm/7RgGVbApYhDgqfkmEAUAoxVdUP6gBgxJYGeTuzG/z98JQSKKL+5mNz0LGjAfT0L9Rnl1VCkmbbsGxzSgnLuo8nOQD4+JG89wf2ZuNfBwCjBPn19c2Nfq1AsXsKKmEXoBd+BWze6H+2Nv+jA8u2L+N7cdCfE4KU/z/xo9hFAOMC718rgCjBQpmUoJfmA50Nwa5DxRBKnv0NtdMuF/vwZ+rAX+RQCkAKjB1ajTH8hB8ATJgTrATSuvlnBOEZmFtpb94IevV/ff1dDMFUxxT+qkPDOv8zdbgoen0CCZ6ZQKIuZezepQBM4e2hNmTQGYARDggK0KLfqB12/C3HCiycvNRILmjRrSqpXAf+IovHO4IagvboVgBSTNbzftQVgAWsWexvpKmsAK/A6/4CtOopYPUr/l59WgFEF7XBtdiL/xkWBEzQ1lzEURuSAnjtzuJ9xmt/8HeIDDfy1EQOtcrHXqMUE7sUgBDYLagQ1nZAlIOBCQFa/jcVqPM3H6XCBf+yraBlDylXQy/9RRdeKGJZl6Bx/Fg+fjpSQojRrNnJ3wJcE+lg4AbQu08EzxVAUANXglb9G2hc43+GXvqLLizjqoJbjOb+H3LYEAwRArVdXUE1EYZnZwEsfaj7cb8JhJ138FV7ROlREnk44Q+oNYdimJxYY42RwBBV3amTgKIN30ST/NnaLdBqQNCDkN57ArC4VlwH/6IMyzgbdaZAze515ijZant1hgGDSIcB46EATKBhOdDwdvBcP25rKOyNy4FNS3Wrr5jAapzzxZo7aZisTsrdgi0D9Z2NAzxjZxzQ6mf9x/0R2OC99MFzQCYHSE4W0cQlF2B4hRgvhUe1HPrT03+MYEduzQuFOx4fSw+QeCGAdgc1MuPSiFKfi6bQFXsA8Tbj6OeaPecWIDiWCidoLRAnLNA4WZMSY9UjfW9jAscBADS9289GIX7DKNjtwOYVvgLQXmI8CIZDwhTDpeMhWerz0RTaAjCBjk1Ay+rwyb4dh2lZA7RvDHr+FfRMNaUiWOvLuUhJ20VV/pOaGMAzd84BtbzvP+6rBcC0rgZy2cCV0BogJqh0YBeolYakoToNOKZ1AS0f9NsCID6Gyv/XwyNWeEDaoBEyaaBOK/YYwve0fX3/j8PHUONDK4C4IQUSvC+AQvcCjCEcB+j3MRoKcSaaMiJP1kmqRoGaeMKrAP2FKws1sUIJPMcASCR09V+c77Ldmfegj7i5Qp2RpsxwPJhqa7BSn4imSPQrbz8YFqxE9AiJJVKoXcB1CFCzDXT0P9ZoFyDOqHLgvhLMC1ZKTxExxaMw2VsTP1horYq8B33ESBXqjDTlhOC+gGRLbvZa6nPRFIlkTf+PkaotxJloyohQ4KWA3bWNjFYEMaSiAIWeFcMLcSaaMiKUdW7wJjMOGnQkIIZw7K5qVP+Pw8dQ40PPD7GCt44gZKQH0RQs8+g7HKflPwMQNWP7HskP3qOOoXsBxA/BjaPEBpkw0Kae0Pc3JgR9+xMJoGbX7uf6chymeiyQSKvGoDohIDao/F8p0cy9ATOlPhtNAWEZdV2gchegABYAqsf4bgC3ktU5AfEgmOyTBrKyNUd+1wh9b2OC9Mt36yYCVmWQDdhHC0B1GU5B8LHYANCDJB4Et7HTpvUyZQhd7hUneJbmnV9GTi1YV2CMOsDvL6AtgFhBEGukQ94m3RAkZvCdHPfRAh0IwNiP6pWAuEFAyhDNMuvK99WModOC44FnA+kExJhD/cf9SfYMVwLGHAKkU4CrA4FxQMm6A2zOee9JE2Kz48JWzWO1io82LOyOCwzfG6jbo7uzb3+Ox8eo2x0YMcU/tnYDIg8nALkevGpTNspNbfZaIrSE91oTYVQbb0BMOMovBPIKsTuwaggIsfvRfiBQl49EGt4CkPu7uh5aVjXaa2VuKJqJqFE5ADodOBYJQNjrxOCJQszWwTH2PMHfb0DvDRhp8to7NlUmsFnuOxfc8mVNEAHQCiCqsGnu5IDhu0Hserj/HGd59JfgGGLcx4HhEwE7p62ACCMEPH+TF1oz/jp0qjvpEd7TCiDisF3HsrnniX4ZcMEy9zhp3PHzASafpFwMrQAiDbGsex5W8QN1J12IFTq4G3E4/deSwNSv+48LGawLVwP2PxXgNpKksoI0UYWNRWBFlwJwPG+p3vYt6rO/A4w/BGLMR/3Cnf5sCtrb8dn3H30wxG6fALJOYY+vGViI87ronTwFIJep6HGwBaQmYvAE7RDEwd8ONgMtQPS/J2Hw75BvB1mBhf8IzQBAMFjWHVsu61IAzW3Oe46DNikheJlgIM5DU8ilPxsYuRvEPvW+eu9XL8CtwMfkHSX2/iIwahKQ4xlDxwKiBOf5GAaEnUPnBsdZyc9xV2BMrMNGj2iVmv/1UmAENwL1IA79HpCo6lq3L8IHBXGGNMRHfwDYXB2oFUAE538W8NXrnscGfkJ6C2CIufBcojcDB0BHAyI1++eAEeMgDj6r8L7/hz4vsAIOPBMYOQHI6SXBKKGse84PI7x19JNwaAEM+dKjvhvgefIV7ddFDPb3efafdhGQHOLP0MVM1VXxBU9ZGuKTMwMrQA+aSPUC5Gxxj15TTyyGkAd/yp/xcy4tCoqC9B2NAjwbZ3PArvtCHPQtXzCL4fv3lhhEHsQBZwC7Heifg14RiE4fIFfFi1/mh0+oIOBi3+fPZK03nCxyQsDQRUERgc3x434OGImgZ99A6G62AjjQaPqfrYaKHi5RQEoYThZOq2MqC+AowJNiLoiHzVOrMqs9omWC8731HS1vpAl0ZCEOOhVi0mf8wN9AzP5dn+8XGondj4E45AygI+efk6asl/5Ztj0PK5cns++qqWIubw/OBt0CGNMXwnU8vKwKPnQgsPyX/YaOgjjuWt/0L4UfHsQDxKd/Dgwfp2sEyh9VA+B4tOjouXBU8B++AlDBAP7lEv2n1Gep2ZGiHxfixF8BlSODyH8JBC+sH08Pg/zcr9Ve0zp8FIW9AAIZD2Q+HDlqxu/sNJ71MjojsGwxTKA9C3H4ORB7f8Ev0hlI078nHPzjc9jzRIgjfqjOTZ2jpuxgmaYs0GrLZ/jxwiW+m+8rgLn+g+as/abjkGoTpNKFNWXm92eAiR/zTf+B9vu3Fw849mpgz8P9c9TxgLKCZZll2rbpg3ezzhv8XP1CX75lV1x3AYy9bkTWg3gWlnqfVgDlAs+0dhYYMgqy/m7ASAZ+fzmY3LxwzPOLBXnKn4C6sUAuWx7KSdOdAMQBQCGe+8R16GRZ9zsA5jcCDXwC2xH/p9cAygj2tdVsn4T8ykJgyG7+43IKuPG5cBJSzTjIr9wLmGl/c5JyOsfBngAkVJjmsXxZZ/LvkJrxm3PiCScDRwqYOh+gxASdWuE4EKf8L7DrtNL7/duLB4z9GMT0P/oKoFQBSk0XLMNsnzmd8Fpt+XjwdJd1L3rmlfCY65xtLEqlxVQ3B0+3Cy+l8AuVaSe+dCvEgd8KhL/M/evgHOnV34PuOR1IWN0pxJqS+P/snWUztPjrS9ypCxbAC9J9e7gAzBx/H1iP8IjOByi1Sc352TmIk34ZHeFn+Bw9B2LqaRCn/M4vG1b7Cup5pER4LMsO4Z8LF8JlGQ+Fn9nyrkzx/5C1xcOqv5ye/QceNu95Aw5e6z/ldxCHfjc6wv8hJXAGRP2dqvxMfadydF3ij+T8/4yNh/NlvPuP+UwP4gBrnOfsHL0vTUi9HDjAgsMRdKMC4r//rAQocsLfUwnsfyrEqX8BrCogq/MEBtz8NyFznVi7Ouc+nS/jvSqAcDlw9zuQcQh/h6W0hVYAA7nOX7s75JmP+R14oyr8PZXAnidAfuNxYNgeQHsmUALlsIQZezyWYcejfxxwLdrzl/9Ctmri52zcy+2Ct/UaTQFg35iDZG0ZiMnHQZ71H4D39Yu68PdQAhh9EOS3/gOxzwnquyp0XKCoqFifB5F1cR8/fiJv+S/vNVvCCzesJV6cgYr9RpvvJJIY6zp6NaDw8BXlmn7OvZYQR82EOHpud+utuNXY530nevJy0ONz/XyGZCpoY6ZXnAtu/huQuRzWL93o7LHvr9AWynb+6z4k1MoNmA3zkPnocD3xgM4KLAIqGEa+OTxyX8hvPApx9GVBab1XXOHntXn+DBa6/B9+TvUUKBJha3GuIDzyEsgzHwdG7e9fg2I1Mh3ceEio5J+HlPD3Yv4zvc/qQaFAm0N3kd8uXM/+hRICNns7s9yfFeLo8yFnPAtMONo3k1k/F9wsZoFnIQ828wg/gwUu/yd0RRh+rWotXmCFoD6DMxt5D4NPQp71DMSxF0NtOsjXRP1dK4ICobYA73Doj9t60VYjMWwuPDEbxifIeD2RFnu7tnYD+owa1OS3z+KHk4+HOPZy5RcrimLysxHYS5uw9g1Ay/tA2waQ0+Gfj1kBVO6iUnlRNXLL13dlHhY4aJf/nde9CnrsUtBbD/g6J5nodoU0fU7+yWVo+dIl7j5TFsLubfbftgKYDVPMhdN2qXlJZTUuczvhCH9/WM2OoGZaNntdTqzwn5swDWLa+RCTP+c/Vjn+/rbMBSW/UtBzQe/9C3jnQdCq/wCblwKdjf5W3+GQ4I/nl6frgKF7+puL7nUCxIQjuwORRak+pOC4QRuqpQ+D/n0VsPIp/89Jq/saFtM9iRkEOEYaZkczXVF5hXtJKMu9vXZbAq38/rac84dUpzlTCCRUanfRTjsOBOa12qkn52fBmYCYdAzw8e9D7H2y/7IwLbbQAqWEJPCn7XbQot+BXvoNsPZVX+D5bvNHSgtI9jDm+JwyTcD7z4NWPg88fR1o1H6qBbg4+JtAojo476D6ryCwTWl2XQ+x5/Hqh95+AHj2RtDKR/3uR2wQmEn/LWzV6IDhNlG5/xnYm7PGnbzz57ZieNu8kzQb3DPQ67jUfChdhc+6GbjaCsgnEIawO47LQh+UUA0ZrmZ6ceA3lL/rEwTgiuHnquMGWzy/8SfQY7OBde9ABXGtRJBeHAb6aPvfh1/Lbb7YeBm5B8TRsyH2/9qHPquw3yGsIAyG5ftP+0rsrb8AzRv9pxM8vEMXYXvfZ/BBBNdIQXa249GKy5zjQhne2uu3J8x8N7yMQzenSRwvuKhwUJoAYbP0cPYTgfnqADb3WQ5eVj0EmHgYxEe+BDH5RKBq1JaRdxVsK4Lwh+Z5ZjPowXNAi+7y72xlqivyvmPFONR9rggUB+8G3LgMdPfXgbf+CvG5X6k2YEXJUwivjfL9JbDrJyD455grQEsfAr15H7DqKaCtyZd5/niTg5hhYlFw/up38H0GGSL4lXXolnwZ3s7rtw5XCC6eA2tPYSy2kmIPL+7BQBWpD/5NeQLBg9INLiX/yCBYVTcJYtzHgYnHQOx2JDBk1+5jqbr9vIFdDEJBbHgL3l1fAtYs2VLwCxm95yW7UZMhv3ovMGJK8ZOVwhk+31VqWe3HNFY8Blr9rB/TyOS670nXT97KRuiyKN3gxr3zj7RzeHfNSucjE+5ANu+b91EBdAUD5XmV1fKa2AcDeZvtsL8lDyQee2YKSNWqJpyibndg+EeAkVMhRu7vp7eyTx0SCp5SJEU2l0IBXP0svLu+ALSsA9LcjCMIOhYaTuHNZIDKEZD/fR/AwcKByFhUSjhwD/JdD1awjUtBG15XKwnYtATUuMJf6chsBpxMt9JmEeC3Jsx4B/8qYLa3YFbVZc5PtxX82ykLgMfxmoswfHjKfMcwMCTYgSpmzoC/7CSOuAQYvjdgJiA48JWqA9JD/R9WAr0RZrL1HKBFo3uJj966D3TPaYDTBljJ4FyKiAowBgVLX7rd35E47FA0EO3JuyybIJOyNzLNQGeDv9rBblGu1VeKG98E/evy7mXZuDX+8JtHtX2w2Zm8+/VYe+lsyLnb8P+ZHbpjoSbpuNS4MV0tvhdPK4B7JtuQ33sTGLb31l+WvyTVNehFaVJqn74W9PefAIbhz84DZd6Gbcq4ZPm4eRDTLvjQuQ0MoYsW+P3h0uvWYDfppo8EFlvsFIC/9NdCt1Ze7s5QmX/T/SWAbbGj0xVXdIvGNuNGN4Ms/O3D4gkvhbFZyxH9rhTZvDRZHmBs8vJPfsR6IFDZgry7QwfoL2eCHvoJYFm+AhhI31YFNCWQSIAevhD059MAu627LdiAkZ/VaOYFEcO4TZDyrO6l49/b+GK4WdjNjnE9y+rChTv2ph1SAGoZYQHkuF/k3snauM9I+SvdiCNdAp6fIjtA5u3WCIOQfF4bXod32xGg534HVARr46VotxXOvJUp0Iv/C+83nwTWLepe1y9lC7BwKXOLlOc8BREzPH/pT+Sy+OuYq3JLWFZ5p68dee+OO6wLfSOrzRFXO1nuMBzjlYByQs36fo48vTQf3q3TgNUv+ZH+klfRBUuhfC5rX1FKgF741ZY5/5qiIyWEa4PabcxT09TCnXjvjr5QsEaphxx5pf2KncWD3KWaNU/fTlmz40tgJtCyCnT3KaA/nw24bUAqWV7CxeeS5HPKgO4/B3TXyUDTu8HqQF5egaYoiT8si04Wj4yY57zgceLPDs7+zE7P4qxhmjK43M2BpFA7CGkKSei3Bm6HmvVvPhT02r2+yR/sxFN2hHUNFSnQG3+Bd8uhoBd+3e2nh/EUTWFhGXSA9hwuU4+X7FxQaqcUAGsWrx7GmJ85L+ayuE+mIVkD7eQpa3qDZ/vQ3Gch/+A50B2f8mf9zo2+8CshovL/DnyumQbQ/d+F97ujVEpvVzyl3L9D9Hx/menEg8PmOc9QPYydmf37ZAGwe8GxgE5HzHaycNj/0BuIFGLGDwpjmt4F/fVseL+ZBlr2f74w8RJfOc76W4PPlc+Zz33Fk/B+ewToL2cBm1cEikAEPQe0RdBXWOZY9hwbXhuJS9W0X7/zx9lpBaCiiwsgh11lv2FncadMqWNEaHSWoanPQtG2FvToRfBuPgj07Hz/zihfP6IzprIGXP87SAl6/jf+d/vnBSqdt2sZVX0/PXx2FiJ4LHu5DO7e5Qp7kbeD6/496VskfzGIMwSbOpw5difahVTtwyM4SktkIodZgyz4m1eC/nkhvF8dAHpsHpBrUn60Ikqz/tYIVyr4O9mtoMevgffrA0H/OB9oXJ5XIBVcmygqu1LM/gaEk0FnW6dzCcsiy2RfjtUnBcB5AU/MgTHmWrxn23S9tgJ2YCYM8qe7Ktfefwb0l2/Cu/kA0BNXA50b/OU0EXTRjRthEhN/R44PPPEzeDcfCLr/DIAblYS9AVTbyrBPoVYGW8FlmevspF+O/DmWY+G2S363RZ+zW5TWmQOxIoPqXSvMJYaF0eSo3exkpFOBz3reb8vd57TWvArCnrUBbOZz26vX/wB6799+rT035uD69sHU9SZM2eUMvazn9ywYfzjEfqdC7H0SUD2ml+KqfqRdh/dyzQvwbv1opFOByd/sg/ukbHynydlnSg2aMAekdgDuA33O5+cPpAWQk6ajufFi76K6tLyD+wbGrURo2+TXn1N3gUp+c8+29aB3Hwfeuh+04lGguSGoSrMAK1jSi+OMvy2UggwsgopA+a38D2j5f0A1syAmfgrY+wsQux8JVI3eUomGijJUBgNdi1FqCAQLRnubmLXvdWhUOf/c/b+P9PvKBUsPXuZS49/JSnG46hokVBFtRC2A54KNOUILIFSsoZCHL99K5R/PahuX+DP8ikdB7z8DtGz0DxO2top5XXq/+jBwKzU7uM41wyDGHQZM+jTE+GnAiH380uye9Ew93kIpBC6FDC2Aj0XWAiB/2c/IttMLVwn343OWQOzssl9PClXRRy2O/MEwh55X3aRIuQLRVMvsg4f+qP9E3t96vJYHVutaUMM7wLpXgA9eAHE+fOMyIMODjrvqcLPNvH52cQjsFQM1swc7CaUDxdrZAFryILD4QRB3Jho6CYI7KY/9KDDqAIhhewHVbCEEOQbbvKd5vyNc7us68Noc8b25V8KbU9//ibbfV4Q1kF8ubL/cNtO4qbJOnOt2dLWgjB5cO263A3ZHUPLaCWTb/MEYttRueg9oWgHide2WD4COFr80SoRtqkw/2BWmwWqh3wmCoCljWIAZVFyym7RpKWjdUuDlu9V1pnQ1MGQcRO1EoG4iMGS8+hGVI/y2ZclqwEz7s79V4d/b6OLKNMz2JvrV8Cvd53e03Hd7FGSWVs2CZ0O81YHKiZXG64mEGO9GMiBIQHq4agYCJ6tcAtjcVSYLuN6WrbTDbkG83wqblGFj0PyeeprCkh8IVIrVBlxuxprX9S5scW4GwVWLFQArkqTvXnRuilzMgABPmFzwQx+83+HuOzGF1v4E/vIpyCytthNbAvmRhWhtuBDfHZrCQ0LABUVNAQigfb0v5PlNQHngWabfkba7YWCPnoFa6IuOus55j9mkt8RW7ovndwFiRR42CVVt3qJnmAoBTxowW1rx/UlXo1nF3foR+Nvi2CggYeeg9kvM31XU4Ax2BYSImCuQX/ffNdiiFzDS5PfIzXsqYkutHsE1K2BkWvCn9OXOVwtl+hdHAQS5Ae82oWbsUPMNy8KYaLoCGk35rPk7Djas3Ojsv+dQNPDzfU366Y2CCqbySaZA7H4DmlqzdBakaiiqbWONpg8o2TEgWzvo7L1uxEaWrUIKP1PwmZnNE3YFhl3p/q29jW7iyCU3LCz052g0cYYIDstORxvNHzrPfUC51wU0/UOKEg5VrsBCyCcegvXx3Y3nUymxH7cRk7qNmEazXTyCZybV7r5vv77GPejgTyGLetWGr+ABjKIIJJ8odyU9+g5kmtvcrzkuMtzCnhOEivF5Gk1cIFKVfuQ4sFsy8tRD5qODm3AUQ/iZos3I3Dfg8dkwR/0cr3V2iB/IJAzw0qBGo9kqQsBhWWnvwI9GzLNfUqZ/P9N9t0XRMyLCpcHOS407UjXiNLc9gkuDGs0A+f1GJcz2ZtxddbnzlR3Z2qv8FQB/Rj3kS3VI7jvWeCaZFPu72agWDGk0RSz0ScLIZejNF1a5Hzt8V7RjrlpCL6rbXPSgnPoC+4DYl9nUbNTbOTQbluojqJcHNRqooB9xqq/joK2xQ9ZP+y1U0UKxhZ8ZkKg8r11yBhPvLNTWQV+DgBRSbTemg4KaQQ35zT1daUB2Zuj00dfYiwPTf0AmyAFblgvzA4bOcx9sbcMFMgVT6PwAjcbl9f7WFsyqucL980D4/fkMeFlU+AVbLzFurRoivqWDgprBHvTraKY7Ki93zxho4WcGPjFnLlx2B8683P12Zxv+YVTA5Asx4Oeh0ZRa+Ctgdrbi8TvXu2exTLBsDPR5DLgC4MDGnMWgBQRvdYNTn+2g142UUgI6R0AzKCC/tZdpd9KSFaudU749Hza39R6IoF9PStYZgXgTw7nwVv8Iu46oNZ9KWBjv5vTyoGYQCH8CRs7GmrUbnGkTbsLKUBZKcT4lbY0S1jav+rG17+g6etKUGMqdhfXW45q47uZjWJAuoWldgzhm3C/sRYWu799ZSipo/MU5XXj8tfYbHR04wSW0GabacFTnCGhiBQGeNCEdQkdHBz6nhL9IFX47Q1k0RwujnxsvMo6urRR/MwSSnqMtAU08IO7pJyFcILe5hU4aeY37SCki/r1RFgLGF4IvyIir3Mcbm+hkl5BlbamzBTVxEX5PgpqbaToL/4szYJWD8JeNBRASasU15xufHVEj7tOWgCbyLb0khCOU8H95+DXuPeUy84eUlWCFlsCYa9y/bWyhL7hAhmMC3CCh1Oem0ewMPGYNA9Lh/Z5b6ORyFP6yUwA9lUBTC53gAm2mpQKDOk9AEwmIO/lytB9ob2yhk0Zc7f61nMz+snUB8gm1ZcOF5mE1lfiraWGYm4MjorrjkGZQ4LHwJ2A4LjZ3tuLzNVc7TxELPyf7lCFlZwH0tASGzXOeWdsojrZtvBtkDJadFtVoGB6bZgqG7eL9zY3iWCX8PJGVqfCXtQIIlYDKE7jOfn3DZueIbJYW6doBTTnn9ts5er1ho3PELuE6fxma/ZFwAfIJs6X+OQNDpo0z70pV4LNqA1JSWyRF4jto4gn5v5TwZ9vx6LJVzpf3vQ2Npc7wi4UFEMIXckE9jE/PR/O8S50T21vpFiMNE1Jt9KRXCDQl6+QDAY/HYkcr3XbVY85nWfh5rEZB+JlIzZ6zZ0POCXZFbb7E/El1Gj/j3mKuo4uINCUo6jHA/6G1AxfVXO7MC7fGK1VhT+wVQFeT0QWQrGGbZxknVqTE7WqFIKMbi2gG0N9PwrQdNLV00JnDr3TvU/X80+GVoqQ39i5APnyBw/ZiQ65wH1zfLA+3s/Qyd1Zhraw3H9EUC/LHlurik83RKw2bxDQl/EFRT9SEP5IKoOcy4bif5d7++/PuJzva6TYjDYNTL3XSkKbQEMGVEoL792Xa6PfPvO5+cvT1XQ08yzrSHysXoCf5zRQ2z5TfrErLG0wLldol0BTa5HdcZDJZ7yfVl3m/5Oc52Mc7YCHCRF4B9IwLrL/AmlpX5d1mpcXBboevGESELR1N6aBghcmogLQ76JXmDvkttV1XRP393oiFYOTHBUZebb/6h0fdae2tdB0XEqkGI7r9uGYnIfb1efxYkO2tdONrz7uHd+3VF1F/P7YWwNZcgoaLjc9WpXBjIi0muZ3aGtDsxKyfhrSzeLetg34w9Er3r3Ex+WOvALpcgtkwODjz2ndQN3GUcVVlQpzNf3NtZQ0YIqbfXdPPjD4LJo+Mzizd1rjBvWDcL9EQJ5O/J7EWAuKMrEBjN1xoHF9diWuttNibOvyqLZ08pAkj/DwWZAVgd9LStix+MvQK9wH1t4ik9PaVWCuAngHCN76Lqt1HGrMSpvihaSLhZuBC8Jbs2i0YtOY+gYwUDMeGk3Po+jfXuFccMh/NatavV92oYjfrDyoF0Js1sOFi66AhKZqXSOLT/Izr6MKiQZfQI+AaJvg/ZDN4rLUDF46Y57wwGGb9fAbVgM+PDfDj1kvlqamEmGsmxSRkAcdVpqDU8YH47sTLLedNzuBPAnaGVnTadNmQy7w71N9nw+TtueLo62+NQTnQeaUAQVHRO99Hzdihxo8sU5xrpVBLnTo+ENtMPgFDpAEni5acTTe8uda9Vpn7ESziKRSDUgGE5Jt6K8/FhNFDjfMNQ3zTTCLhdfqDBtoiiEeAL6UE37aJfrexxb1mt59j+WAz93tj0A/snm5B4yxrv7RFPzENfM1MQFIGcP1BpBVBhEx9kArg+YKfg+d4uLuzXVw99Gr7VX4Nd5o6apCZ+72hB3R+r4EpEOFs0HSxeUgyiR+bEqeYKZjwFYEOFkYhuMc1IP6M7zkuFmSzuLb2SudF9ZoFMHh36rmD0NzvDT2Qe4sP5CkCri2orvB+YEnxFTOFCuT8BiR6+bAMl/OC4J6TQcYG/am9Xd7E6bvqNbysx1twa8HfAq0AdlARbDgvsWdllXt2QoqvmSmMZIeBdzJWxqZ2D0pm5rMi5nx9Xs6zM9hgu3RnR9a4dcRVubfU67TgbxM9aHdSEXzwIwyvrJFfrTDEmZYpDlBrBdnAPYBSBNoqKH6uvqfM/CT/CxzZey3rid8tX+v88YCbsUG9Tgv+DqEVwM4oAhbwIFhYDxi3zjQ+nUyKMwyBE6wUqlhFeDnVqJSVhVYGBRZ6jr8YCaguD3Yn2l3CQzmHbv/8v9x/Pvmkf1/UWj5vyKkFf4fQCmAnCdaMu1YNmJUXYMLwtPmlhEFfTghxqJqZbOUiqKCUVgb9FHoLAhbA8RfboUWOEHdtaHbumXAtVna9ngV/jlqtGdRR/Z1FK4C+I6gekk2B/HXkTRebH08nqN4y8DnLEHuqgcvKgNcPfMuAr7mOGfTm0/tCz78Ng2vygmtnO7Qs5+DBLIl7hl3uPB0W7ykzfyEgFna9T7OT6EFYBPeAefj7SB5Wa3zCMnCyJfCZhCkmIxGoAFYInlpJ4EHL7+UVBTEIBd4XeoIwJAwl8EYw07v0Ts7FI7aH+55pcp8+/kaOtATv1WZ+wRhUg65UyuCWGbBOGWkekpD0mZTEp0mIA60U0urqOwA5gBcoBOL3EkTccg16CrxKy2WBZ1EmFcHvFKBXHA//zLni74+85bw0fSGrguD9s2EuXAKarmf7ghKrQVZ2GYbsIuyjcsy3aEm29gJMqEjKT6ZNcSQRDhMQk600DHU32ELwFYKXt+sR2woyKkohSMjpElSOf0jpL9WpGd4XeI+I3iHg6axNT3aQ9+/RP+326btm+iUgLIxnM45yIBIDKg7KYGE9ZP0+KoDYM1Al15yPyTUp+VFTik8IgYOEEHtZFmq6ehqzUuAVBlcdix/572cx4//838H/A/J9/A75/Mm+sIffh10ZQ7KQhz+Mw0t1aAXRUo/wcqdNT2ds4/mvPGe/HUbv8wOsPNPXa6EfELQCKJGb8AQgjwr2N+j593cvxughlvERE+IAU9L+krCPgJhoGRim4gihYPlx8i6V4HlbBNOCD9viLu/o/Q4VTM93qOClVFGL4DyUwxP81Q39dzR4glaCsMQm8aoDeqUF7lu7zcWaXq5FqOa0T18CtAIoPYJmQ4QKQfKGJ728aPkFGFIrrV0tw9uDDDHRAk2UJCZB0i6GEKM9oNqSqOIpWIlUzzsbHjT0xHs9k7z39fZ+jlew+e6hTQKtDtE6QWKDR7TcFmK5cGlFhy2Xr83Y7x94A5p6O7znJ+iof2IuSM/ypUUrgDIuTAoEBdtb32bl4GSTw3avc0dsaqNhdRVifM5FJXm0S3VSjMq5SDiECo9QlTSo2jRRJUg1x1DH52OTgHBctGcd0SIF2kyBDtOE3Z6h9UKKdWkTbQ2dtHpYhdi0crOx0UxmGyZdjeatnVNozqsHU0C6AAdlyf8H/qPwgyUzrfYAAAAASUVORK5CYII=">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#0C0D10;color:#EDEEF2;font-family:'Inter','Noto Sans SC',sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:22px 18px 60px}
+.top{display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.top .dot{width:8px;height:8px;border-radius:50%;background:#19E57D;box-shadow:0 0 10px #19E57D}
+.top b{font-weight:800;letter-spacing:.04em;font-size:15px}
+.top .d{margin-left:auto;color:#7A8090;font-size:13px;font-weight:600}
+.eyebrow{color:#6B7280;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin:22px 0 14px}
+.rings{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.rg{background:#15171C;border:1px solid #21242B;border-radius:18px;padding:18px 8px 16px;display:flex;flex-direction:column;align-items:center;gap:12px}
+.rgw{position:relative;width:124px;height:124px}
+.rgw svg{position:absolute;inset:0;width:124px;height:124px;transform:rotate(-90deg)}
+.rgw .rbg{fill:none;stroke:#23262E;stroke-width:9}
+.rgw .rfg{fill:none;stroke-width:9;stroke-linecap:round;filter:drop-shadow(0 0 5px var(--g))}
+.rgw .rv{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.rgw .rv b{font-size:31px;font-weight:800;line-height:1}.rgw .rv b small{font-size:14px;color:#7A8090;font-weight:700}
+.rg .lab{font-size:13px;font-weight:700;letter-spacing:.04em;color:#C4C9D2;text-align:center}
+.rg .lab span{display:block;font-size:10.5px;color:#6B7280;font-weight:600;margin-top:3px;letter-spacing:.02em}
+.card{background:#15171C;border:1px solid #21242B;border-radius:18px;padding:18px;margin-top:14px}
+.ch{display:flex;align-items:baseline;margin-bottom:14px}.ch b{font-size:13px;font-weight:800;letter-spacing:.02em}.ch span{margin-left:auto;color:#6B7280;font-size:12px;font-weight:600}
+.alloc{display:flex;height:10px;border-radius:6px;overflow:hidden;gap:1.5px;background:#23262E;margin-bottom:14px}
+.alloc i{height:100%;box-shadow:0 0 8px var(--c)}
+.crow{display:flex;align-items:center;gap:11px;padding:9px 0;border-top:1px solid #1D2026}.crow:first-child{border-top:0}
+.crow .dt{width:9px;height:9px;border-radius:3px}.crow .nm{font-size:13px;font-weight:600;min-width:80px;color:#D6D9DF}
+.crow .tk{flex:1;height:6px;border-radius:4px;background:#23262E;overflow:hidden}.crow .tk i{height:100%;border-radius:4px}
+.crow .vl{font-size:13px;font-weight:800;min-width:50px;text-align:right;font-variant-numeric:tabular-nums}
+.crow .pc{font-size:11px;color:#6B7280;min-width:34px;text-align:right;font-weight:600}
+.tlg{position:relative;margin-top:4px}
+.hl{position:absolute;left:0;right:0;height:0;border-top:1px solid #1B1E24}.hl span{position:absolute;left:0;top:-7px;font-size:10px;color:#5A606B;background:#15171C;padding-right:6px;font-variant-numeric:tabular-nums}
+.track{position:absolute;left:48px;right:4px;top:0;bottom:0}
+.blk{position:absolute;border-radius:9px;padding:6px 9px;background:var(--c);background:linear-gradient(180deg,color-mix(in srgb,var(--c) 30%,#15171C),color-mix(in srgb,var(--c) 16%,#15171C));border-left:3px solid var(--c);overflow:hidden}
+.blk b{display:block;font-size:12px;font-weight:700;color:#F2F3F6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.blk i{font-size:10.5px;color:#A7AEBC;font-style:normal;white-space:nowrap}
+.blk.slp{background:#15171C;border-left-color:#3A3F49;border:1px dashed #2A2E36}
+</style></head><body><div id="app"></div><script>const CATS = [
+  {key:'strategy',  label:'战略',    color:'#1D1D1D', icon:'🎯',
+   sub:['公司战略','品牌战略','董事会与股东','战略研究']},
+  {key:'people',    label:'组织人才', color:'#6E8FA8', icon:'👥',
+   sub:['高管团队','招聘','1-1','团队文化']},
+  {key:'product',   label:'产品品牌', color:'#818A7D', icon:'🎨',
+   sub:['产品评审','品牌营销','设计创意','门店体验']},
+  {key:'operations',label:'运营财务', color:'#A89880', icon:'⚙️',
+   sub:['日常运营','财务','跨部门协同','审批决策']},
+  {key:'external',  label:'对外关系', color:'#F37434', icon:'🤝',
+   sub:['投资人','合作伙伴','媒体公关','社会责任']},
+  {key:'global',    label:'全球业务', color:'#7B6EA0', icon:'🌏',
+   sub:['MTI EC','MTI Retail','海外人才']},
+  {key:'growth',    label:'进修成长', color:'#5A8A70', icon:'📚',
+   sub:['湖畔/YPO','读书','课程学习','行业交流']},
+  {key:'family',    label:'家庭',    color:'#C08060', icon:'👨‍👩‍👧',
+   sub:['亲子居家','亲子旅行','陪伴长辈']},
+  {key:'self',      label:'自我时间', color:'#C4A0BE', icon:'🪞',
+   sub:['健身运动','美容护肤','休闲放松']},
+  {key:'sleep',     label:'睡眠',    color:'#C5C8C2', icon:'😴', sub:[]},
+];
+const REAL_EVENTS = {
+  "2026-04-18": [
+    {cat:"strategy",sub:"公司战略",title:"meeting with alex",start:21.0,end:22.0,tags:[]},
+  ],
+  "2026-04-19": [
+    {cat:"people",sub:"招聘",title:"视频面试：刘海峰（财务模型Owner - 总经办）",start:20.0,end:21.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"视频面试：柴蓉蓉（财务模型Owner - 总经办）",start:20.58,end:21.58,tags:[]},
+  ],
+  "2026-04-20": [
+    {cat:"strategy",sub:"公司战略",title:"🔧 装 Health Brief cron 到 Mac Studio",start:9.0,end:9.25,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"【Learn】AI Time",start:9.5,end:10.5,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"Q2 OKR 拆解",start:13.0,end:14.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:14.0,end:15.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"product",sub:"门店体验",title:"China Retail store BD meeting",start:16.0,end:17.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"HR case",start:18.0,end:18.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"final sunny esop plan",start:18.0,end:18.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"ken IT setup",start:19.0,end:19.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"SZ-HK",start:19.5,end:21.0,tags:[]},
+  ],
+  "2026-04-21": [
+    {cat:"strategy",sub:"战略研究",title:"【Learn】AI Time",start:10.0,end:11.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"zoe个人账目",start:14.0,end:14.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"esop discussion",start:15.0,end:16.0,tags:[]},
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"MT3 Q2OKR跟踪对齐",start:16.5,end:17.0,tags:[]},
+  ],
+  "2026-04-22": [
+    {cat:"strategy",sub:"战略研究",title:"【Learn】AI Time",start:9.0,end:10.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"pinn深圳面聊",start:10.0,end:11.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"With token公司（湖畔季总推荐）",start:11.0,end:12.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"MT3-O2拉新获客",start:14.0,end:15.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"MT3-O3爆品矩阵",start:15.0,end:16.0,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"MT3-O5品牌心智",start:16.0,end:16.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"RECAP",start:16.5,end:17.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务部年度调薪沟通",start:17.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Price control 机制【training room】",start:18.0,end:18.5,tags:["AI"]},
+  ],
+  "2026-04-23": [
+    {cat:"strategy",sub:"战略研究",title:"【Learn】AI Time",start:8.25,end:9.25,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"eyelash",start:10.0,end:11.5,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务部沟通",start:12.5,end:13.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"湖畔：深圳串门·富途|踩过了才知道是坑?和富途聊聊资本、出海、AI的下一局",start:14.0,end:20.0,tags:["AI"]},
+    {cat:"product",sub:"产品评审",title:"产品管理例会",start:14.0,end:14.5,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"数智化周会 +BI沟通",start:15.0,end:16.5,tags:[]},
+    {cat:"external",sub:"社会责任",title:"UNICEF HK Thankathon",start:19.0,end:20.0,tags:[]},
+  ],
+  "2026-04-24": [
+    {cat:"strategy",sub:"公司战略",title:"zoe&yan",start:10.0,end:12.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务模型share",start:12.0,end:12.5,tags:[]},
+    {cat:"people",sub:"1-1",title:"Vicki 1-1",start:12.5,end:13.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Lunch at office",start:13.0,end:14.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【Online】with Elaine  Moodytiger x Nativex",start:15.0,end:16.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"15:00-16:00 with Phoebe",start:15.0,end:16.0,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"品牌 KV 大片选款标准【管理层room】",start:16.0,end:17.0,tags:[]},
+  ],
+  "2026-04-25": [
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D0】抵达与集结晚宴 @法兰克福",start:1.0,end:4.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【不能值机】DXB迪拜T3-FRA法兰克福T3，EK045,预定号:HBMLFS,票号:176...",start:11.17,end:19.25,tags:[]},
+    {cat:"family",sub:"亲子居家",title:"【Olivia's SCHOOL】Rally the Family! Join Us for ...",start:13.0,end:15.0,tags:["Olivia"]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D1-1】交流:一个中国企业的欧洲生存之道",start:15.5,end:17.5,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D1-2】午餐会:《当德甲逻辑遇见中国土壤》",start:17.5,end:20.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D1-3】德甲球赛:美因茨 VS 拜仁",start:21.5,end:23.5,tags:[]},
+  ],
+  "2026-04-26": [
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D1-4】晚餐:Eisgrub-Bräu 啤酒屋",start:0.0,end:2.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D2-0】集合 @ Kimpton 酒店大堂",start:15.5,end:16.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D2-1】音乐会:《贝涯德茨四重奏——三封告别信》",start:18.0,end:19.5,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D2-2】午餐 @ Trattoria Toscana (Heidelberg)",start:18.5,end:20.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D2-3】City Walk:哲学小径 @ Heidelberg",start:20.0,end:22.0,tags:[]},
+  ],
+  "2026-04-27": [
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D3-1】奔驰访学:《奔驰的长期主义与未来之变》",start:15.0,end:16.5,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D3-2】参观:奔驰 56 号工厂",start:16.5,end:18.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D3-3】奔驰分享:《以客户为中心的定制化服务》",start:19.5,end:20.5,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D3-4】City Walk @ 斯图加特市中心",start:22.0,end:24.0,tags:[]},
+  ],
+  "2026-04-28": [
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D4-1】午餐 @ Camilla (卢塞恩)",start:18.0,end:19.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D4-2】迅达集团访学:《150 年的利益、权力与传承》",start:19.0,end:22.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D4-3】卢塞恩湖游船 · 夕阳阿尔卑斯",start:23.0,end:24.0,tags:[]},
+  ],
+  "2026-04-29": [
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D5-1】UBS 访学:《世界格局下的资产多元配置》",start:15.5,end:18.5,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D5-2】FREITAG 访学:《\"0\"广告下的营销法则》",start:19.0,end:21.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D5-3】On 昂跑旗舰店体验",start:21.5,end:23.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D5-4】On 交流:《昂跑从 0 到 1 到 10 到 100》",start:23.0,end:24.0,tags:[]},
+  ],
+  "2026-04-30": [
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D5-5】晚餐 @ 藏红花食馆",start:1.0,end:3.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"数智化周会 +BI沟通",start:15.0,end:16.5,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D6-1】瑞士莲访学:《180 年的匠心守与应变》",start:15.5,end:17.5,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D6-2】午餐 @ 兵器库餐厅 Zeughauskeller",start:18.0,end:19.5,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔·D6-3】Country Walk:山野、酒庄、葡萄园",start:19.5,end:23.0,tags:[]},
+  ],
+  "2026-05-01": [
+    {cat:"strategy",sub:"公司战略",title:"LSZH苏黎世- 凯夫拉维克T3",start:16.5,end:20.57,tags:[]},
+    {cat:"people",sub:"1-1",title:"【冰岛·D1-1】KEF 机场落地 + 朋友局接机",start:20.67,end:21.67,tags:[]},
+  ],
+  "2026-05-02": [
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D1-3】晚餐 @ moss",start:2.5,end:4.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D2-1】黄金瀑布 Gullfoss + 午餐",start:19.0,end:20.25,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D2-2】雪地摩托 + 冰洞探险",start:20.5,end:24.0,tags:[]},
+  ],
+  "2026-05-03": [
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D2-3】晚餐 @ Grillmarkaðurinn",start:2.5,end:4.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D3-1】塞里雅兰瀑布 Seljalandsfoss",start:19.33,end:20.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D3-2】斯科加瀑布 Skógafoss + 午餐",start:20.5,end:21.33,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D3-3】黑沙滩 Reynisfjara ATV",start:21.5,end:23.5,tags:[]},
+  ],
+  "2026-05-04": [
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D3-4】冰河湖 Jökulsárlón + 钻石沙滩",start:2.0,end:3.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D4-1】抵达 Skaftafell 机场",start:19.0,end:19.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D4-2】兰德曼劳卡 Landmannalaugar + 午餐",start:20.0,end:21.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D4-3】冰盖飞行 Vatnajökull",start:21.75,end:22.25,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D4-4】海福斯瀑布 Háifoss",start:22.58,end:23.0,tags:[]},
+  ],
+  "2026-05-05": [
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D4-6】晚餐 @ ox",start:2.25,end:5.75,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【冰岛·D5】送机 KEF · 飞赫尔辛基",start:16.0,end:20.0,tags:[]},
+  ],
+  "2026-05-06": [
+    {cat:"strategy",sub:"公司战略",title:"KEF 雷克雅未克(凯夫拉维克国际机场）---HEL 赫尔辛基，编号:74BDGD,票号:10...",start:1.25,end:4.67,tags:[]},
+  ],
+  "2026-05-07": [
+    {cat:"product",sub:"产品评审",title:"产品管理例会",start:14.0,end:15.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【Online】with  众源 Joicy",start:15.0,end:15.67,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"🍳 Brunch · Restaurant Flät no 14",start:16.0,end:17.5,tags:[]},
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"🥐 Brunch — Restaurant Flät no 14",start:16.33,end:18.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"🛍️ Reima 第一站 · REDI",start:19.0,end:19.75,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"🏬 Reima 第二站 · Forum（最重要）",start:20.0,end:21.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"🏷️ Reima 第三站 · Outlet Helsinki（最值得）",start:21.5,end:22.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"🏘️ Reima 第四站 · Outlet Tammisto",start:22.75,end:23.75,tags:[]},
+  ],
+  "2026-05-08": [
+    {cat:"strategy",sub:"公司战略",title:"🍷 Dinner · Ravintola Ragu，预定信息：Zoe Ng",start:0.0,end:2.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"☕ Coffee break · Café Ekberg",start:0.25,end:1.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"moodytiger × Reima — Helsinki catch-up (Zoe × E...",start:14.5,end:16.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【Jiahui】HEL赫尔辛基机场-ZRH苏黎世机场  Fri, May 8 · 4:30 P...",start:20.5,end:22.25,tags:[]},
+  ],
+  "2026-05-09": [
+    {cat:"strategy",sub:"公司战略",title:"法兰克福→迪拜 EK048（返程第1段）",start:4.33,end:10.67,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"迪拜→香港 EK380（返程第2段）",start:14.0,end:21.42,tags:[]},
+  ],
+  "2026-05-11": [
+    {cat:"strategy",sub:"公司战略",title:"2026年度 & 季度 Budget KPI OKR progress",start:10.5,end:12.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:14.0,end:15.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Stone过程述职",start:16.5,end:17.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"阿贝贝&超品日执行沟通",start:18.0,end:19.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"抖音超品目标",start:19.0,end:19.5,tags:[]},
+  ],
+  "2026-05-12": [
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:10.5,end:11.5,tags:[]},
+    {cat:"people",sub:"招聘",title:"视频面试：吴女士（品牌市场总监 - 品牌市场部）",start:12.0,end:13.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"27ss样衣预览",start:14.0,end:16.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"市场部费用review",start:18.0,end:19.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"阿贝贝&超品日执行沟通",start:19.0,end:20.0,tags:[]},
+  ],
+  "2026-05-13": [
+    {cat:"strategy",sub:"公司战略",title:"Tennis PT",start:12.0,end:14.0,tags:[]},
+    {cat:"operations",sub:"日常运营",title:"东区零售运营经理- Wendy过程述职",start:15.0,end:16.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"516超品日直播Rundown与脚本沟通",start:16.0,end:17.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"阿贝贝&超品日执行沟通",start:18.0,end:19.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"项目会议",start:18.0,end:19.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"现场面试：Will（财务总监 - 财务部）",start:19.0,end:20.0,tags:[]},
+  ],
+  "2026-05-14": [
+    {cat:"people",sub:"招聘",title:"视频面试：李淑曼（财务总监 - 财务部）",start:11.0,end:12.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"股权激励员工宣讲&沟通会",start:13.5,end:15.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【WASHK 6V】Art Show for Year 4 to Year 6",start:13.75,end:16.25,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"数智化周会 +BI沟通",start:15.0,end:16.5,tags:[]},
+    {cat:"people",sub:"招聘",title:"视频面试：周强（财务总监 - 财务部）",start:17.0,end:18.0,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"超品日执行动员会(mkt内部)",start:17.5,end:18.5,tags:[]},
+  ],
+  "2026-05-15": [
+    {cat:"strategy",sub:"公司战略",title:"接Marc（先在香港接到zoe再去接marc）",start:8.5,end:10.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Marc visit sz office & mixc world store",start:10.0,end:13.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"慕迪&飞书AI培训聊一聊",start:11.0,end:11.75,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"visit 万象天地 with Marc",start:12.0,end:14.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"visit Michael",start:15.0,end:16.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"去影棚，预计耗时：约 40分钟 - 1小时 路程距离：约 25 - 30公里",start:16.0,end:17.0,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"视频拍摄：自己化妆",start:17.0,end:18.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"【腾讯会议】市场总监面试-陈东升David",start:18.5,end:19.5,tags:[]},
+  ],
+  "2026-05-16": [
+    {cat:"people",sub:"招聘",title:"视频面试：何惠娟（品牌市场总监 - 品牌市场部）",start:9.0,end:10.0,tags:[]},
+    {cat:"family",sub:"亲子居家",title:"【George】 Assessment & Interview",start:11.0,end:13.5,tags:["George"]},
+    {cat:"strategy",sub:"公司战略",title:"kiki化妆+熟悉脚本",start:17.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"全连彩排",start:18.0,end:19.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"晚饭",start:19.0,end:19.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"zoe直播",start:20.0,end:20.67,tags:[]},
+  ],
+  "2026-05-17": [
+    {cat:"people",sub:"招聘",title:"Video interview：王珺（品牌市场总监 - Brand & Marketing D...",start:10.0,end:11.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"🌿 Wellness 周回顾",start:21.92,end:22.0,tags:[]},
+  ],
+  "2026-05-18": [
+    {cat:"strategy",sub:"公司战略",title:"27SS新品反馈",start:10.0,end:12.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"OKR + mt3 agenda & follow up",start:11.5,end:12.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务模型专家/Iris Chai/新人入职午餐",start:12.0,end:13.5,tags:["AI"]},
+    {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:14.0,end:15.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【08 Huddle Room】1v1 with Iris Chai/Financial Mo...",start:15.0,end:16.0,tags:["AI"]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"product",sub:"门店体验",title:"China Retail store BD meeting",start:16.0,end:17.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"秋冬大片的创意和进度汇报",start:17.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:18.0,end:19.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"Video interview：马瑶（流程管理 - Digital Intelligence ...",start:19.0,end:20.0,tags:[]},
+  ],
+  "2026-05-19": [
+    {cat:"strategy",sub:"公司战略",title:"签到",start:10.67,end:11.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"小鹏集团展厅参观+餐叙 with小鹏集团创始人何小鹏",start:11.0,end:13.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"小鹏汇天展厅参观+交流 with 小鹏汇天创始人赵德力",start:13.5,end:15.25,tags:[]},
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"松间集晚餐",start:18.0,end:21.0,tags:[]},
+  ],
+  "2026-05-20": [
+    {cat:"strategy",sub:"公司战略",title:"Tennis PT（肖教练 19068607870）",start:7.0,end:8.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"moodytiger 税务筹划方案沟通会（初稿）(在01会议室)",start:9.0,end:11.0,tags:[]},
+    {cat:"people",sub:"团队文化",title:"Hey Zoe! - 与CEO真实对话!",start:11.0,end:12.0,tags:[]},
+    {cat:"people",sub:"团队文化",title:"hey zoe数据复盘",start:12.0,end:12.25,tags:[]},
+    {cat:"global",sub:"MTI EC",title:"MTI汇报",start:13.0,end:14.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"月度经营分析会",start:14.0,end:16.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"MT3",start:16.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Team Dinner",start:18.0,end:20.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"26fw摄影师沟通-杨璐",start:21.5,end:22.5,tags:[]},
+  ],
+  "2026-05-21": [
+    {cat:"strategy",sub:"公司战略",title:"MT zoe稿件",start:3.0,end:3.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"《美的实战·企业精细化经营利润增长课》",start:9.0,end:17.5,tags:[]},
+  ],
+  "2026-05-22": [
+    {cat:"family",sub:"亲子居家",title:"【养和医院-骨龄】George+Max",start:14.75,end:16.0,tags:["George", "Max"]},
+  ],
+  "2026-05-23": [
+    {cat:"strategy",sub:"公司战略",title:"【养和医院-zoe皮肤科检查】Dr. Chan Chun Yin. Johnny陳俊彥醫生医生",start:10.0,end:12.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"Video interview：全智恒（AI工具创作者 - Digital Intellige...",start:15.0,end:16.0,tags:["AI"]},
+  ],
+  "2026-05-24": [
+    {cat:"strategy",sub:"公司战略",title:"🌿 Wellness 周回顾",start:21.92,end:22.0,tags:[]},
+  ],
+  "2026-05-25": [
+    {cat:"strategy",sub:"公司战略",title:"Year 3 Party",start:11.5,end:13.5,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:14.0,end:15.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Dinner @ The Grand Buffet (HK) 预定信息：Zoe 5683550...",start:18.5,end:20.5,tags:[]},
+  ],
+  "2026-05-26": [
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:10.5,end:11.5,tags:[]},
+    {cat:"global",sub:"MTI EC",title:"Global EC reset target P&L",start:11.5,end:12.5,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"【线上会议】讨论 AI 安全架构的问题",start:12.5,end:13.0,tags:["AI"]},
+    {cat:"family",sub:"亲子居家",title:"【IMS Max】国际小学图书馆节家长朗读会（提前10min到达）",start:14.5,end:15.0,tags:["Max"]},
+    {cat:"family",sub:"亲子居家",title:"【Zoom】George Follow-up Meeting",start:16.5,end:18.0,tags:["George"]},
+    {cat:"strategy",sub:"公司战略",title:"最新版人员形象标准宣贯",start:17.0,end:17.5,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"拍摄方案、预算沟通",start:19.0,end:20.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"视频面试：白浩（AI工具创作者 - 数智化部）",start:21.0,end:22.0,tags:["AI"]},
+    {cat:"external",sub:"投资人",title:"行权事项讨论",start:22.0,end:23.0,tags:[]},
+  ],
+  "2026-05-27": [
+    {cat:"strategy",sub:"公司战略",title:"【IMS Georgr】国际小学图书馆节家长朗读会（提前10min到达）",start:8.5,end:9.0,tags:[]},
+    {cat:"people",sub:"1-1",title:"1 on 1 with Shirley",start:11.5,end:12.0,tags:[]},
+    {cat:"external",sub:"社会责任",title:"[Confirmed 27/5] UNICEF 2026 - 2nd Fundraising ...",start:12.75,end:14.0,tags:["AI"]},
+    {cat:"external",sub:"社会责任",title:"【Offline or Zoom】NICEF 2026 - 2ed Fundraising C...",start:13.0,end:14.0,tags:["AI"]},
+    {cat:"product",sub:"品牌营销",title:"公开课《moodytiger发展历程》",start:14.5,end:15.17,tags:[]},
+    {cat:"growth",sub:"课程学习",title:"新员工培训课程-企业发展史",start:14.5,end:15.17,tags:[]},
+    {cat:"external",sub:"合作伙伴",title:"【现场】Simon沟通",start:15.5,end:17.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Dylan 过程述职",start:17.0,end:18.0,tags:[]},
+    {cat:"people",sub:"1-1",title:"with@Dylan，项目进展1 on 1",start:20.0,end:20.67,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"AI岗位沟通",start:20.5,end:21.0,tags:["AI"]},
+    {cat:"strategy",sub:"战略研究",title:"AI catch up",start:21.0,end:22.5,tags:["AI"]},
+  ],
+  "2026-05-28": [
+    {cat:"strategy",sub:"公司战略",title:"Zoe & Yan 月度 1o1",start:10.5,end:11.5,tags:[]},
+    {cat:"people",sub:"招聘",title:"Discussion on US retail hiring（微信沟通）",start:11.67,end:12.33,tags:["AI"]},
+    {cat:"growth",sub:"课程学习",title:"「AI组织研修班：Agent 时代组织发展新范式」",start:13.5,end:20.0,tags:["AI"]},
+    {cat:"growth",sub:"课程学习",title:"AI组织研修班：Agent 时代组织发展新范式",start:14.0,end:17.67,tags:["AI"]},
+    {cat:"growth",sub:"湖畔/YPO",title:"湖畔串门·云迹科技：具身智能的价值跃迁——机器人3.0时代的竞争逻辑",start:14.0,end:20.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"数智化周会 +BI沟通",start:15.0,end:16.5,tags:[]},
+  ],
+  "2026-05-29": [
+    {cat:"strategy",sub:"战略研究",title:"《AI落地与组织转型》CEO小会深圳场",start:9.5,end:17.5,tags:["AI"]},
+    {cat:"growth",sub:"课程学习",title:"腾讯咨询《AI落地与组织转型》深圳场",start:9.5,end:17.5,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"Zoe & Yan 月度 1o1",start:18.0,end:19.0,tags:[]},
+  ],
+  "2026-05-30": [
+    {cat:"strategy",sub:"公司战略",title:"牙齿检查",start:11.0,end:12.0,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"moodytiger秋冬产品营销策划会议",start:14.0,end:16.0,tags:[]},
+  ],
+  "2026-05-31": [
+    {cat:"strategy",sub:"公司战略",title:"【时间调整至小朋友放暑假】博飞摄影 全家照",start:9.0,end:13.25,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"🌿 Wellness 周回顾",start:21.92,end:22.0,tags:[]},
+  ],
+  "2026-06-01": [
+    {cat:"strategy",sub:"公司战略",title:"📸 Beauty Baseline 月度复拍",start:9.0,end:9.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【08 Huddle Room】1v1 with Iris Chai/Week 2",start:11.0,end:12.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"lunch & chat（zoe准备外卖）",start:12.0,end:13.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:13.0,end:14.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:14.0,end:15.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"【08 Huddle Roon】财务部-Jan-过程述职",start:15.0,end:16.0,tags:[]},
+    {cat:"product",sub:"门店体验",title:"China Retail store BD meeting",start:16.0,end:17.0,tags:["AI"]},
+    {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"MKT AI training",start:17.0,end:18.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"自建系统 打通BI",start:18.5,end:19.5,tags:[]},
+  ],
+  "2026-06-02": [
+    {cat:"strategy",sub:"公司战略",title:"聚餐",start:12.0,end:13.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"swimming比赛",start:12.0,end:14.5,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"AI update｜需要参加",start:13.5,end:16.0,tags:["AI"]},
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Onboarding Conversation with Zoe",start:18.0,end:18.5,tags:[]},
+  ],
+  "2026-06-03": [
+    {cat:"strategy",sub:"公司战略",title:"站内换乘",start:11.67,end:12.33,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【DeepTalk】案主分享",start:13.5,end:14.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【DeepTalk】高管访谈",start:14.5,end:18.5,tags:[]},
+    {cat:"sleep",sub:"",title:"【Cocktails & Canapés】Charterhouse",start:18.5,end:21.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"【DeepTalk】组内拼图&晚餐",start:18.5,end:19.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【DeepTalk】访谈呈现&提问",start:19.5,end:21.0,tags:[]},
+  ],
+  "2026-06-04": [
+    {cat:"strategy",sub:"公司战略",title:"【DeepTalk】案主分享",start:9.0,end:9.75,tags:[]},
+    {cat:"growth",sub:"课程学习",title:"【胖东来游学】两家门店参观体验",start:9.5,end:14.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【DeepTalk】反馈&分享",start:9.75,end:10.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【DeepTalk】行动建议",start:10.5,end:11.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【DeepTalk】复盘",start:11.0,end:12.0,tags:[]},
+    {cat:"growth",sub:"课程学习",title:"【胖东来游学】解读胖东来",start:15.0,end:20.0,tags:[]},
+    {cat:"growth",sub:"课程学习",title:"【胖东来游学】聚餐",start:20.0,end:22.0,tags:[]},
+  ],
+  "2026-06-05": [
+    {cat:"growth",sub:"课程学习",title:"【胖东来游学】宏观经济政策解读",start:9.0,end:12.5,tags:[]},
+    {cat:"growth",sub:"课程学习",title:"【胖东来游学】针对性研讨：行业趋势、政策环境、AI应用等",start:12.5,end:13.5,tags:["AI"]},
+    {cat:"growth",sub:"课程学习",title:"腾讯咨询 AI组织转型CEO小会·线上交流（长链条 AI Agent 协同）",start:20.0,end:20.75,tags:["AI"]},
+    {cat:"strategy",sub:"战略研究",title:"AI组织转型CEO小会-线上交流会",start:20.0,end:20.75,tags:["AI"]},
+  ],
+  "2026-06-06": [
+    {cat:"strategy",sub:"公司战略",title:"集合：HK 湾仔南营地露营",start:10.0,end:10.5,tags:[]},
+  ],
+  "2026-06-07": [
+    {cat:"family",sub:"亲子居家",title:"【好奇星球杂志】Reading Time📚 With Olivia+George+Max",start:20.0,end:21.0,tags:["Olivia", "George", "Max"]},
+    {cat:"strategy",sub:"公司战略",title:"🌿 Wellness 周回顾",start:21.92,end:22.0,tags:[]},
+  ],
+  "2026-06-08": [
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:11.0,end:12.0,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"Meeting with Jerry",start:14.0,end:15.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"block",start:15.5,end:16.0,tags:[]},
+    {cat:"external",sub:"合作伙伴",title:"德勤&moody  AI财务需求沟通",start:16.0,end:17.0,tags:["AI"]},
+    {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"2026年度 & 季度 Budget KPI OKR progress",start:17.0,end:18.5,tags:[]},
+    {cat:"external",sub:"合作伙伴",title:"KPMG issue List 汇报",start:18.5,end:19.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"视频面试：贺先生（技术架构师（AI方向） - 数智化部）",start:19.0,end:20.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"IT",start:20.0,end:20.5,tags:[]},
+  ],
+  "2026-06-09": [
+    {cat:"family",sub:"亲子居家",title:"School Leaders Panel | Rugby, Tonbridge & Downe...",start:10.0,end:12.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"视频面试：林燊杰（产品主管（供应链） - 数智化部）",start:13.0,end:14.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:14.5,end:15.5,tags:[]},
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"数智化周会",start:17.0,end:18.0,tags:[]},
+    {cat:"sleep",sub:"",title:"【Cocktails & Canapés】Downe House | Rugby | Tonb...",start:18.5,end:21.0,tags:["AI"]},
+  ],
+  "2026-06-10": [
+    {cat:"strategy",sub:"公司战略",title:"innovan",start:10.25,end:10.75,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Claire Qian零售支持经理-过程述职",start:11.0,end:12.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"GYM",start:12.0,end:13.5,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"AI 实战周会（首场）",start:13.0,end:13.75,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"AI实战周会",start:13.33,end:13.67,tags:["AI"]},
+    {cat:"external",sub:"合作伙伴",title:"KPMG审计访谈",start:14.0,end:16.5,tags:[]},
+    {cat:"growth",sub:"课程学习",title:"AI 提效案例交流（风变科技）",start:16.5,end:18.5,tags:["AI"]},
+    {cat:"growth",sub:"湖畔/YPO",title:"YPO Member Preboarding Call with Member Preboar...",start:19.0,end:20.0,tags:[]},
+  ],
+  "2026-06-11": [
+    {cat:"strategy",sub:"公司战略",title:"Lunch with 周凌霏Stella@渶策合伙人",start:12.5,end:14.0,tags:[]},
+    {cat:"external",sub:"投资人",title:"与innoven沟通期权行权事宜",start:14.0,end:15.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"CRM catchup",start:16.0,end:19.0,tags:[]},
+    {cat:"people",sub:"1-1",title:"shirley meeting",start:18.0,end:18.5,tags:[]},
+  ],
+  "2026-06-12": [
+    {cat:"family",sub:"亲子居家",title:"小学部学期末 XVenture Park Play Date",start:13.0,end:16.0,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"YPOI Closing Dinner",start:19.0,end:21.0,tags:[]},
+  ],
+  "2026-06-13": [
+    {cat:"strategy",sub:"公司战略",title:"牙齿检查-Zoe",start:9.75,end:11.75,tags:[]},
+    {cat:"family",sub:"亲子居家",title:"Ms. Yvette 欢送会 (Mediterranean Class)  george+max",start:14.5,end:16.5,tags:["George", "Max"]},
+  ],
+  "2026-06-14": [
+    {cat:"family",sub:"亲子居家",title:"【好奇星球杂志】Reading Time📚 With Olivia+George+Max",start:20.0,end:21.0,tags:["Olivia", "George", "Max"]},
+    {cat:"strategy",sub:"公司战略",title:"🌿 Wellness 周回顾",start:21.92,end:22.0,tags:[]},
+  ],
+  "2026-06-15": [
+    {cat:"strategy",sub:"公司战略",title:"飞书网盘&电脑安全性",start:10.5,end:11.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:11.0,end:12.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"丝域养发",start:12.0,end:13.5,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:14.5,end:15.5,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"AI Account apply",start:15.5,end:16.0,tags:["AI"]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
+    {cat:"family",sub:"亲子居家",title:"Dinner | Zoe Ng, Moody Tiger / Tak-Wai Tse, Rot...",start:19.0,end:20.5,tags:["AI"]},
+  ],
+  "2026-06-16": [
+    {cat:"product",sub:"品牌营销",title:"AI 内容试跑跟进",start:10.75,end:11.75,tags:["AI"]},
+    {cat:"people",sub:"团队文化",title:"moodytiger夏季团建",start:12.0,end:21.5,tags:[]},
+  ],
+  "2026-06-17": [
+    {cat:"strategy",sub:"公司战略",title:"经营分析会",start:10.0,end:12.0,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"董事会决议&框架",start:12.0,end:13.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"飞书 云盘 网盘 Nas 电脑安全性 mac windows",start:12.5,end:13.0,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"AI 实战周会",start:13.0,end:13.75,tags:["AI"]},
+    {cat:"operations",sub:"财务",title:"税务筹划终稿方案沟通",start:14.0,end:16.0,tags:[]},
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"call diana about CRM data",start:16.25,end:16.75,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"牙齿检查-Zoe",start:17.5,end:19.5,tags:[]},
+  ],
+  "2026-06-18": [
+    {cat:"strategy",sub:"公司战略",title:"MT3",start:9.0,end:13.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"lunch",start:13.0,end:13.5,tags:[]},
+    {cat:"growth",sub:"湖畔/YPO",title:"with 鑫磊@湖畔班主任",start:13.5,end:16.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"数智化周会 +BI沟通",start:15.0,end:16.5,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"秋冬整合营销",start:17.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"丝域养发",start:18.0,end:19.5,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务模型 计划",start:18.0,end:18.5,tags:[]},
+  ],
+  "2026-06-19": [
+    {cat:"people",sub:"招聘",title:"视频面试：Jennifer Han（品牌市场总监 - 品牌市场部）",start:10.0,end:11.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【Cafe Landmark】with Stephanie",start:15.0,end:17.0,tags:[]},
+  ],
+  "2026-06-20": [
+    {cat:"strategy",sub:"战略研究",title:"AI in Physical Security: What Leaders Should Know",start:2.0,end:2.25,tags:["AI"]},
+  ],
+  "2026-06-21": [
+    {cat:"family",sub:"亲子居家",title:"【好奇星球杂志】Reading Time📚 With Olivia+George+Max",start:20.0,end:21.0,tags:["Olivia", "George", "Max"]},
+    {cat:"strategy",sub:"公司战略",title:"🌿 Wellness 周回顾",start:21.92,end:22.0,tags:[]},
+  ],
+  "2026-06-22": [
+    {cat:"external",sub:"投资人",title:"与 Kelvin Chan（East West Bank）会面",start:10.0,end:11.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"【香港皮肤及激光中心-皮肤科检查】Dr. Henry Chan Hin Lee",start:14.0,end:16.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:15.0,end:16.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"BP工作汇报",start:15.5,end:16.5,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
+    {cat:"product",sub:"门店体验",title:"China Retail store BD meeting",start:16.0,end:17.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"Virtual New Girls Day",start:17.5,end:18.5,tags:[]},
+    {cat:"people",sub:"招聘",title:"数智化负责人招聘对齐（Zoe线上）",start:18.5,end:19.5,tags:[]},
+    {cat:"family",sub:"亲子居家",title:"[TO BE RESCHEDULED] Dinner | Zoe Ng, Moody Tige...",start:19.0,end:20.5,tags:["AI"]},
+  ],
+  "2026-06-23": [
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:10.0,end:11.0,tags:[]},
+    {cat:"people",sub:"团队文化",title:"Hey Zoe! - 与CEO真实对话!（Dress code yellow）",start:11.0,end:12.0,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"AI素材交流-Jerry朋友",start:13.0,end:14.0,tags:["AI"]},
+    {cat:"external",sub:"合作伙伴",title:"德勤-财务AI需求沟通(线下)",start:14.0,end:16.0,tags:["AI"]},
+    {cat:"growth",sub:"湖畔/YPO",title:"与 Morris Mak 会面 (YPO GBA)",start:16.0,end:17.0,tags:[]},
+    {cat:"people",sub:"1-1",title:"费控系统 1-1",start:17.0,end:17.5,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"moodytiger academy 学院 update",start:17.5,end:18.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"视频面试：刘继征（品牌市场总监 - 品牌市场部）",start:18.0,end:19.0,tags:[]},
+    {cat:"external",sub:"合作伙伴",title:"德勤AI分享-catch up",start:19.0,end:20.0,tags:["AI"]},
+    {cat:"external",sub:"合作伙伴",title:"德勤AI分享-catch up",start:19.1,end:20.1,tags:["AI"]},
+    {cat:"people",sub:"招聘",title:"Video interview：王显兵（数智化负责人 - Digital Intelligen...",start:20.0,end:20.5,tags:[]},
+    {cat:"people",sub:"招聘",title:"Video interview：谭建立（数智化负责人 - Digital Intelligen...",start:20.5,end:21.0,tags:[]},
+  ],
+  "2026-06-24": [
+    {cat:"strategy",sub:"公司战略",title:"WAS 6V年度庆典及颁奖典礼",start:8.5,end:10.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"茶聚 with Savio Kwan",start:11.0,end:12.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"GYM",start:12.0,end:13.5,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"AI 实战周会",start:13.0,end:13.75,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"AI实战周会",start:13.0,end:13.75,tags:["AI"]},
+    {cat:"growth",sub:"湖畔/YPO",title:"【湖畔】企业声誉与传播管理",start:14.0,end:17.5,tags:[]},
+  ],
+  "2026-06-25": [
+    {cat:"growth",sub:"课程学习",title:"AI时代的消费者洞察与体验设计（汪志谦 MOT 工作坊）",start:9.0,end:17.5,tags:["AI"]},
+    {cat:"operations",sub:"日常运营",title:"EC电商周会（复盘会,取数到6月21日）",start:14.0,end:18.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"数智化周会 +BI沟通",start:15.0,end:16.5,tags:[]},
+  ],
+  "2026-06-26": [
+    {cat:"growth",sub:"课程学习",title:"【立杏】答辩开题",start:9.0,end:11.5,tags:[]},
+    {cat:"growth",sub:"课程学习",title:"企业风险与危机管理",start:13.5,end:21.0,tags:[]},
+  ],
+  "2026-06-27": [
+    {cat:"growth",sub:"课程学习",title:"AI驱动的业务重构与组织变革（孙天澍·长江商学院）",start:9.0,end:17.0,tags:["AI"]},
+  ],
+  "2026-06-28": [
+    {cat:"people",sub:"招聘",title:"On-site interview：刘继征（品牌市场总监 - Brand & Marketin...",start:15.0,end:16.0,tags:[]},
+    {cat:"people",sub:"招聘",title:"On-site interview：Jennifer Han（品牌市场总监 - Brand &...",start:17.0,end:18.0,tags:[]},
+    {cat:"family",sub:"亲子居家",title:"【好奇星球杂志】Reading Time📚 With Olivia+George+Max",start:20.0,end:21.0,tags:["Olivia", "George", "Max"]},
+    {cat:"strategy",sub:"公司战略",title:"🌿 Wellness 周回顾",start:21.92,end:22.0,tags:[]},
+  ],
+  "2026-06-29": [
+    {cat:"strategy",sub:"公司战略",title:"上海虹桥T2→深圳宝安T3  南方航空CZ204   航司预订号：QXGHL0",start:7.67,end:10.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"【转正述职】Hailey Liang-财务部·核算",start:11.0,end:12.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"GYM",start:12.0,end:13.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Lunch with 龙",start:12.0,end:13.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"Lionel - 试用期转正述职（6个月）",start:13.0,end:14.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:14.0,end:15.0,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务部AI场景应用分享会",start:15.0,end:16.0,tags:["AI"]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
+    {cat:"product",sub:"产品评审",title:"27FW企划",start:17.0,end:18.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"报表数据月度Review（moda&ksw&lmoda）",start:18.0,end:19.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"RD1-秋冬Campaign第一轮创意提案",start:19.0,end:20.0,tags:["AI"]},
+  ],
+  "2026-06-30": [
+    {cat:"strategy",sub:"公司战略",title:"HKG香港国际机场T2→KIX关西国际机场T1  香港航空HX614   航司预订号：PT7HVS",start:8.42,end:12.5,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:10.5,end:11.5,tags:[]},
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+  ],
+  "2026-07-01": [
+    {cat:"family",sub:"亲子居家",title:"【Swimming Competition】 Olivia/George/Max",start:9.0,end:12.0,tags:["Olivia", "George", "Max"]},
+    {cat:"strategy",sub:"公司战略",title:"GYM",start:12.0,end:13.5,tags:[]},
+    {cat:"strategy",sub:"战略研究",title:"AI 实战周会",start:13.0,end:13.75,tags:["AI"]},
+    {cat:"operations",sub:"财务",title:"【税务筹划】月度汇报",start:14.0,end:15.0,tags:[]},
+  ],
+  "2026-07-02": [
+    {cat:"product",sub:"产品评审",title:"产品管理例会",start:14.0,end:15.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"数智化周会 +BI沟通",start:15.0,end:16.5,tags:[]},
+  ],
+  "2026-07-04": [
+    {cat:"strategy",sub:"公司战略",title:"KIX关西国际机场T1→HKG香港国际机场T2  香港航空HX619   航司预订号：PT7HVS",start:16.0,end:20.33,tags:[]},
+  ],
+  "2026-07-05": [
+    {cat:"family",sub:"亲子居家",title:"【好奇星球杂志】Reading Time📚 With Olivia+George+Max",start:20.0,end:21.0,tags:["Olivia", "George", "Max"]},
+    {cat:"strategy",sub:"公司战略",title:"🌿 Wellness 周回顾",start:21.92,end:22.0,tags:[]},
+  ],
+  "2026-07-06": [
+    {cat:"strategy",sub:"公司战略",title:"Meeting with Nick（Oracle）",start:10.5,end:12.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"GYM",start:12.0,end:13.5,tags:[]},
+    {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:14.0,end:15.0,tags:[]},
+    {cat:"strategy",sub:"公司战略",title:"moodytiger  X  Databricks 交流",start:15.0,end:16.0,tags:[]},
+    {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
+    {cat:"product",sub:"门店体验",title:"China Retail store BD meeting",start:16.0,end:17.0,tags:["AI"]},
+    {cat:"strategy",sub:"公司战略",title:"2026年度 & 季度 Budget KPI OKR progress",start:17.5,end:19.0,tags:[]},
+  ],
+  "2026-07-07": [
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:10.5,end:11.5,tags:[]},
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+  ],
+};
+const OURA_DATA = {
+  "2026-01-01": {hrs:7.8,hrv:42,rec:47},
+  "2026-01-02": {hrs:10.4,hrv:61,rec:88},
+  "2026-01-03": {hrs:5.9,hrv:66,rec:95},
+  "2026-01-04": {hrs:6.2,hrv:47,rec:77},
+  "2026-01-06": {hrs:6.3,hrv:46,rec:62},
+  "2026-01-07": {hrs:5.1,hrv:43,rec:48},
+  "2026-01-08": {hrs:8.0,hrv:50,rec:73},
+  "2026-01-09": {hrs:5.2,hrv:55,rec:77},
+  "2026-01-10": {hrs:11.2,hrv:44,rec:62},
+  "2026-01-11": {hrs:1.7,hrv:66,rec:18},
+  "2026-01-12": {hrs:5.7,hrv:47,rec:67},
+  "2026-01-13": {hrs:7.4,hrv:42,rec:56},
+  "2026-01-14": {hrs:6.8,hrv:61,rec:96},
+  "2026-01-15": {hrs:5.6,hrv:48,rec:64},
+  "2026-01-16": {hrs:7.5,hrv:44,rec:58},
+  "2026-01-17": {hrs:8.1,hrv:44,rec:87},
+  "2026-01-18": {hrs:9.0,hrv:37,rec:37},
+  "2026-01-19": {hrs:8.3,hrv:40,rec:54},
+  "2026-01-20": {hrs:6.3,hrv:46,rec:62},
+  "2026-01-21": {hrs:4.7,hrv:47,rec:56},
+  "2026-01-22": {hrs:6.8,hrv:45,rec:58},
+  "2026-01-23": {hrs:5.6,hrv:43,rec:54},
+  "2026-01-24": {hrs:6.6,hrv:38,rec:44},
+  "2026-01-25": {hrs:7.9,hrv:40,rec:44},
+  "2026-01-26": {hrs:6.0,hrv:37,rec:33},
+  "2026-01-27": {hrs:4.1,hrv:38,rec:27},
+  "2026-01-28": {hrs:6.0,hrv:31,rec:23},
+  "2026-01-29": {hrs:7.3,hrv:33,rec:37},
+  "2026-01-30": {hrs:8.5,hrv:37,rec:53},
+  "2026-01-31": {hrs:7.3,hrv:45,rec:76},
+  "2026-02-01": {hrs:7.2,hrv:55,rec:90},
+  "2026-02-02": {hrs:6.0,hrv:53,rec:84},
+  "2026-02-03": {hrs:7.3,hrv:43,rec:68},
+  "2026-02-04": {hrs:6.2,hrv:43,rec:59},
+  "2026-02-05": {hrs:6.5,hrv:43,rec:60},
+  "2026-02-06": {hrs:5.4,hrv:49,rec:73},
+  "2026-02-07": {hrs:9.4,hrv:49,rec:83},
+  "2026-02-08": {hrs:8.4,hrv:44,rec:60},
+  "2026-02-09": {hrs:5.1,hrv:54,rec:92},
+  "2026-02-10": {hrs:4.5,hrv:55,rec:70},
+  "2026-02-11": {hrs:11.4,hrv:44,rec:56},
+  "2026-02-12": {hrs:5.7,hrv:44,rec:52},
+  "2026-02-13": {hrs:6.7,hrv:41,rec:48},
+  "2026-02-14": {hrs:5.1,hrv:44,rec:66},
+  "2026-02-15": {hrs:8.4,hrv:42,rec:89},
+  "2026-02-16": {hrs:5.8,hrv:45,rec:71},
+  "2026-02-17": {hrs:8.4,hrv:43,rec:71},
+  "2026-02-18": {hrs:4.3,hrv:47,rec:65},
+  "2026-02-19": {hrs:5.4,hrv:53,rec:80},
+  "2026-02-20": {hrs:8.1,hrv:47,rec:79},
+  "2026-02-21": {hrs:8.2,hrv:31,rec:75},
+  "2026-02-22": {hrs:10.3,hrv:42,rec:90},
+  "2026-02-23": {hrs:7.8,hrv:45,rec:75},
+  "2026-02-24": {hrs:6.3,hrv:38,rec:55},
+  "2026-02-25": {hrs:7.0,hrv:49,rec:84},
+  "2026-02-26": {hrs:5.8,hrv:44,rec:68},
+  "2026-02-27": {hrs:3.9,hrv:39,rec:31},
+  "2026-02-28": {hrs:3.8,hrv:49,rec:36},
+  "2026-03-01": {hrs:7.9,hrv:57,rec:97},
+  "2026-03-02": {hrs:4.8,hrv:52,rec:88},
+  "2026-03-03": {hrs:8.9,hrv:48,rec:68},
+  "2026-03-04": {hrs:7.2,hrv:48,rec:72},
+  "2026-03-05": {hrs:6.6,hrv:47,rec:63},
+  "2026-03-06": {hrs:8.4,hrv:43,rec:55},
+  "2026-03-07": {hrs:7.7,hrv:45,rec:63},
+  "2026-03-08": {hrs:7.0,hrv:42,rec:53},
+  "2026-03-09": {hrs:4.5,hrv:46,rec:57},
+  "2026-03-10": {hrs:8.0,hrv:41,rec:87},
+  "2026-03-11": {hrs:7.3,hrv:44,rec:54},
+  "2026-03-12": {hrs:5.6,hrv:41,rec:58},
+  "2026-03-13": {hrs:5.8,hrv:44,rec:69},
+  "2026-03-14": {hrs:3.2,hrv:49,rec:32},
+  "2026-03-15": {hrs:7.5,hrv:46,rec:76},
+  "2026-03-16": {hrs:8.0,hrv:45,rec:74},
+  "2026-03-17": {hrs:9.9,hrv:40,rec:49},
+  "2026-03-18": {hrs:6.3,hrv:35,rec:36},
+  "2026-03-19": {hrs:5.8,hrv:43,rec:59},
+  "2026-03-20": {hrs:2.2,hrv:41,rec:57},
+  "2026-03-21": {hrs:6.0,hrv:42,rec:56},
+  "2026-03-22": {hrs:8.9,hrv:37,rec:76},
+  "2026-03-23": {hrs:8.5,hrv:40,rec:64},
+  "2026-03-24": {hrs:7.6,hrv:45,rec:80},
+  "2026-03-25": {hrs:5.9,hrv:42,rec:69},
+  "2026-03-26": {hrs:5.9,hrv:44,rec:74},
+  "2026-03-27": {hrs:4.5,hrv:42,rec:50},
+  "2026-03-28": {hrs:8.5,hrv:39,rec:48},
+  "2026-03-29": {hrs:6.1,hrv:44,rec:79},
+  "2026-03-30": {hrs:6.0,hrv:49,rec:89},
+  "2026-03-31": {hrs:5.3,hrv:50,rec:74},
+  "2026-04-01": {hrs:4.7,hrv:51,rec:61},
+  "2026-04-02": {hrs:9.5,hrv:38,rec:51},
+  "2026-04-03": {hrs:5.6,hrv:46,rec:74},
+  "2026-04-04": {hrs:8.1,hrv:46,rec:73},
+  "2026-04-05": {hrs:7.8,hrv:50,rec:91},
+  "2026-04-06": {hrs:9.7,hrv:37,rec:45},
+  "2026-04-07": {hrs:9.0,hrv:36,rec:46},
+  "2026-04-08": {hrs:4.1,hrv:43,rec:50},
+  "2026-04-09": {hrs:5.4,hrv:36,rec:77},
+  "2026-04-10": {hrs:3.9,hrv:40,rec:34},
+  "2026-04-11": {hrs:6.3,hrv:41,rec:68},
+  "2026-04-12": {hrs:5.7,hrv:36,rec:78},
+  "2026-04-13": {hrs:2.0,hrv:38,rec:10},
+  "2026-04-14": {hrs:4.0,hrv:41,rec:36},
+  "2026-04-15": {hrs:3.0,hrv:29,rec:50},
+  "2026-04-16": {hrs:4.2,hrv:34,rec:26},
+  "2026-04-17": {hrs:4.6,hrv:36,rec:36},
+  "2026-04-18": {hrs:8.1,hrv:32,rec:70},
+  "2026-04-19": {hrs:9.9,hrv:38,rec:65},
+  "2026-04-20": {hrs:5.8,hrv:43,rec:76},
+  "2026-04-21": {hrs:7.5,hrv:36,rec:57},
+  "2026-04-22": {hrs:7.5,hrv:34,rec:53},
+  "2026-04-23": {hrs:3.9,hrv:50,rec:64},
+  "2026-04-24": {hrs:5.0,hrv:51,rec:72},
+  "2026-04-25": {hrs:4.3,hrv:43,rec:45},
+  "2026-04-26": {hrs:7.4,hrv:44,rec:73},
+  "2026-04-27": {hrs:5.1,hrv:42,rec:63},
+  "2026-04-28": {hrs:7.7,hrv:40,rec:56},
+  "2026-04-29": {hrs:5.7,hrv:32,rec:32},
+  "2026-04-30": {hrs:8.1,hrv:42,rec:68},
+  "2026-05-01": {hrs:6.6,hrv:61,rec:94},
+  "2026-05-02": {hrs:4.9,hrv:36,rec:41},
+  "2026-05-03": {hrs:8.4,hrv:79,rec:91},
+  "2026-05-04": {hrs:5.7,hrv:41,rec:53},
+  "2026-05-05": {hrs:6.2,hrv:28,rec:53},
+  "2026-05-06": {hrs:9.0,hrv:46,rec:70},
+  "2026-05-07": {hrs:7.6,hrv:40,rec:58},
+  "2026-05-08": {hrs:4.7,hrv:53,rec:78},
+  "2026-05-09": {hrs:7.7,hrv:46,rec:71},
+  "2026-05-10": {hrs:3.8,hrv:38,rec:63},
+  "2026-05-11": {hrs:8.8,hrv:47,rec:71},
+  "2026-05-12": {hrs:6.7,hrv:45,rec:63},
+  "2026-05-13": {hrs:7.0,hrv:40,rec:45},
+  "2026-05-14": {hrs:8.1,hrv:40,rec:58},
+  "2026-05-15": {hrs:2.3,hrv:47,rec:21},
+  "2026-05-16": {hrs:9.5,hrv:48,rec:72},
+  "2026-05-17": {hrs:7.7,hrv:46,rec:67},
+  "2026-05-18": {hrs:6.3,hrv:50,rec:72},
+  "2026-05-19": {hrs:5.3,hrv:53,rec:78},
+  "2026-05-20": {hrs:5.9,hrv:60,rec:89},
+  "2026-05-21": {hrs:4.9,hrv:57,rec:61},
+  "2026-05-22": {hrs:8.9,hrv:49,rec:74},
+  "2026-05-23": {hrs:7.2,hrv:45,rec:51},
+  "2026-05-24": {hrs:9.8,hrv:43,rec:49},
+  "2026-05-25": {hrs:5.1,hrv:46,rec:55},
+  "2026-05-26": {hrs:8.7,hrv:48,rec:61},
+  "2026-05-27": {hrs:4.0,hrv:53,rec:57},
+  "2026-05-28": {hrs:7.0,hrv:45,rec:53},
+  "2026-05-29": {hrs:3.8,hrv:40,rec:26},
+  "2026-05-30": {hrs:3.9,hrv:39,rec:20},
+  "2026-05-31": {hrs:10.4,hrv:37,rec:39},
+  "2026-06-01": {hrs:4.6,hrv:57,rec:86},
+  "2026-06-02": {hrs:8.3,hrv:44,rec:59},
+  "2026-06-03": {hrs:2.9,hrv:52,rec:32},
+  "2026-06-04": {hrs:3.4,hrv:51,rec:30},
+  "2026-06-05": {hrs:7.2,hrv:38,rec:51},
+  "2026-06-06": {hrs:5.2,hrv:53,rec:73},
+  "2026-06-07": {hrs:7.1,hrv:39,rec:51},
+  "2026-06-08": {hrs:4.8,hrv:45,rec:45},
+  "2026-06-09": {hrs:7.0,hrv:46,rec:68},
+  "2026-06-10": {hrs:5.9,hrv:46,rec:67},
+  "2026-06-11": {hrs:5.4,hrv:39,rec:34},
+  "2026-06-12": {hrs:8.2,hrv:46,rec:66},
+  "2026-06-13": {hrs:8.4,hrv:38,rec:42},
+  "2026-06-14": {hrs:6.0,hrv:42,rec:50},
+  "2026-06-15": {hrs:5.4,hrv:54,rec:87},
+  "2026-06-16": {hrs:4.9,hrv:52,rec:62},
+  "2026-06-17": {hrs:5.6,hrv:45,rec:49},
+  "2026-06-19": {hrs:5.9,hrv:57,rec:77},
+  "2026-06-20": {hrs:8.9,hrv:53,rec:76},
+  "2026-06-21": {hrs:6.5,hrv:54,rec:78},
+  "2026-06-23": {hrs:9.0,hrv:49,rec:67},
+  "2026-06-25": {hrs:6.3,hrv:38,rec:39},
+  "2026-06-26": {hrs:7.2,hrv:33,rec:29},
+  "2026-06-27": {hrs:6.1,hrv:42,rec:48},
+};
+const CM=Object.fromEntries(CATS.map(c=>[c.key,c]));
+const WORK=['strategy','people','product','operations','external','global','growth'];
+const ACTIVE=CATS.filter(c=>c.key!=='sleep');
+function genDay(ds){const evs=[];const push=(cat,sub,t,s,e,tg=[])=>evs.push({cat,sub,title:t,start:s,end:e,tags:tg});
+ const ou=OURA_DATA[ds];
+ if(ou&&ou.hrs>0){const hrs=ou.hrs,wake=Math.min(9.5,Math.max(5,6+(7-hrs)*0.3));push('sleep','','睡眠',0,Math.round(wake*4)/4);
+  const bed=24-Math.max(0,hrs-wake);if(bed<24)push('sleep','','入睡',Math.round(bed*4)/4,24);}
+ (REAL_EVENTS[ds]||[]).forEach(e=>push(e.cat,e.sub,e.title,e.start,e.end,e.tags));
+ return evs.sort((a,b)=>a.start-b.start);}
+function catMins(evs){const m={};evs.forEach(e=>{m[e.cat]=(m[e.cat]||0)+(e.end-e.start)*60;});return m;}
+function fmtDur(min){min=Math.round(min);const h=Math.floor(min/60),m=min%60;return h&&m?h+'h'+m+'m':h?h+'h':m+'m';}
+function h2t(h){const hh=Math.floor(h),mm=Math.round((h-hh)*60);return String(hh%24).padStart(2,'0')+':'+String(mm).padStart(2,'0');}
+function hexA(hex,a){const n=parseInt(hex.slice(1),16);return `rgba(${n>>16&255},${n>>8&255},${n&255},${a})`;}
+// busiest day
+let DS=Object.keys(REAL_EVENTS).sort((a,b)=>(REAL_EVENTS[b].length-REAL_EVENTS[a].length))[0];
+const EVS=genDay(DS),M=catMins(EVS),OU=OURA_DATA[DS];
+const SLEEP=M.sleep||0, AWAKE=24*60-SLEEP, WK=WORK.reduce((s,k)=>s+(M[k]||0),0);
+const RANK=ACTIVE.filter(c=>(M[c.key]||0)>0).sort((a,b)=>M[b.key]-M[a.key]);
+const TOTACT=RANK.reduce((s,c)=>s+M[c.key],0)||1;
+const D=new Date(DS+'T00:00:00');const WKD=['周日','周一','周二','周三','周四','周五','周六'][D.getDay()];
+// positioned timeline (shared A/C)
+function posTL(from,to,pph){
+ const ev=EVS.filter(e=>e.end>from&&e.start<to).sort((a,b)=>a.start-b.start);
+ const lanes=[];ev.forEach(e=>{let li=lanes.findIndex(end=>end<=e.start+1e-6);if(li<0){li=lanes.length;lanes.push(e.end);}else lanes[li]=e.end;e._l=li;});
+ const N=Math.max(1,lanes.length),H=(to-from)*pph;
+ let grid='';for(let h=from;h<=to;h+=2)grid+=`<div class="hl" style="top:${(h-from)*pph}px"><span>${String(h%24).padStart(2,'0')}:00</span></div>`;
+ const blk=ev.map(e=>{const c=CM[e.cat],top=(Math.max(from,e.start)-from)*pph,hgt=Math.max(18,(Math.min(to,e.end)-Math.max(from,e.start))*pph-3),w=100/N;
+  return `<div class="blk${e.cat==='sleep'?' slp':''}" style="top:${top}px;height:${hgt}px;left:${e._l*w}%;width:calc(${w}% - 4px);--c:${c.color}">
+   <b>${e.title}</b><i>${h2t(e.start)}–${h2t(e.end)} · ${c.label}</i></div>`;}).join('');
+ return `<div class="tlg" style="height:${H}px">${grid}<div class="track">${blk}</div></div>`;
+}
+
+
+function ring(val,unit,p,label,sub,g){const r=54,c=2*Math.PI*r;
+ return `<div class="rg"><div class="rgw"><svg viewBox="0 0 124 124"><circle class="rbg" cx="62" cy="62" r="54"></circle><circle class="rfg" cx="62" cy="62" r="54" stroke="${g}" stroke-dasharray="${c}" stroke-dashoffset="${c*(1-Math.min(1,p))}" style="--g:${g}"></circle></svg><div class="rv"><b>${val}<small>${unit}</small></b></div></div><div class="lab">${label}<span>${sub}</span></div></div>`;}
+const recC=OU&&OU.rec>=67?'#19E57D':OU&&OU.rec>=34?'#FFD91C':'#FF5C7A';
+document.getElementById('app').innerHTML=`<div class="wrap">
+ <div class="top"><span class="dot"></span><b>ZOE · 时间</b><span class="d">${DS} · ${WKD}</span></div>
+ <div class="eyebrow">Today · 今日概览</div>
+ <div class="rings">
+  ${ring(Math.round(WK/60),'h',WK/AWAKE,'清醒工作',Math.round(WK/AWAKE*100)+'% 清醒','#BEDA6E')}
+  ${ring(OU?OU.hrs:'--','h',OU?OU.hrs/8:0,'睡眠',OU?'Oura':'无数据','#5AD1FF')}
+  ${ring(OU?OU.rec:'--','',OU?OU.rec/100:0,'恢复分',OU?(OU.rec>=67?'已恢复':OU.rec>=34?'适度':'需休整'):'',recC)}
+ </div>
+ <div class="card"><div class="ch"><b>时间分配</b><span>清醒 ${fmtDur(AWAKE)}</span></div>
+  <div class="alloc">${RANK.map(c=>`<i style="width:${M[c.key]/TOTACT*100}%;background:${c.color};--c:${c.color}"></i>`).join('')}</div>
+  ${RANK.map(c=>`<div class="crow"><span class="dt" style="background:${c.color}"></span><span class="nm">${c.icon} ${c.label}</span>
+   <span class="tk"><i style="width:${M[c.key]/M[RANK[0].key]*100}%;background:${c.color}"></i></span>
+   <span class="vl">${fmtDur(M[c.key])}</span><span class="pc">${Math.round(M[c.key]/TOTACT*100)}%</span></div>`).join('')}</div>
+ <div class="card"><div class="ch"><b>24h 时间线</b><span>${EVS.length} 段</span></div>${posTL(0,24,30)}</div>
+</div>`;
+</script></body></html>
