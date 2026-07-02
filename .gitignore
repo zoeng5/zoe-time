@@ -5,3 +5,8 @@ __pycache__/
 *.pyc
 node_modules/
 backups/
+
+# 瞬态/备份
+*.bak
+*.tmp
+*.tmptest

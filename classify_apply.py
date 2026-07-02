@@ -1,8 +1,18 @@
 #!/usr/bin/env python3
 """用 classify-brain.json 给标题归类：overrides > rules(顺序) > fallback。供 refresh.py 调用。"""
-import json, re, os
+import json, re, os, sys, glob
 BASE=os.path.dirname(os.path.abspath(__file__))
-BRAIN=json.load(open(f"{BASE}/classify-brain.json",encoding="utf-8"))
+def _load_brain():
+    """主文件损坏时自动回退 .bak / backups/，避免一处半截写坏就永久卡死每日刷新。"""
+    cands=[f"{BASE}/classify-brain.json", f"{BASE}/classify-brain.json.bak"] + sorted(glob.glob(f"{BASE}/backups/classify-brain.*.json"), reverse=True)
+    for i,p in enumerate(cands):
+        try:
+            b=json.load(open(p,encoding="utf-8"))
+            if i>0: print(f"[classify_apply] 主 brain 不可读，已回退 {os.path.basename(p)}", file=sys.stderr)
+            return b
+        except Exception: continue
+    raise SystemExit("classify-brain.json 及所有备份均无法读取，请人工检查")
+BRAIN=_load_brain()
 RULES=BRAIN["rules"]; OVR=BRAIN["overrides"]; FB=BRAIN["fallback"]
 def classify(title):
     t=title.strip()
