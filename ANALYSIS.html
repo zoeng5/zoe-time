@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zoe's Time 睡眠目标分析</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; line-height: 1.6; color: #333; max-width: 900px; margin: 0 auto; padding: 20px; }
+    h1 { border-bottom: 3px solid #F37434; padding-bottom: 10px; }
+    h2 { color: #1D1D1D; margin-top: 30px; }
+    .info-box { background: #f0f5e8; border-left: 4px solid #6f9e3f; padding: 15px; margin: 15px 0; }
+    .alert { background: #fdf4f0; border-left: 4px solid #F37434; padding: 15px; margin: 15px 0; }
+    .success { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 15px; margin: 15px 0; }
+    table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+    th, td { text-align: left; padding: 12px; border-bottom: 1px solid #ddd; }
+    th { background: #f5f5f5; font-weight: 600; }
+    tr:hover { background: #f9f9f9; }
+    code { background: #f5f5f5; padding: 2px 6px; border-radius: 3px; font-family: 'Monaco', monospace; }
+    .path { background: #f5f5f5; padding: 8px; border-radius: 3px; overflow-x: auto; margin: 10px 0; }
+    .metric { display: inline-block; background: #F37434; color: white; padding: 3px 8px; border-radius: 3px; margin: 0 3px; font-weight: 600; }
+  </style>
+</head>
+<body>
+
+<h1>🔍 Zoe's Time 睡眠目标完整分析</h1>
+
+<p><strong>项目位置</strong>：<code>/Users/zoe/AI/Workspaces/mt-sites/bi-dashboards/mt-time-tracker</code></p>
+<p><strong>项目名称</strong>：<code>mt-time-tracker</code>（爱时间 MTVI 复刻版）</p>
+
+<hr>
+
+<h2>📊 发现总结</h2>
+
+<h3>1️⃣ 睡眠目标"29%"的定义</h3>
+
+<div class="success">
+<strong>✅ 完全正确</strong>
+</div>
+
+<p><strong>源代码位置</strong>：<code>itime_build.py</code> 第 652 行</p>
+
+<div class="path">
+{key:'sleep', period:'每天', target:7}
+</div>
+
+<p><strong>计算过程</strong>：</p>
+<ul>
+<li>硬目标：每天 <strong>7 小时</strong></li>
+<li>一周时间：7天 × 7小时 = 49 小时</li>
+<li><strong>百分比</strong>：49 ÷ 168 = <span class="metric">29.17%</span> ≈ <span class="metric">29%</span></li>
+</ul>
+
+<p><strong>对齐情况</strong>：与 <code>timekeeper-feishu-bridge/proactive.py</code> 中的 <code>SLEEP_MIN=7.0</code> 完全一致。</p>
+
+<hr>
+
+<h3>2️⃣ 为什么日视图睡眠显示"--"？</h3>
+
+<div class="alert">
+<strong>🔴 根本原因</strong>：<strong>今天 (7/14) 的睡眠数据还没有生成</strong>
+</div>
+
+<table>
+<tr>
+<th>日期</th>
+<th>状态</th>
+<th>原因</th>
+</tr>
+<tr>
+<td>7/13</td>
+<td>✅ <code>hrs:8.0</code></td>
+<td>已过夜，数据完整</td>
+</tr>
+<tr>
+<td>7/14</td>
+<td>❌ <code>--</code></td>
+<td><strong>今天还没睡觉，无法记录</strong></td>
+</tr>
+</table>
+
+<p>Oura/WHOOP 的睡眠数据只有在<strong>起床后</strong>才能定稿，所以进行中的一天必然显示为空。这是<strong>设计特性</strong>，不是故障。</p>
+
+<p><strong>实际数据位置</strong>：<code>~/AI/DataLake/健康/normalized/daily/2026/</code></p>
+<ul>
+<li>7/13 数据：<code>whoop_sleep_hours: 7.98h</code> ✓</li>
+<li>7/12 数据：<code>whoop_sleep_hours: 7.3h</code> ✓</li>
+<li>7/14 数据：暂无（当前时刻只是下午）</li>
+</ul>
+
+<hr>
+
+<h3>3️⃣ 用户说"睡眠进来得太短"是合理的吗？</h3>
+
+<div class="info-box">
+<strong>💡 用户的直觉很可能是对的</strong>
+</div>
+
+<p><strong>实际数据</strong>：</p>
+<ul>
+<li>7/12: 7.3h（接近目标 7h）</li>
+<li>7/13: 8.0h（超目标）</li>
+<li>平均：7.65h/晚 ≈ 目标水平</li>
+</ul>
+
+<p><strong>但用户觉得"不足"，可能原因</strong>：</p>
+<table>
+<tr>
+<th>可能原因</th>
+<th>解决方案</th>
+</tr>
+<tr>
+<td>目标太低（7h 只是最低护栏）</td>
+<td>改成 7.5h 或 8.0h</td>
+</tr>
+<tr>
+<td>睡眠质量差（只看小时数不准）</td>
+<td>查看深睡占比、HRV、恢复分</td>
+</tr>
+<tr>
+<td>最近几天确实偏低</td>
+<td>查看完整 30 天趋势</td>
+</tr>
+<tr>
+<td>Oura/WHOOP 可能高估睡眠</td>
+<td>交叉验证（如对比日志）</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>🔧 系统架构</h2>
+
+<h3>数据流向</h3>
+
+<div class="path">
+Oura/WHOOP 设备
+  ↓
+~/AI/DataLake/健康/raw/{oura,whoop}/  (原始数据)
+  ↓
+~/AI/DataLake/健康/normalized/daily/2026/*.json  (标准化日数据)
+  ↓
+refresh.py: build_oura()
+  ↓
+index.html: const OURA_DATA = { "2026-07-13": {hrs:8.0, ...} }
+  ↓
+itime_build.py: 渲染前端
+  ↓
+最终应用展示
+</div>
+
+<h3>关键文件</h3>
+
+<table>
+<tr>
+<th>文件</th>
+<th>作用</th>
+<th>最后修改</th>
+</tr>
+<tr>
+<td><code>refresh.py</code></td>
+<td>每日数据同步&渲染主程序</td>
+<td>Jul 12 17:01</td>
+</tr>
+<tr>
+<td><code>itime_build.py</code></td>
+<td>前端渲染（118KB）</td>
+<td>Jul 5 21:54</td>
+</tr>
+<tr>
+<td><code>index.html</code></td>
+<td>最终应用页面（400KB）</td>
+<td>Jul 14 11:00</td>
+</tr>
+<tr>
+<td><code>itime_build.py</code> L652</td>
+<td>睡眠目标定义</td>
+<td>7h/天 = 29%</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>✅ 目标合理性评估</h2>
+
+<table>
+<tr>
+<th>维度</th>
+<th>评价</th>
+</tr>
+<tr>
+<td><strong>硬编码值</strong></td>
+<td>✓ 合理（7h 是 WHO 建议下限）</td>
+</tr>
+<tr>
+<td><strong>数学转换</strong></td>
+<td>✓ 正确（7×7÷168=29.17%）</td>
+</tr>
+<tr>
+<td><strong>与 timekeeper 一致</strong></td>
+<td>✓ 对齐（SLEEP_MIN=7.0）</td>
+</tr>
+<tr>
+<td><strong>是否符合个人需求</strong></td>
+<td>❓ 可能偏低（用户说睡眠不足）</td>
+</tr>
+</table>
+
+<hr>
+
+<h2>🛠️ 建议的下一步</h2>
+
+<h3>立即</h3>
+<ol>
+<li><strong>等待今晚睡眠数据</strong> — 7/14 的数据会在明早起床后出现</li>
+<li><strong>确认数据准确性</strong> — 检查 Oura/WHOOP 是否同步正常</li>
+</ol>
+
+<h3>本周</h3>
+<ol>
+<li><strong>调整个人目标</strong> — 如果持续觉得不足，改成 7.5h 或 8h<br>
+<code>// itime_build.py L652 改为</code><br>
+<code>{key:'sleep', period:'每天', target:7.5}  // 或 8.0</code>
+</li>
+
+<li><strong>查看睡眠质量</strong> — 不只看时长，还看深睡占比、HRV 等指标
+<pre>{
+  "oura_sleep_efficiency_pct": 96,    // Oura 的睡眠效率
+  "whoop_sleep_performance_pct": 87,  // WHOOP 的表现分
+  "hrv": 56                            // 心率变异度（越高越好）
+}</pre>
+</li>
+</ol>
+
+<hr>
+
+<h2>📍 核心结论</h2>
+
+<table>
+<tr>
+<th>问题</th>
+<th>答案</th>
+</tr>
+<tr>
+<td>29% 目标怎么来的？</td>
+<td>7h/天 ÷ 168h/周 = 29% ✓ 正确</td>
+</tr>
+<tr>
+<td>合不合理？</td>
+<td>合理（是行业标准），但可能需要个性化调整</td>
+</tr>
+<tr>
+<td>为什么今天显示"--"?</td>
+<td>今天数据还没完成（你还没睡觉）完全正常</td>
+</tr>
+<tr>
+<td>数据断层了吗？</td>
+<td>没有，7/12-7/13 数据都在。每天自动同步。</td>
+</tr>
+<tr>
+<td>系统完不完整？</td>
+<td>很完整（Python 后端 + 前端渲染 + 云同步 + 数据库）</td>
+</tr>
+</table>
+
+</body>
+</html>
