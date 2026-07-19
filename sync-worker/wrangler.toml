@@ -3,3 +3,7 @@ main = "worker.js"
 compatibility_date = "2026-01-01"
 workers_dev = true
 # 密钥（飞书 app_id / app_secret）用 `wrangler secret put` 注入，不写在这里
+
+[[kv_namespaces]]
+binding = "ZT_KV"
+id = "b78cccf3906146b489b4fb1147f956f3"

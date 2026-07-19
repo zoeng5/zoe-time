@@ -1,28 +1,24 @@
 #!/bin/bash
-# 从 macOS 钥匙串读飞书 app secret → 注入 Cloudflare Worker → 部署 → 自测
-# 运行时若弹出"security 想访问钥匙串"，点【始终允许】
+# 把飞书 App Secret 安全注入 Cloudflare Worker → 部署 → 自测
+# 用法：在【真实终端 Terminal.app】里运行本脚本，按提示粘贴 secret（输入隐藏，不回显、不进任何记录）
+#   bash ~/AI/Workspaces/mt-sites/bi-dashboards/mt-time-tracker/sync-worker/setsecret.sh
+# secret 来源：飞书开放平台 → 开发者后台 → 应用 cli_a951fab3c6785cb1（Zoe AI 助理）→ 凭证与基础信息 → App Secret
 set -e
 cd "$(dirname "$0")"
-ACCT="appsecret:cli_a951fab3c6785cb1"
-SECRET=""
-for svc in lark-cli lark-mcp larksuite-cli ""; do
-  if [ -n "$svc" ]; then
-    SECRET=$(security find-generic-password -s "$svc" -a "$ACCT" -w 2>/dev/null) || true
-  else
-    SECRET=$(security find-generic-password -a "$ACCT" -w 2>/dev/null) || true
-  fi
-  [ -n "$SECRET" ] && { echo "✓ 从钥匙串(service=${svc:-auto})读到密钥，长度 ${#SECRET}"; break; }
-done
+APPID="cli_a951fab3c6785cb1"
+SECRET="${1:-}"
 if [ -z "$SECRET" ]; then
-  echo "✗ 钥匙串里没找到。请改为手动：去飞书开放平台复制 cli_a951fab3c6785cb1 的 App Secret，然后运行："
-  echo "    echo '你的secret' | wrangler secret put LARK_APP_SECRET"
-  exit 1
+  read -r -s -p "粘贴 App Secret（隐藏输入），回车确认: " SECRET; echo
 fi
-# 注入 + 同时确保 app_id
-printf '%s' "cli_a951fab3c6785cb1" | wrangler secret put LARK_APP_ID >/dev/null 2>&1 || true
-printf '%s' "$SECRET" | wrangler secret put LARK_APP_SECRET 2>&1 | grep -iE 'success|error' | head -1
+if [ -z "$SECRET" ]; then echo "✗ 没拿到 secret，退出"; exit 1; fi
+echo "→ 注入 Cloudflare（密钥仅存 Cloudflare，不落本地/记录）…"
+printf '%s' "$APPID"  | wrangler secret put LARK_APP_ID    >/dev/null 2>&1 || true
+printf '%s' "$SECRET" | wrangler secret put LARK_APP_SECRET 2>&1 | grep -iE 'success|uploaded|error' | head -1
+unset SECRET
 echo "→ 部署…"
-wrangler deploy 2>&1 | grep -iE 'Deployed|https://|error' | head -3
-echo "→ 自测 /test（应返回 success:true）…"
+wrangler deploy 2>&1 | grep -iE 'Deployed|https://|error' | head -2
+echo "→ 自测（飞书 code:0 = 密钥通；若是权限类错误我再修多维表格授权）…"
 sleep 3
-curl -s -m 25 "https://zoe-time-sync.zoe-mt.workers.dev/test" | python3 -c "import sys,json;d=json.load(sys.stdin);b=d.get('body',{});print('飞书返回 code:', b.get('code'), '| msg:', b.get('msg'))" 2>/dev/null || echo "(自测请求失败)"
+curl -s -m 25 "https://zoe-time-sync.zoe-mt.workers.dev/test" \
+ | python3 -c "import sys,json;b=json.load(sys.stdin).get('body',{});print('飞书 code:',b.get('code'),'| msg:',(b.get('msg') or '')[:80])" 2>/dev/null \
+ || echo "(自测请求失败，检查网络/代理)"

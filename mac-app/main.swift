@@ -1,9 +1,11 @@
 import Cocoa
 import WebKit
 
-// 数据来源：稳定路径（refresh.py 每次刷新会同步过来，抗目录迁移）
+// 数据来源：本地稳定路径 + Worker 远程源（管线迁到 Studio 后由远程更新本地副本）
 let APP_DIR = ("~/Library/Application Support/ZoeTime" as NSString).expandingTildeInPath
 let HTML_PATH = APP_DIR + "/index.html"
+let REMOTE_URL = "https://zoe-time-sync.zoe-mt.workers.dev/html"
+let ZT_TOKEN = "41326c953ec9ceb6227a27adc2cc83e583b9db05454e77f0"
 
 class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
     var window: NSWindow!
@@ -28,7 +30,25 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
         window.isReleasedWhenClosed = false
 
         loadHTML()
+        fetchRemote()                                    // 启动就拉一次远程最新
+        Timer.scheduledTimer(withTimeInterval: 1800, repeats: true) { _ in self.fetchRemote() }  // 常开每30分钟
         NSApp.activate(ignoringOtherApps: true)
+    }
+
+    // 从 Worker 拉最新页面：有更新 → 覆写本地副本并热替换；失败静默（本地照常，离线可用）
+    func fetchRemote() {
+        guard var req = URL(string: REMOTE_URL).map({ URLRequest(url: $0) }) else { return }
+        req.setValue(ZT_TOKEN, forHTTPHeaderField: "X-ZT-Token")
+        req.timeoutInterval = 30
+        URLSession.shared.dataTask(with: req) { data, resp, _ in
+            guard let d = data, d.count > 50_000,
+                  (resp as? HTTPURLResponse)?.statusCode == 200 else { return }
+            let old = FileManager.default.contents(atPath: HTML_PATH)
+            if old == d { return }                       // 没变不折腾
+            try? FileManager.default.createDirectory(atPath: APP_DIR, withIntermediateDirectories: true)
+            guard (try? d.write(to: URL(fileURLWithPath: HTML_PATH))) != nil else { return }
+            DispatchQueue.main.async { self.loadHTML() } // 热替换到最新
+        }.resume()
     }
 
     func loadHTML() {
@@ -47,6 +67,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, WKNavigationDelegate {
         guard web != nil else { return }
         let m = (try? FileManager.default.attributesOfItem(atPath: HTML_PATH)[.modificationDate]) as? Date
         if let m = m, m != lastMtime { loadHTML() }
+        fetchRemote()                                    // 切回前台也拉一次
     }
 
     @objc func reloadNow() { loadHTML() }

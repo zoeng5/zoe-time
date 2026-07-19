@@ -34,7 +34,7 @@
       ]
     },
     "operations": {
-      "label": "运营财务",
+      "label": "日常运营",
       "def": "日常运营、财务预算税务、OKR/经营分析、BI/数智化/IT、电商运营",
       "subs": [
         "财务",
@@ -543,9 +543,9 @@
       "_note": "Simon=外部"
     },
     "Brian Chee": {
-      "cat": "external",
-      "sub": "",
-      "_note": "AI 判定"
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
     },
     "Hupan8 JK@Insta360": {
       "cat": "growth",
@@ -593,19 +593,19 @@
       "_note": "AI 判定"
     },
     "日本研学 DAY3 大阪—和歌山—大阪": {
-      "cat": "family",
-      "sub": "",
-      "_note": "AI 判定"
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
     },
     "日本研学 DAY4 大阪—京都": {
-      "cat": "family",
-      "sub": "",
-      "_note": "AI 判定"
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
     },
     "日本研学 DAY5 京都—大阪—国内 自由安排": {
-      "cat": "family",
-      "sub": "",
-      "_note": "AI 判定"
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
     },
     "酒店出发35min路程": {
       "cat": "travel",
@@ -738,9 +738,9 @@
       "_note": "AI 判定"
     },
     "DM3 X moodytiger 聊一下next step": {
-      "cat": "product",
-      "sub": "品牌营销",
-      "_note": "AI 判定"
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
     },
     "DM3沟通": {
       "cat": "product",
@@ -813,9 +813,9 @@
       "_note": "AI 判定"
     },
     "PFAS舆情面对": {
-      "cat": "external",
-      "sub": "媒体公关",
-      "_note": "AI 判定"
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
     },
     "Q2 市场部工作重点+方向": {
       "cat": "product",
@@ -893,9 +893,9 @@
       "_note": "AI 判定"
     },
     "content": {
-      "cat": "product",
-      "sub": "内容营销",
-      "_note": "AI 判定"
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
     },
     "family": {
       "cat": "family",
@@ -1078,9 +1078,9 @@
       "_note": "AI 判定"
     },
     "【co-creat/comsult】会议安排沟通+时间记录沟通": {
-      "cat": "operations",
-      "sub": "会议协调",
-      "_note": "AI 判定"
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
     },
     "【mtmt room 】Q2会议安排沟通": {
       "cat": "operations",
@@ -1169,13 +1169,13 @@
     },
     "三月第一周业绩": {
       "cat": "operations",
-      "sub": "经营分析",
-      "_note": "AI 判定"
+      "sub": "日常运营",
+      "_note": "App 回流"
     },
     "下午BD会议妙计+视频": {
-      "cat": "product",
-      "sub": "品牌营销",
-      "_note": "AI 判定"
+      "cat": "self",
+      "sub": "健身运动",
+      "_note": "App 回流"
     },
     "下午会议PPT preview": {
       "cat": "operations",
@@ -1183,9 +1183,9 @@
       "_note": "AI 判定"
     },
     "与通力律师面谈品牌保护方案": {
-      "cat": "external",
-      "sub": "法律合作",
-      "_note": "AI 判定"
+      "cat": "product",
+      "sub": "产品评审",
+      "_note": "App 回流"
     },
     "专家访谈：泰兰尼斯": {
       "cat": "external",
@@ -1208,9 +1208,9 @@
       "_note": "AI 判定"
     },
     "中国零售Q1季度复盘&Q2季度规划": {
-      "cat": "operations",
-      "sub": "经营分析",
-      "_note": "AI 判定"
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
     },
     "产品部&商品管理部年终奖沟通": {
       "cat": "operations",
@@ -1293,9 +1293,9 @@
       "_note": "AI 判定"
     },
     "午餐:深业上城": {
-      "cat": "self",
-      "sub": "用餐休闲",
-      "_note": "AI 判定"
+      "cat": "product",
+      "sub": "产品评审",
+      "_note": "App 回流"
     },
     "午餐：太古汇": {
       "cat": "self",
@@ -1398,9 +1398,9 @@
       "_note": "AI 判定"
     },
     "沟通葛媛纠纷案": {
-      "cat": "external",
-      "sub": "法律事务",
-      "_note": "AI 判定"
+      "cat": "product",
+      "sub": "产品评审",
+      "_note": "App 回流"
     },
     "泛微 review": {
       "cat": "operations",
@@ -1528,9 +1528,9 @@
       "_note": "AI 判定"
     },
     "迪士尼活动-具体操作在描述中": {
-      "cat": "family",
-      "sub": "亲子活动",
-      "_note": "AI 判定"
+      "cat": "external",
+      "sub": "投资人",
+      "_note": "App 回流"
     },
     "采购部 Monthly Meeting": {
       "cat": "operations",
@@ -1558,9 +1558,9 @@
       "_note": "AI 判定"
     },
     "马会 meet 小明，最晚19:30到": {
-      "cat": "family",
-      "sub": "陪伴",
-      "_note": "AI 判定"
+      "cat": "external",
+      "sub": "投资人",
+      "_note": "App 回流"
     },
     "高新投合同签署（贷款息2.4%+担保息0.9%）": {
       "cat": "operations",
@@ -1576,6 +1576,426 @@
       "cat": "growth",
       "sub": "学习成长",
       "_note": "AI 判定"
+    },
+    "导所有银行卡历史流水": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "App 回流"
+    },
+    "检测系统上线方案电话沟通": {
+      "cat": "external",
+      "sub": "投资人",
+      "_note": "App 回流"
+    },
+    "Global EC Weekly Update_EDITED": {
+      "cat": "family",
+      "sub": "",
+      "_note": "App 回流"
+    },
+    "Global EC Weekly Update": {
+      "cat": "global",
+      "sub": "MTI EC",
+      "_note": "App 回流"
+    },
+    "与茅忠群董事长问答交流": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "AI 判定"
+    },
+    "主题午餐会": {
+      "cat": "strategy",
+      "sub": "战略讨论",
+      "_note": "AI 判定"
+    },
+    "同学讨论": {
+      "cat": "growth",
+      "sub": "同学交流",
+      "_note": "AI 判定"
+    },
+    "方太企业参观": {
+      "cat": "growth",
+      "sub": "企业参观",
+      "_note": "AI 判定"
+    },
+    "方太文化主题": {
+      "cat": "people",
+      "sub": "团队文化",
+      "_note": "AI 判定"
+    },
+    "待定：世界杯洛杉矶1/4决赛（8进4）": {
+      "cat": "self",
+      "sub": "私人休闲",
+      "_note": "AI 判定"
+    },
+    "AI驱动的业务重构与组织变革（孙天澍·长江商学院）": {
+      "cat": "growth",
+      "sub": "湖畔",
+      "_note": "App 回流"
+    },
+    "WAS 6V年度庆典及颁奖典礼": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "鞋战略weekly update": {
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
+    },
+    "AI素材交流-Jerry朋友": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "与 Morris Mak 会面 (YPO GBA)": {
+      "cat": "external",
+      "sub": "投资人",
+      "_note": "App 回流"
+    },
+    "Lunch with 龙": {
+      "cat": "external",
+      "sub": "投资人",
+      "_note": "App 回流"
+    },
+    "财务部AI场景应用分享会": {
+      "cat": "operations",
+      "sub": "财务",
+      "_note": "App 回流"
+    },
+    "AI direction": {
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
+    },
+    "ZZ合成AI会": {
+      "cat": "growth",
+      "sub": "AI",
+      "_note": "App 回流"
+    },
+    "【08 Huddle Room】1v1 with Iris Chai/Week 2": {
+      "cat": "people",
+      "sub": "1o1",
+      "_note": "App 回流"
+    },
+    "lunch & chat（zoe准备外卖）": {
+      "cat": "people",
+      "sub": "1o1",
+      "_note": "App 回流"
+    },
+    "聚餐": {
+      "cat": "people",
+      "sub": "团建",
+      "_note": "App 回流"
+    },
+    "Onboarding Conversation with Zoe": {
+      "cat": "people",
+      "sub": "1o1",
+      "_note": "App 回流"
+    },
+    "【DeepTalk】案主分享": {
+      "cat": "growth",
+      "sub": "湖畔",
+      "_note": "App 回流"
+    },
+    "【DeepTalk】高管访谈": {
+      "cat": "growth",
+      "sub": "湖畔",
+      "_note": "App 回流"
+    },
+    "【胖东来游学】两家门店参观体验": {
+      "cat": "growth",
+      "sub": "湖畔",
+      "_note": "App 回流"
+    },
+    "集合：HK 湾仔南营地露营": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "KPMG issue List 汇报": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "App 回流"
+    },
+    "视频面试：贺先生（技术架构师（AI方向） - 数智化部）": {
+      "cat": "people",
+      "sub": "面试",
+      "_note": "App 回流"
+    },
+    "【08 huddle room】3月第一周业绩-MTI Retail": {
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
+    },
+    "with Jennifer子涵": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "YPO Gold Pan GBA": {
+      "cat": "external",
+      "sub": "投资人",
+      "_note": "App 回流"
+    },
+    "财务部调薪沟通": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "App 回流"
+    },
+    "【IMS-George家长会】with Art-Rachel Mcinerney": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "虹桥机场空间设计方案审定": {
+      "cat": "product",
+      "sub": "产品评审",
+      "_note": "App 回流"
+    },
+    "电商第一季度汇报": {
+      "cat": "product",
+      "sub": "产品评审",
+      "_note": "App 回流"
+    },
+    "❤【IMS-George家长会】with Yvette Sybil Fernandes": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "Zoe去HK接Olivia放学": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "Zoe & Olivia time- 赤柱跟George汇合": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "【3.23妙记】China Retail store BD meeting": {
+      "cat": "self",
+      "sub": "健身运动",
+      "_note": "App 回流"
+    },
+    "南区visit plan": {
+      "cat": "product",
+      "sub": "产品评审",
+      "_note": "App 回流"
+    },
+    "【IMS-Max家长会】with IT-Ludwig Ablana": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "moodytiger  X  Databricks 交流（01 Hiking Room）": {
+      "cat": "external",
+      "sub": "合作伙伴",
+      "_note": "App 回流"
+    },
+    "Meeting with Nick（Oracle）": {
+      "cat": "external",
+      "sub": "合作伙伴",
+      "_note": "App 回流"
+    },
+    "【IMS-George家长会】with PE-Alexander Gregory Coladi...": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "陪George上足球课": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "DM3第二次交付宣讲": {
+      "cat": "product",
+      "sub": "产品评审",
+      "_note": "App 回流"
+    },
+    "review OKR Q2": {
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
+    },
+    "股份奖励方面的筹划 KPMG": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "App 回流"
+    },
+    "【08 huddle room】with Yan & Lily": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "【IMS-George家长会】with IT-Ludwig Ablan": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "周销售数据Recap": {
+      "cat": "product",
+      "sub": "产品评审",
+      "_note": "App 回流"
+    },
+    "26年晋升调薪方案": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "晋升述职(Momo Tao）": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "Dinner": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "❤【IMS-Max家长会】with Laura Hernandez": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "【08 huddle room 】With Joey": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "1-1": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "Lunch": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "JK DeepTalk（影石）Day 1": {
+      "cat": "growth",
+      "sub": "湖畔",
+      "_note": "App 回流"
+    },
+    "13:00 出发影石创新园": {
+      "cat": "travel",
+      "sub": "出发",
+      "_note": "AI 判定"
+    },
+    "KPMG+AI": {
+      "cat": "operations",
+      "sub": "日常运营",
+      "_note": "App 回流"
+    },
+    "FM progress": {
+      "cat": "operations",
+      "sub": "FM进展",
+      "_note": "AI 判定"
+    },
+    "moody圈运营": {
+      "cat": "people",
+      "sub": "团建",
+      "_note": "App 回流"
+    },
+    "27AW大图评审": {
+      "cat": "product",
+      "sub": "产品企划评审",
+      "_note": "AI 判定"
+    },
+    "[RSVP] 🏆 World Cup Final | 20 July 2026": {
+      "cat": "self",
+      "sub": "私人休闲",
+      "_note": "AI 判定"
+    },
+    "佳慧17:15到达 HKG  安排司机去接送到JEN酒店": {
+      "cat": "travel",
+      "sub": "机场接送",
+      "_note": "AI 判定"
+    },
+    "公司层经营模型汇报": {
+      "cat": "operations",
+      "sub": "经营分析",
+      "_note": "AI 判定"
+    },
+    "AISL夏日拓展营结业典礼": {
+      "cat": "family",
+      "sub": "学校活动",
+      "_note": "AI 判定"
+    },
+    "公司 AI整体使用情况": {
+      "cat": "strategy",
+      "sub": "AI战略",
+      "_note": "AI 判定"
+    },
+    "天猫渠道模型": {
+      "cat": "operations",
+      "sub": "电商运营",
+      "_note": "AI 判定"
+    },
+    "室内网球 PA": {
+      "cat": "self",
+      "sub": "运动",
+      "_note": "App 回流"
+    },
+    "🤖 一号位周会 Leadership Weekly": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "AI 判定"
+    },
+    "hey zoe demo": {
+      "cat": "product",
+      "sub": "产品评审",
+      "_note": "App 回流"
+    },
+    "MT3": {
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
+    },
+    "lunch with Nathan": {
+      "cat": "people",
+      "sub": "高管团队",
+      "_note": "App 回流"
+    },
+    "in hk": {
+      "cat": "people",
+      "sub": "1o1",
+      "_note": "App 回流"
+    },
+    "【Max】AISL夏日拓展营结业典礼": {
+      "cat": "family",
+      "sub": "亲子居家",
+      "_note": "App 回流"
+    },
+    "zoe时间管理计划": {
+      "cat": "self",
+      "sub": "时间管理",
+      "_note": "AI 判定"
+    },
+    "吕桂华来访": {
+      "cat": "external",
+      "sub": "来访",
+      "_note": "AI 判定"
+    },
+    "鞋收入路径盘点": {
+      "cat": "operations",
+      "sub": "经营分析",
+      "_note": "AI 判定"
+    },
+    "公司日历讨论": {
+      "cat": "operations",
+      "sub": "",
+      "_note": "AI 判定"
+    },
+    "牙齿复查-Zoe（当天需要支付$26000）": {
+      "cat": "self",
+      "sub": "健身运动",
+      "_note": "App 回流"
+    },
+    "【晚餐聚会】滩万 Nadaman 日本料理   预订人：zoe 56835507 预定9位铁板烧位": {
+      "cat": "external",
+      "sub": "湖畔",
+      "_note": "App 回流"
     }
   },
   "fallback": {
