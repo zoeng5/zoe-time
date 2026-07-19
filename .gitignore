@@ -1,12 +1,11 @@
-logs/
 .refresh.lock
-.publish/
 __pycache__/
 *.pyc
-node_modules/
 backups/
-
-# 瞬态/备份
 *.bak
-*.tmp
-*.tmptest
+*.bak-*
+logs/
+.DS_Store
+node_modules/
+.env
+.env.local
