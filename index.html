@@ -66,7 +66,7 @@ body{font-family:'Hanken Grotesk','Noto Sans SC',-apple-system,'PingFang SC',san
 .aitog{border:1.5px solid var(--line);background:var(--bg);color:var(--mut);font-family:inherit;font-weight:800;font-size:13px;padding:8px 14px;border-radius:18px;cursor:pointer;margin:0 0 11px}
 .aitog.on{background:#1D1D1D;color:#BEDA6E;border-color:#1D1D1D}
 .stp .tin{border:0;background:none;font-family:inherit;font-size:17px;font-weight:800;color:var(--ink);width:78px;text-align:center;outline:none;padding:0}
-.stp .tin::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.6}
+.stp .tin::-webkit-calendar-picker-indicator{display:none}
 /* timeline list */
 .tl{padding:6px 0 10px}
 .tli{display:flex;align-items:center;gap:13px;padding:13px 18px;border-top:1px solid var(--line);cursor:pointer}
@@ -1727,8 +1727,8 @@ const REAL_EVENTS = {
     {cat:"family",sub:"亲子居家",title:"【Olivia】AISL夏日拓展营结业典礼",start:18.5,end:19.0,tags:["Olivia"]},
   ],
   "2026-07-18": [
-    {cat:"self",sub:"健康医疗",title:"牙齿复查-Zoe（当天需要支付$26000）",start:10.5,end:11.5,tags:[]},
-    {cat:"self",sub:"休闲放松",title:"【晚餐聚会】滩万 Nadaman 日本料理   预订人：zoe 56835507 预定9位铁板烧位",start:18.5,end:21.5,tags:[]},
+    {cat:"self",sub:"健身运动",title:"牙齿复查-Zoe（当天需要支付$26000）",start:10.5,end:11.5,tags:[]},
+    {cat:"external",sub:"湖畔",title:"【晚餐聚会】滩万 Nadaman 日本料理   预订人：zoe 56835507 预定9位铁板烧位",start:18.5,end:21.5,tags:[]},
   ],
   "2026-07-19": [
     {cat:"family",sub:"亲子居家",title:"【好奇星球杂志】Reading Time📚 With Olivia+George+Max",start:20.0,end:21.0,tags:["Olivia", "George", "Max"]},
@@ -1741,9 +1741,9 @@ const REAL_EVENTS = {
     {cat:"self",sub:"健身运动",title:"GYM",start:12.0,end:13.5,tags:[]},
     {cat:"growth",sub:"课程学习",title:"Motherswork visit in Shenzhen office - Business...",start:14.0,end:16.0,tags:[]},
     {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
+    {cat:"product",sub:"产品企划评审",title:"27AW大图评审",start:16.0,end:18.0,tags:[]},
     {cat:"product",sub:"门店体验",title:"China Retail store BD meeting",start:16.0,end:17.0,tags:[]},
     {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
-    {cat:"product",sub:"产品企划评审",title:"27AW大图评审",start:16.0,end:18.0,tags:[]},
     {cat:"operations",sub:"经营分析",title:"鞋收入路径盘点",start:18.0,end:19.0,tags:[]},
   ],
   "2026-07-21": [
@@ -1776,6 +1776,13 @@ const REAL_EVENTS = {
     {cat:"operations",sub:"财务",title:"财务leaders weekly meeting",start:14.0,end:15.0,tags:[]},
     {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:15.5,end:16.5,tags:[]},
     {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
+  ],
+  "2026-07-28": [
+    {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
+  ],
+  "2026-07-29": [
+    {cat:"strategy",sub:"公司战略",title:"鞋战略weekly update",start:10.5,end:11.5,tags:[]},
+    {cat:"self",sub:"健身运动",title:"GYM",start:12.0,end:13.5,tags:[]},
   ],
 };
 const OURA_DATA = {
@@ -1964,6 +1971,7 @@ const OURA_DATA = {
   "2026-07-15": {hrs:3.8,hrv:51,rec:44,wake:7.53,bs:3.57},
   "2026-07-16": {hrs:5.5,hrv:54,rec:66,wake:8.27,bs:2.72},
   "2026-07-17": {hrs:6.1,hrv:51,rec:63,wake:9.27,bs:2.58},
+  "2026-07-18": {hrs:4.1,hrv:42,rec:26,wake:10.2,bs:5.8},
 };
 // 全新调色板（明快、克制、区分度高），覆盖旧的发闷棕黑灰
 const PAL={strategy:'#F37434',people:'#A6C061',product:'#C56B4A',operations:'#D69A3C',external:'#B4643E',global:'#8C6E45',growth:'#818A7D',family:'#8A6BA4',self:'#E2A3B3',travel:'#A79E8C',sleep:'#FFFFFF'};
