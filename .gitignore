@@ -9,3 +9,5 @@ logs/
 node_modules/
 .env
 .env.local
+classify-brain.json
+frozen_events.json
