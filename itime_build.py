@@ -308,6 +308,7 @@ body{font-family:'Hanken Grotesk','Noto Sans SC',-apple-system,'PingFang SC',san
 <div class="tabs">
   <button data-v="clock" class="on"><span class="ic">🕘</span><span class="tx">时钟</span></button>
   <button data-v="stats"><span class="ic">📊</span><span class="tx">统计</span></button>
+  <button data-v="timer"><span class="ic">⏱</span><span class="tx">计时</span></button>
   <button data-v="insights"><span class="ic">💡</span><span class="tx">洞察</span></button>
   <button data-v="family"><span class="ic">🏡</span><span class="tx">家庭</span></button>
   <button data-v="goals"><span class="ic">🎯</span><span class="tx">目标</span></button>
@@ -645,6 +646,15 @@ function vStats(){
    <div class="bar"><i class="${slp.trim()}" style="width:${Math.min(100,r.v/span*100)}%;background:${r.c.color};display:block;height:100%"></i>${(()=>{if(isU)return '';const g=goals().find(x=>x.key===r.k);if(!g)return '';const de=g.period==='每周'?g.target/7:g.target;return `<div class="tgt2" style="left:${Math.min(98,de/24*100).toFixed(1)}%"></div>`;})()}</div></div>`;}).join('')}
   <div class="snote">竖线＝该类的参考目标（按每日目标折算到时间占比，目标页可调）。<b>未记录</b>＝这段时间里没有日历日程、也没有手动补录覆盖的部分${partial?'（分母只算到此刻，未来时间不计）':''}。点「未记录」这一行即可补录。日程撞车/补录重叠时各类相加可能 >100%，「覆盖」和「未记录」按时间轴去重计算。</div>
   <button class="fab" id="fabS">＋</button>`;
+}
+function vTimer(){
+  const t=tGet();
+  if(!t)return`<div style="height:100%;display:flex;align-items:center;justify-content:center;color:var(--mut);flex-direction:column;gap:12px;padding:40px 20px"><div style="font-size:14px;color:var(--mut);font-weight:600">还没开始计时</div><button id="timerStart" style="padding:12px 24px;background:var(--tang);color:#fff;border:none;border-radius:12px;cursor:pointer;font-weight:700">开始计时</button></div>`;
+  const ms=Date.now()-t.start;
+  const h=Math.floor(ms/3600000),m=Math.floor((ms%3600000)/60000),s=Math.floor((ms%60000)/1000);
+  const timeStr=`\${String(h).padStart(2,'0')}:\${String(m).padStart(2,'0')}:\${String(s).padStart(2,'0')}`;
+  const cat=t.cat?CM[t.cat]:{label:'计时中',color:'#C2B8A6'};
+  return`<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 20px"><div style="font-size:13px;color:var(--mut);font-weight:600">现在计时中</div><div style="font-size:64px;font-weight:800;font-family:monospace;letter-spacing:8px;color:var(--ink)">\${timeStr}</div><div style="font-size:16px;font-weight:700;color:\${cat.color}">● \${cat.label}</div><div style="display:flex;gap:12px;margin-top:20px"><button id="timerStop" style="padding:11px 24px;border:1.5px solid var(--tang);background:var(--tang);color:#fff;border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">结束计时</button><button id="timerNew" style="padding:11px 24px;border:1.5px solid var(--line);background:var(--soft);border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">新计时</button></div></div>`;
 }
 
 // 目标：可编辑（存 localStorage 'ztGoals'），家庭默认提到 每天3h
@@ -1076,7 +1086,7 @@ function render(){
  } else if(view==='family'){document.getElementById('dlab').textContent='家庭 · 自身';document.getElementById('dsub').textContent='睡眠趋势 · 陪伴每个孩子';
  } else {const isT=dateStr(d)===dateStr(today());document.getElementById('dlab').textContent=isT?'目标 · 今天':`目标 · ${d.getMonth()+1}月${d.getDate()}日`;document.getElementById('dsub').textContent=`${dateStr(d)} ${WKD[d.getDay()]} · 每日看当天/每周看所在周 · 点卡片改`;}
  document.getElementById('nextB').style.visibility=off>=0?'hidden':'visible';
- document.getElementById('body').innerHTML = view==='clock'?vClock():view==='stats'?vStats():view==='insights'?vInsights():view==='family'?vFamily():vGoals();
+ document.getElementById('body').innerHTML = view==='clock'?vClock():view==='stats'?vStats():view==='timer'?vTimer():view==='insights'?vInsights():view==='family'?vFamily():vGoals();
  if(view==='stats'){document.querySelectorAll('.seg2 button').forEach(b=>b.onclick=()=>{statScope=b.dataset.s;render();});
   wireStatsAdd();
   document.querySelectorAll('.srow[data-cat]').forEach(el=>el.onclick=()=>openTrend('cat',el.dataset.cat));}
@@ -1090,6 +1100,11 @@ function render(){
    document.querySelectorAll('.kcell[data-trend]').forEach(el=>el.onclick=()=>{const t=el.dataset.trend;openTrend(t==='sleep'?'sleep':'cat',t);});
  }
  if(view==='goals')document.querySelectorAll('.gcard').forEach(el=>el.onclick=()=>openCatDetail(el.dataset.g));
+ if(view==='timer'){
+  const startBtn=document.getElementById('timerStart');if(startBtn)startBtn.onclick=()=>startTimerFlow();
+  const stopBtn=document.getElementById('timerStop');if(stopBtn)stopBtn.onclick=()=>stopTimerSheet();
+  const newBtn=document.getElementById('timerNew');if(newBtn)newBtn.onclick=()=>{tSet(null);render();};
+ }
 }
 // 点一条时间线 → 改类别 / 删除（不参加）
 function wireEdit(){
@@ -1328,6 +1343,9 @@ render();
 (function(){const h=document.querySelector('.hdr');const f=()=>document.documentElement.style.setProperty('--hdrH',(h?h.offsetHeight:66)+'px');f();window.addEventListener('resize',f);})();
 cloudPull();                        // 启动即拉云端（Zoe+助理的共享编辑），合并后自动重渲染
 setInterval(cloudPull, 5*60*1000);  // 常开时每 5 分钟拉一次，两人编辑准实时互见
+setInterval(()=>{if(view==='timer'&&tGet()){document.getElementById('body').innerHTML=vTimer();
+ const stopBtn=document.getElementById('timerStop');if(stopBtn)stopBtn.onclick=()=>stopTimerSheet();
+ const newBtn=document.getElementById('timerNew');if(newBtn)newBtn.onclick=()=>{tSet(null);render();};}},1000);
 </script></body></html>'''
 
 def render(real_js, oura_js):
