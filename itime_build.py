@@ -338,8 +338,7 @@ __CATS__
 __REAL_EVENTS__
 __OURA_DATA__
 // 全新调色板（明快、克制、区分度高），覆盖旧的发闷棕黑灰
-const PAL={strategy:'#F37434',people:'#A6C061',product:'#C56B4A',operations:'#D69A3C',external:'#B4643E',global:'#8C6E45',growth:'#818A7D',family:'#8A6BA4',self:'#E2A3B3',travel:'#A79E8C',sleep:'#FFFFFF'};
-if(!CATS.find(c=>c.key==='travel')) CATS.splice(CATS.length-1,0,{key:'travel',label:'差旅',color:PAL.travel,icon:'✈️',sub:['出差飞行','通勤接送']});
+const PAL={strategy:'#F37434',people:'#A6C061',product:'#C56B4A',operations:'#D69A3C',external:'#B4643E',global:'#8C6E45',growth:'#818A7D',family:'#8A6BA4',self:'#E2A3B3',travel:'#A79E8C',ai:'#6B5B95',sleep:'#FFFFFF'};
 CATS.forEach(c=>{if(PAL[c.key])c.color=PAL[c.key];});
 CATS.forEach(c=>{if(c.key==='operations')c.label='日常运营';});   // 改名:运营财务→日常运营
 {const _sl=CATS.find(c=>c.key==='sleep');if(_sl)_sl.label='睡眠·在床';} // 时间账本里的 sleep 类=在床区间(bs→wake+nb→24)；概览/家庭/趋势的「睡眠」=WHOOP 实际睡眠 hrs。标注开，两口径不再混淆
