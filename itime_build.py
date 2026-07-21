@@ -315,6 +315,25 @@ body{font-family:'Hanken Grotesk','Noto Sans SC',-apple-system,'PingFang SC',san
 </div>
 </div>
 <script>
+// 自动缓存清除：检测版本变化，自动清除 Service Worker 和浏览器缓存
+(function(){
+  const VER='__VERSION__';
+  const lastVer=localStorage.getItem('ztAppVersion');
+  if(lastVer!==VER){
+    console.log('[缓存清除] 版本从',lastVer,'→',VER);
+    localStorage.setItem('ztAppVersion',VER);
+    // 清除所有 Service Worker
+    navigator.serviceWorker?.getRegistrations?.().then(regs=>{
+      regs.forEach(reg=>reg.unregister());
+      console.log('[缓存清除] Service Worker 已清除');
+    });
+    // 清除 IndexedDB（PWA 缓存）
+    indexedDB.databases?.().then(dbs=>{
+      dbs.forEach(db=>indexedDB.deleteDatabase(db.name));
+      console.log('[缓存清除] IndexedDB 已清除');
+    });
+  }
+})();
 __CATS__
 __REAL_EVENTS__
 __OURA_DATA__
@@ -1348,13 +1367,14 @@ setInterval(()=>{if(view==='timer'&&tGet()){document.getElementById('body').inne
  const newBtn=document.getElementById('timerNew');if(newBtn)newBtn.onclick=()=>{tSet(null);render();};}},1000);
 </script></body></html>'''
 
-def render(real_js, oura_js):
+def render(real_js, oura_js, ver='dev'):
     """供 refresh.py 调用：注入最新数据，返回完整 App HTML。"""
     return (HTML.replace("__FAV__",FAV).replace("__CATS__",CATS)
-            .replace("__REAL_EVENTS__",real_js).replace("__OURA_DATA__",oura_js))
+            .replace("__REAL_EVENTS__",real_js).replace("__OURA_DATA__",oura_js)
+            .replace("__VERSION__",ver))
 
 if __name__=="__main__":
-    out=render(REAL,OURA)
+    out=render(REAL,OURA,'dev')
     os.makedirs(f"{BASE}/demos",exist_ok=True)
     open(f"{BASE}/demos/itime.html","w",encoding="utf-8").write(out)
     print("wrote demos/itime.html", len(out))

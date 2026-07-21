@@ -459,7 +459,10 @@ def main():
     if n_ou < 30:
         print(f"  ! 健康数据仅 {n_ou} 天(<30)，疑似本机数据不全——拒绝发布/上传，防止贫血版本覆盖线上", file=sys.stderr)
         sys.exit(1)
-    html = itime_build.render(re_js, ou_js)
+    # 生成版本号（时间戳），强制浏览器清除缓存
+    import time as _time
+    ver = str(int(_time.time()))
+    html = itime_build.render(re_js, ou_js, ver)
     tmp = HTML + ".tmp"                       # 原子写：先落临时文件再 rename，杜绝半截/并发覆盖
     open(tmp, "w", encoding="utf-8").write(html)
     os.replace(tmp, HTML)

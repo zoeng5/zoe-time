@@ -1996,6 +1996,56 @@
       "cat": "external",
       "sub": "湖畔",
       "_note": "App 回流"
+    },
+    "公司数据门户项目": {
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
+    },
+    "Motherswork visit in Shenzhen office - Business...": {
+      "cat": "strategy",
+      "sub": "公司战略",
+      "_note": "App 回流"
+    },
+    "Fordeal吕皓：如何用 AI 提高决策质量？": {
+      "cat": "strategy",
+      "sub": "AI战略",
+      "_note": "AI 判定"
+    },
+    "Sharing Session from Jiahui": {
+      "cat": "growth",
+      "sub": "专家分享",
+      "_note": "AI 判定"
+    },
+    "company calender": {
+      "cat": "operations",
+      "sub": "日程管理",
+      "_note": "AI 判定"
+    },
+    "【Jiahui专项深度交流会】产品与品牌的全球化 · 端到端GTM": {
+      "cat": "product",
+      "sub": "全球化GTM",
+      "_note": "AI 判定"
+    },
+    "【Jiahui专项深度交流会】爆品的选择与打造": {
+      "cat": "product",
+      "sub": "爆品打造",
+      "_note": "AI 判定"
+    },
+    "【Jiahui专项深度交流会】鞋业务的组织架构与组织能力": {
+      "cat": "people",
+      "sub": "组织架构",
+      "_note": "AI 判定"
+    },
+    "【ZOOM】Ms. Al's Exclusive Insight": {
+      "cat": "growth",
+      "sub": "专家洞察",
+      "_note": "AI 判定"
+    },
+    "组织内部人员沟通事项": {
+      "cat": "people",
+      "sub": "内部沟通",
+      "_note": "AI 判定"
     }
   },
   "fallback": {

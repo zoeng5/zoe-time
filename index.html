@@ -293,12 +293,32 @@ body{font-family:'Hanken Grotesk','Noto Sans SC',-apple-system,'PingFang SC',san
 <div class="tabs">
   <button data-v="clock" class="on"><span class="ic">🕘</span><span class="tx">时钟</span></button>
   <button data-v="stats"><span class="ic">📊</span><span class="tx">统计</span></button>
+  <button data-v="timer"><span class="ic">⏱</span><span class="tx">计时</span></button>
   <button data-v="insights"><span class="ic">💡</span><span class="tx">洞察</span></button>
   <button data-v="family"><span class="ic">🏡</span><span class="tx">家庭</span></button>
   <button data-v="goals"><span class="ic">🎯</span><span class="tx">目标</span></button>
 </div>
 </div>
 <script>
+// 自动缓存清除：检测版本变化，自动清除 Service Worker 和浏览器缓存
+(function(){
+  const VER='1784647088';
+  const lastVer=localStorage.getItem('ztAppVersion');
+  if(lastVer!==VER){
+    console.log('[缓存清除] 版本从',lastVer,'→',VER);
+    localStorage.setItem('ztAppVersion',VER);
+    // 清除所有 Service Worker
+    navigator.serviceWorker?.getRegistrations?.().then(regs=>{
+      regs.forEach(reg=>reg.unregister());
+      console.log('[缓存清除] Service Worker 已清除');
+    });
+    // 清除 IndexedDB（PWA 缓存）
+    indexedDB.databases?.().then(dbs=>{
+      dbs.forEach(db=>indexedDB.deleteDatabase(db.name));
+      console.log('[缓存清除] IndexedDB 已清除');
+    });
+  }
+})();
 const CATS = [
   {key:'strategy',  label:'战略',    color:'#1D1D1D', icon:'🎯',
    sub:['公司战略','品牌战略','董事会与股东','战略研究']},
@@ -1743,9 +1763,9 @@ const REAL_EVENTS = {
     {cat:"growth",sub:"课程学习",title:"Motherswork visit in Shenzhen office - Business...",start:14.0,end:16.0,tags:[]},
     {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:14.5,end:15.5,tags:[]},
     {cat:"operations",sub:"日常运营",title:"mt3 会议跟进方式&方法",start:15.5,end:16.0,tags:[]},
-    {cat:"product",sub:"门店体验",title:"China Retail store BD meeting",start:16.0,end:17.0,tags:[]},
-    {cat:"product",sub:"产品企划评审",title:"27AW大图评审",start:16.0,end:18.0,tags:[]},
     {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
+    {cat:"product",sub:"产品企划评审",title:"27AW大图评审",start:16.0,end:18.0,tags:[]},
+    {cat:"product",sub:"门店体验",title:"China Retail store BD meeting",start:16.0,end:17.0,tags:[]},
     {cat:"strategy",sub:"公司战略",title:"董事会会议安排",start:18.5,end:19.0,tags:[]},
     {cat:"operations",sub:"跨部门协同",title:"ON COO 本周 visit plan",start:19.0,end:19.5,tags:[]},
   ],
@@ -1755,8 +1775,8 @@ const REAL_EVENTS = {
     {cat:"self",sub:"健身运动",title:"普拉提 PA（ZYAN之岩普拉提）",start:12.5,end:14.0,tags:[]},
     {cat:"family",sub:"亲子居家",title:"剪发 with Olivia",start:14.83,end:16.0,tags:["Olivia"]},
     {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
-    {cat:"operations",sub:"财务",title:"报表数据月度Review（moda&ksw&lmoda）",start:16.5,end:17.5,tags:[]},
     {cat:"travel",sub:"机场接送",title:"佳慧17:15到达 HKG  安排司机去接送到JEN酒店",start:16.5,end:17.17,tags:[]},
+    {cat:"operations",sub:"财务",title:"报表数据月度Review（moda&ksw&lmoda）",start:16.5,end:17.5,tags:[]},
     {cat:"self",sub:"美容护肤",title:"儿童护肤线电话沟通（立白护肤 金雨秋）",start:17.5,end:18.5,tags:[]},
     {cat:"operations",sub:"经营分析",title:"鞋收入路径盘点",start:18.5,end:19.5,tags:[]},
     {cat:"people",sub:"内部沟通",title:"组织内部人员沟通事项",start:19.5,end:20.0,tags:[]},
@@ -2349,6 +2369,15 @@ function vStats(){
   <div class="snote">竖线＝该类的参考目标（按每日目标折算到时间占比，目标页可调）。<b>未记录</b>＝这段时间里没有日历日程、也没有手动补录覆盖的部分${partial?'（分母只算到此刻，未来时间不计）':''}。点「未记录」这一行即可补录。日程撞车/补录重叠时各类相加可能 >100%，「覆盖」和「未记录」按时间轴去重计算。</div>
   <button class="fab" id="fabS">＋</button>`;
 }
+function vTimer(){
+  const t=tGet();
+  if(!t)return`<div style="height:100%;display:flex;align-items:center;justify-content:center;color:var(--mut);flex-direction:column;gap:12px;padding:40px 20px"><div style="font-size:14px;color:var(--mut);font-weight:600">还没开始计时</div><button id="timerStart" style="padding:12px 24px;background:var(--tang);color:#fff;border:none;border-radius:12px;cursor:pointer;font-weight:700">开始计时</button></div>`;
+  const ms=Date.now()-t.start;
+  const h=Math.floor(ms/3600000),m=Math.floor((ms%3600000)/60000),s=Math.floor((ms%60000)/1000);
+  const timeStr=`\${String(h).padStart(2,'0')}:\${String(m).padStart(2,'0')}:\${String(s).padStart(2,'0')}`;
+  const cat=t.cat?CM[t.cat]:{label:'计时中',color:'#C2B8A6'};
+  return`<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 20px"><div style="font-size:13px;color:var(--mut);font-weight:600">现在计时中</div><div style="font-size:64px;font-weight:800;font-family:monospace;letter-spacing:8px;color:var(--ink)">\${timeStr}</div><div style="font-size:16px;font-weight:700;color:\${cat.color}">● \${cat.label}</div><div style="display:flex;gap:12px;margin-top:20px"><button id="timerStop" style="padding:11px 24px;border:1.5px solid var(--tang);background:var(--tang);color:#fff;border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">结束计时</button><button id="timerNew" style="padding:11px 24px;border:1.5px solid var(--line);background:var(--soft);border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">新计时</button></div></div>`;
+}
 
 // 目标：可编辑（存 localStorage 'ztGoals'），家庭默认提到 每天3h
 const GOAL_DEF=[
@@ -2779,7 +2808,7 @@ function render(){
  } else if(view==='family'){document.getElementById('dlab').textContent='家庭 · 自身';document.getElementById('dsub').textContent='睡眠趋势 · 陪伴每个孩子';
  } else {const isT=dateStr(d)===dateStr(today());document.getElementById('dlab').textContent=isT?'目标 · 今天':`目标 · ${d.getMonth()+1}月${d.getDate()}日`;document.getElementById('dsub').textContent=`${dateStr(d)} ${WKD[d.getDay()]} · 每日看当天/每周看所在周 · 点卡片改`;}
  document.getElementById('nextB').style.visibility=off>=0?'hidden':'visible';
- document.getElementById('body').innerHTML = view==='clock'?vClock():view==='stats'?vStats():view==='insights'?vInsights():view==='family'?vFamily():vGoals();
+ document.getElementById('body').innerHTML = view==='clock'?vClock():view==='stats'?vStats():view==='timer'?vTimer():view==='insights'?vInsights():view==='family'?vFamily():vGoals();
  if(view==='stats'){document.querySelectorAll('.seg2 button').forEach(b=>b.onclick=()=>{statScope=b.dataset.s;render();});
   wireStatsAdd();
   document.querySelectorAll('.srow[data-cat]').forEach(el=>el.onclick=()=>openTrend('cat',el.dataset.cat));}
@@ -2793,6 +2822,11 @@ function render(){
    document.querySelectorAll('.kcell[data-trend]').forEach(el=>el.onclick=()=>{const t=el.dataset.trend;openTrend(t==='sleep'?'sleep':'cat',t);});
  }
  if(view==='goals')document.querySelectorAll('.gcard').forEach(el=>el.onclick=()=>openCatDetail(el.dataset.g));
+ if(view==='timer'){
+  const startBtn=document.getElementById('timerStart');if(startBtn)startBtn.onclick=()=>startTimerFlow();
+  const stopBtn=document.getElementById('timerStop');if(stopBtn)stopBtn.onclick=()=>stopTimerSheet();
+  const newBtn=document.getElementById('timerNew');if(newBtn)newBtn.onclick=()=>{tSet(null);render();};
+ }
 }
 // 点一条时间线 → 改类别 / 删除（不参加）
 function wireEdit(){
@@ -3031,4 +3065,7 @@ render();
 (function(){const h=document.querySelector('.hdr');const f=()=>document.documentElement.style.setProperty('--hdrH',(h?h.offsetHeight:66)+'px');f();window.addEventListener('resize',f);})();
 cloudPull();                        // 启动即拉云端（Zoe+助理的共享编辑），合并后自动重渲染
 setInterval(cloudPull, 5*60*1000);  // 常开时每 5 分钟拉一次，两人编辑准实时互见
+setInterval(()=>{if(view==='timer'&&tGet()){document.getElementById('body').innerHTML=vTimer();
+ const stopBtn=document.getElementById('timerStop');if(stopBtn)stopBtn.onclick=()=>stopTimerSheet();
+ const newBtn=document.getElementById('timerNew');if(newBtn)newBtn.onclick=()=>{tSet(null);render();};}},1000);
 </script></body></html>
