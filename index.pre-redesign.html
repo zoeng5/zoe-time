@@ -1931,12 +1931,16 @@ function saveManualEntry() {
   if (end <= start) { alert('结束时间需晚于开始时间'); return; }
   const cat = CATS.find(c=>c.key===_addCatSel) || CATS[8];
   const manuals = getManuals(_addDateStr);
+  // 读取 AI 标签复选框状态
+  const tags = document.getElementById('addAITag').checked ? ['AI'] : [];
   manuals.push({
     _id: 'm_' + Date.now(), _source: 'manual',
-    cat: cat.key, sub: cat.sub[0]||'', title, start, end, tags: []
+    cat: cat.key, sub: cat.sub[0]||'', title, start, end, tags
   });
   saveManualEvsArr(_addDateStr, manuals);
   document.getElementById('addModalOverlay').classList.remove('open');
+  // 重置 AI 复选框状态
+  document.getElementById('addAITag').checked = false;
   renderDay();
 }
 
@@ -2753,6 +2757,12 @@ render();
     <div class="add-modal-row">
       <div class="add-modal-label">类别</div>
       <div class="add-modal-cats" id="addCats"></div>
+    </div>
+    <div class="add-modal-row" style="border-top:1px solid var(--line);padding-top:12px;margin-top:12px">
+      <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-size:14px;font-weight:600">
+        <input type="checkbox" id="addAITag" style="cursor:pointer;width:18px;height:18px" />
+        <span>⚡ 用了 AI</span>
+      </label>
     </div>
     <div class="add-modal-actions">
       <button class="btn-cancel" onclick="closeAddModal(null)">取消</button>

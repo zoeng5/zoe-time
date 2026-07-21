@@ -491,14 +491,14 @@ function stopTimerSheet(){
    const endTs=Date.now();   // 结束时刻=点「结束并保存」这一刻；补选类目挂起多久都不再膨胀时长
    const finMins=Math.max(1,Math.round((endTs-t.start)/60000));
    const note=(m.querySelector('#tnote').value||'').trim();
-   if(m.querySelector('#tai').classList.contains('on')&&!(t.kids||[]).includes('AI'))t.kids=[...(t.kids||[]),'AI'];
+   const aiTag=m.querySelector('#tai').classList.contains('on')?['AI']:[];  // AI 标签
    const doSave=(cat,sub,kids)=>{
     const cc=CM[cat]||{label:cat};
     if(!(typeof t.start==='number'&&isFinite(t.start)&&t.start<=endTs)){tSet(null);toast('⏱ 计时状态异常，未入账');render();return;}   // 异常状态直接丢弃：不落 MANUAL 不上云
     const st=new Date(t.start),en=new Date(endTs);
     const sh=st.getHours()+st.getMinutes()/60, eh=en.getHours()+en.getMinutes()/60;
     const sds=dateStr(st), eds=dateStr(en);
-    const tg=[...new Set([...(kids||[]),...(t.kids||[])])];
+    const tg=[...new Set([...aiTag,...(kids||[])])];  // 合并 AI 标签和 kids（家庭成员标签）
     const base={cat,sub:sub||'',note,tags:tg};
     const ttl=note||sub||cc.label;
     if(sds===eds) saveManual(sds,{...base,title:ttl,start:Math.round(sh*100)/100,end:Math.max(Math.round(sh*100)/100+0.02,Math.round(eh*100)/100)});
