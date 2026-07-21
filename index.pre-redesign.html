@@ -1037,11 +1037,10 @@ const CATS = [
    sub:['健身运动','美容护肤','休闲放松']},
   {key:'travel',    label:'差旅',    color:'#A79E8C', icon:'✈️',
    sub:['出差飞行','通勤接送']},
-  {key:'ai',        label:'AI',      color:'#6B5B95', icon:'🤖',
-   sub:['模型迭代','数据标注','提示词优化','AI 产品']},
   {key:'sleep',     label:'睡眠',    color:'#C5C8C2', icon:'😴', sub:[]},
 ];
 const CM = Object.fromEntries(CATS.map(c => [c.key, c]));
+// AI 作为标签系统，而非时间维度（用"闪电"按钮标记某条记录是否用了 AI，统计时单独聚合）
 const TAGS = ['AI','Don','Olivia','George','Max','Zoe'];
 // Work category keys (for stats)
 const WORK_KEYS_ALL = ['strategy','people','product','operations','external','global','growth'];

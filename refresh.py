@@ -411,9 +411,10 @@ def build_oura():
         try: d = json.load(open(f, encoding="utf-8"))
         except Exception: continue
         date = d.get("date")
-        # 优先用 WHOOP，没有则用 Oura 或 sleep_hours（已合并的数据）
-        hrs = d.get("whoop_sleep_hours") or d.get("sleep_hours")
-        rec = d.get("whoop_recovery_score") or d.get("recovery_score")
+        # ⚠️ 所有睡眠数据仅用 WHOOP（重要！确保数据一致性）
+        # Oura 仅作为备选（当 WHOOP 缺失时）
+        hrs = d.get("whoop_sleep_hours") or d.get("oura_sleep_hours")
+        rec = d.get("whoop_recovery_score") or d.get("oura_readiness_score")
         hrv = d.get("whoop_hrv_rmssd_ms")
         if not date or hrs is None or date < "2026-01-01": continue
         rows[date] = {"hrs":round(float(hrs),1),

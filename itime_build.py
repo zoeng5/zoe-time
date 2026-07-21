@@ -338,7 +338,7 @@ __CATS__
 __REAL_EVENTS__
 __OURA_DATA__
 // 全新调色板（明快、克制、区分度高），覆盖旧的发闷棕黑灰
-const PAL={strategy:'#F37434',people:'#A6C061',product:'#C56B4A',operations:'#D69A3C',external:'#B4643E',global:'#8C6E45',growth:'#818A7D',family:'#8A6BA4',self:'#E2A3B3',travel:'#A79E8C',ai:'#6B5B95',sleep:'#FFFFFF'};
+const PAL={strategy:'#F37434',people:'#A6C061',product:'#C56B4A',operations:'#D69A3C',external:'#B4643E',global:'#8C6E45',growth:'#818A7D',family:'#8A6BA4',self:'#E2A3B3',travel:'#A79E8C',sleep:'#FFFFFF'};
 CATS.forEach(c=>{if(PAL[c.key])c.color=PAL[c.key];});
 CATS.forEach(c=>{if(c.key==='operations')c.label='日常运营';});   // 改名:运营财务→日常运营
 {const _sl=CATS.find(c=>c.key==='sleep');if(_sl)_sl.label='睡眠·在床';} // 时间账本里的 sleep 类=在床区间(bs→wake+nb→24)；概览/家庭/趋势的「睡眠」=WHOOP 实际睡眠 hrs。标注开，两口径不再混淆
@@ -670,9 +670,9 @@ function vTimer(){
   if(!t)return`<div style="height:100%;display:flex;align-items:center;justify-content:center;color:var(--mut);flex-direction:column;gap:12px;padding:40px 20px"><div style="font-size:14px;color:var(--mut);font-weight:600">还没开始计时</div><button id="timerStart" style="padding:12px 24px;background:var(--tang);color:#fff;border:none;border-radius:12px;cursor:pointer;font-weight:700">开始计时</button></div>`;
   const ms=Date.now()-t.start;
   const h=Math.floor(ms/3600000),m=Math.floor((ms%3600000)/60000),s=Math.floor((ms%60000)/1000);
-  const timeStr=`\${String(h).padStart(2,'0')}:\${String(m).padStart(2,'0')}:\${String(s).padStart(2,'0')}`;
+  const timeStr=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
   const cat=t.cat?CM[t.cat]:{label:'计时中',color:'#C2B8A6'};
-  return`<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 20px"><div style="font-size:13px;color:var(--mut);font-weight:600">现在计时中</div><div style="font-size:64px;font-weight:800;font-family:monospace;letter-spacing:8px;color:var(--ink)">\${timeStr}</div><div style="font-size:16px;font-weight:700;color:\${cat.color}">● \${cat.label}</div><div style="display:flex;gap:12px;margin-top:20px"><button id="timerStop" style="padding:11px 24px;border:1.5px solid var(--tang);background:var(--tang);color:#fff;border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">结束计时</button><button id="timerNew" style="padding:11px 24px;border:1.5px solid var(--line);background:var(--soft);border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">新计时</button></div></div>`;
+  return`<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 20px"><div style="font-size:13px;color:var(--mut);font-weight:600">现在计时中</div><div style="font-size:64px;font-weight:800;font-family:monospace;letter-spacing:8px;color:var(--ink)">${timeStr}</div><div style="font-size:16px;font-weight:700;color:${cat.color}">● ${cat.label}</div><div style="display:flex;gap:12px;margin-top:20px"><button id="timerStop" style="padding:11px 24px;border:1.5px solid var(--tang);background:var(--tang);color:#fff;border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">结束计时</button><button id="timerNew" style="padding:11px 24px;border:1.5px solid var(--line);background:var(--soft);border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">新计时</button></div></div>`;
 }
 
 // 目标：可编辑（存 localStorage 'ztGoals'），家庭默认提到 每天3h

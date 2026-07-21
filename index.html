@@ -302,7 +302,7 @@ body{font-family:'Hanken Grotesk','Noto Sans SC',-apple-system,'PingFang SC',san
 <script>
 // 自动缓存清除：检测版本变化，自动清除 Service Worker 和浏览器缓存
 (function(){
-  const VER='1784647088';
+  const VER='1784648037';
   const lastVer=localStorage.getItem('ztAppVersion');
   if(lastVer!==VER){
     console.log('[缓存清除] 版本从',lastVer,'→',VER);
@@ -338,6 +338,8 @@ const CATS = [
    sub:['亲子居家','亲子旅行','陪伴长辈']},
   {key:'self',      label:'自我时间', color:'#C4A0BE', icon:'🪞',
    sub:['健身运动','美容护肤','休闲放松']},
+  {key:'travel',    label:'差旅',    color:'#A79E8C', icon:'✈️',
+   sub:['出差飞行','通勤接送']},
   {key:'sleep',     label:'睡眠',    color:'#C5C8C2', icon:'😴', sub:[]},
 ];
 const REAL_EVENTS = {
@@ -1763,9 +1765,9 @@ const REAL_EVENTS = {
     {cat:"growth",sub:"课程学习",title:"Motherswork visit in Shenzhen office - Business...",start:14.0,end:16.0,tags:[]},
     {cat:"operations",sub:"跨部门协同",title:"BI weekly review",start:14.5,end:15.5,tags:[]},
     {cat:"operations",sub:"日常运营",title:"mt3 会议跟进方式&方法",start:15.5,end:16.0,tags:[]},
-    {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
-    {cat:"product",sub:"产品企划评审",title:"27AW大图评审",start:16.0,end:18.0,tags:[]},
     {cat:"product",sub:"门店体验",title:"China Retail store BD meeting",start:16.0,end:17.0,tags:[]},
+    {cat:"product",sub:"产品企划评审",title:"27AW大图评审",start:16.0,end:18.0,tags:[]},
+    {cat:"product",sub:"品牌营销",title:"MKT周会",start:16.0,end:17.0,tags:[]},
     {cat:"strategy",sub:"公司战略",title:"董事会会议安排",start:18.5,end:19.0,tags:[]},
     {cat:"operations",sub:"跨部门协同",title:"ON COO 本周 visit plan",start:19.0,end:19.5,tags:[]},
   ],
@@ -1775,8 +1777,8 @@ const REAL_EVENTS = {
     {cat:"self",sub:"健身运动",title:"普拉提 PA（ZYAN之岩普拉提）",start:12.5,end:14.0,tags:[]},
     {cat:"family",sub:"亲子居家",title:"剪发 with Olivia",start:14.83,end:16.0,tags:["Olivia"]},
     {cat:"operations",sub:"日常运营",title:"EC电商周会",start:16.0,end:18.0,tags:[]},
-    {cat:"travel",sub:"机场接送",title:"佳慧17:15到达 HKG  安排司机去接送到JEN酒店",start:16.5,end:17.17,tags:[]},
     {cat:"operations",sub:"财务",title:"报表数据月度Review（moda&ksw&lmoda）",start:16.5,end:17.5,tags:[]},
+    {cat:"travel",sub:"机场接送",title:"佳慧17:15到达 HKG  安排司机去接送到JEN酒店",start:16.5,end:17.17,tags:[]},
     {cat:"self",sub:"美容护肤",title:"儿童护肤线电话沟通（立白护肤 金雨秋）",start:17.5,end:18.5,tags:[]},
     {cat:"operations",sub:"经营分析",title:"鞋收入路径盘点",start:18.5,end:19.5,tags:[]},
     {cat:"people",sub:"内部沟通",title:"组织内部人员沟通事项",start:19.5,end:20.0,tags:[]},
@@ -2042,7 +2044,6 @@ const OURA_DATA = {
 };
 // 全新调色板（明快、克制、区分度高），覆盖旧的发闷棕黑灰
 const PAL={strategy:'#F37434',people:'#A6C061',product:'#C56B4A',operations:'#D69A3C',external:'#B4643E',global:'#8C6E45',growth:'#818A7D',family:'#8A6BA4',self:'#E2A3B3',travel:'#A79E8C',sleep:'#FFFFFF'};
-if(!CATS.find(c=>c.key==='travel')) CATS.splice(CATS.length-1,0,{key:'travel',label:'差旅',color:PAL.travel,icon:'✈️',sub:['出差飞行','通勤接送']});
 CATS.forEach(c=>{if(PAL[c.key])c.color=PAL[c.key];});
 CATS.forEach(c=>{if(c.key==='operations')c.label='日常运营';});   // 改名:运营财务→日常运营
 {const _sl=CATS.find(c=>c.key==='sleep');if(_sl)_sl.label='睡眠·在床';} // 时间账本里的 sleep 类=在床区间(bs→wake+nb→24)；概览/家庭/趋势的「睡眠」=WHOOP 实际睡眠 hrs。标注开，两口径不再混淆
@@ -2374,9 +2375,9 @@ function vTimer(){
   if(!t)return`<div style="height:100%;display:flex;align-items:center;justify-content:center;color:var(--mut);flex-direction:column;gap:12px;padding:40px 20px"><div style="font-size:14px;color:var(--mut);font-weight:600">还没开始计时</div><button id="timerStart" style="padding:12px 24px;background:var(--tang);color:#fff;border:none;border-radius:12px;cursor:pointer;font-weight:700">开始计时</button></div>`;
   const ms=Date.now()-t.start;
   const h=Math.floor(ms/3600000),m=Math.floor((ms%3600000)/60000),s=Math.floor((ms%60000)/1000);
-  const timeStr=`\${String(h).padStart(2,'0')}:\${String(m).padStart(2,'0')}:\${String(s).padStart(2,'0')}`;
+  const timeStr=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
   const cat=t.cat?CM[t.cat]:{label:'计时中',color:'#C2B8A6'};
-  return`<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 20px"><div style="font-size:13px;color:var(--mut);font-weight:600">现在计时中</div><div style="font-size:64px;font-weight:800;font-family:monospace;letter-spacing:8px;color:var(--ink)">\${timeStr}</div><div style="font-size:16px;font-weight:700;color:\${cat.color}">● \${cat.label}</div><div style="display:flex;gap:12px;margin-top:20px"><button id="timerStop" style="padding:11px 24px;border:1.5px solid var(--tang);background:var(--tang);color:#fff;border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">结束计时</button><button id="timerNew" style="padding:11px 24px;border:1.5px solid var(--line);background:var(--soft);border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">新计时</button></div></div>`;
+  return`<div style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 20px"><div style="font-size:13px;color:var(--mut);font-weight:600">现在计时中</div><div style="font-size:64px;font-weight:800;font-family:monospace;letter-spacing:8px;color:var(--ink)">${timeStr}</div><div style="font-size:16px;font-weight:700;color:${cat.color}">● ${cat.label}</div><div style="display:flex;gap:12px;margin-top:20px"><button id="timerStop" style="padding:11px 24px;border:1.5px solid var(--tang);background:var(--tang);color:#fff;border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">结束计时</button><button id="timerNew" style="padding:11px 24px;border:1.5px solid var(--line);background:var(--soft);border-radius:12px;cursor:pointer;font-weight:700;font-size:14px">新计时</button></div></div>`;
 }
 
 // 目标：可编辑（存 localStorage 'ztGoals'），家庭默认提到 每天3h
